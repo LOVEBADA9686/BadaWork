@@ -1,0 +1,5 @@
+package a.b.c.swing.member.dao;
+
+public class SwingMemberDAOImpl implements SwingMemberDAO {
+
+}

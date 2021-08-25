@@ -1,0 +1,11 @@
+a.b.c.board.dao
+a.b.c.board.scr
+a.b.c.board.service
+a.b.c.board.sql
+a.b.c.board.vo
+a.b.c.common
+a.b.c.mem.dao
+a.b.c.mem.scr
+a.b.c.mem.service
+a.b.c.mem.sql
+a.b.c.mem.vo

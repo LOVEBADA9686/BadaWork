@@ -1,0 +1,18 @@
+package a.b.c.ch8;
+
+public class Ex_Thread_1 implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Runnable 인터페이스에서 오버라이딩된 run 함수");
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	}
+
+}

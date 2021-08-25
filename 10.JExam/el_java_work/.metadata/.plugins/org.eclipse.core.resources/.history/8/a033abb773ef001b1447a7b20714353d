@@ -1,0 +1,16 @@
+package a.b.c.ch8;
+
+public class Ex_Thread_11 {
+
+	public void run() {
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Ex_Thread_1 ex11 = new Ex_Thread_11();
+		
+		Thread t = new Thread(ex11);
+		t.start();
+	}
+
+}

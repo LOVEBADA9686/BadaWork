@@ -1,0 +1,240 @@
+2021-06-29
+----------------------
+키워드(예약어)
+
+
+
+2021-07-05
+----------------------
+멤버변수 
+클래스 내부(함수 밖)에 선언하는 멤버변수는 선언 만 해서 사용한다.
+클래스를 인스턴스 하는 과정에서 생성자로 초기화 하기 때문이다.
+
+
+2021-07-07
+----------------------
+클래스 자원을 메모리에 올리는 방법
+1. static 키워드
+2. new 연산자 
+3. 상속
+
+2021-07
+----------------------
+length() 문자열의 길이 선언
+length 배열의 길이 선언
+
+
+2021-07-13
+----------------------
+클래스 자원을 메모리에 올리는 방법
+1. static 키워드
+2. new 연산자 
+3. 상속 : inheritance 
+	extedns 키워드 : 단일 클래스 상속
+	implements 키워드 : 다중 인터페이스 상속 
+
+
+2021-07-19
+---------------------
+/* 
+문제
+25분 
+명령행 인수를 받아서 정수의 사칙연산 콘솔 어플리케이션을 만드시오 !!
+연산자는 내부에서 선언해서 사용하기 
++ : addM(int x, int y)
+- : subM(int x, int y)
+* : mulM(int x, int y)
+/ : divM(int x, int y)
+로 만들어서 아규먼트를 받아서 
+리턴값을 받아 콘솔에 결과를 출력하시오 
+*/
+문제 해석
+명령행 인수 : String args[]
+정수 : int
+사칙연산 : + - * / 
+콘솔어플리케이션: main()
+변수
+
+
+
+2021-07-20
+--------------------
+java.text.SimpleDateFormat(클래스) // (예제 Ex_Date 참조 / 날짜를 원하는 형태로 선언)
+java.util.Date(클래스) // (예제 Ex_Date 참조 / 날짜를 나타내는 클래스)
+
+Calendar 클래스 인스턴스 방법
+Calendar cd = Calendar.getInstance();
+
+Date 클래스는 epoch 시간(이포크 시간)을 리턴한다.
+1970년 1월 1일 00:00:00 시간을 기준으로 지나간 시간을 millisecond로 변환한다.	
+//public int getYear() // 년
+int year = d.getYear();
+System.out.println("year >>> : " + year);
+year = year + 1900;
+System.out.println("year >>> : " + year);
+
+// 달
+월은 0부터 시작이므로 출력을 할 때는 +1을 선언한다.
+//public int getMonth()
+int month = d.getMonth();
+System.out.println("month >>> : " + month);
+month = month + 1;
+System.out.println("month >>> : " + month);
+
+2021-07-21
+--------------------
+// 제너릭 : Generic : 데이터 타입을 한정 한다.(한가지만 사용해야 한다. / 예제 Ex_ArrayList_2, Ex_HashMap 참조)
+
+	<T> : Type
+	<E> : Element
+	<K> : Key
+	<V> : Value
+	<N> : Number
+
+public V put(K key, V value) // jdk1.8
+public V get(Object key) // Value 리턴형을 받는다.
+		 	
+public Object put(Object key, Object value) // jdk1.4
+public Object get(Object key)
+
+2021-07-22
+----------------------
+클래스 자원을 메모리에 올리는 방법
+1. static 키워드
+2. new 연산자 
+3. 상속 : inheritance 
+	extedns 키워드 : 단일 클래스 상속
+	implements 키워드 : 다중 인터페이스 상속 
+4. 추상함수 : getInstance
+5. class.forname();
+
+final클래스는 변경하지 마시오
+
+2021-07-23
+----------------------
+자바의 자원, 클래스 
+1. static 키워드
+	클래스이름
+2. new 연산자
+	참조변수
+3. 상속: inheritance 
+	extedns 키워드 : 단일 클래스 상속
+	implements 키워드 : 다중 인터페이스 상속 
+4. 추상클래스 getInstance()
+	참조변수
+	Calendar cd = Calendar.getInstance();
+5. Class.forName().newInstance()
+	참조변수 
+
+2021-07-26
+----------------------
+!= 부정연산자 
+바이트 단위는 맨끝을 -1로 표현한다.
+
+예시)
+while ((data = fis.read()) != -1) {
+//				System.out.print((char)data);
+//			}
+
+콘솔어플리케이션에 입력하면 파일로 나오게 해주는 명령어
+batch 명령어 
+echo (에코) 메아리처럼 불러쓰는거
+>> (리다이션) 내용을 원하는곳에 또 쓰는거
+예시)
+C:\00.KOSMO93\10.JExam\ch7>echo Hello World11 >> hello.txt
+
+C:\00.KOSMO93\10.JExam\ch7>echo Hello World2222
+Hello World2222
+C:\00.KOSMO93\10.JExam\ch7>echo Hello World2222 >> hello_2.txt
+
+C:\00.KOSMO93\10.JExam\ch7>
+C:\00.KOSMO93\10.JExam\ch7>java a.b.c.ch7.Ex_IOTest_1 >> Ex_IOTest_1.txt
+
+C:\00.KOSMO93\10.JExam\ch7>
+
+파일을 읽는 객체, byte단위로 읽는 객체
+파일을 읽을려면
+1. 파일이 있는 위치를 알아야 한다.
+2. 파일 이름을 알아야 한다.
+3. 1번, 2번이 충족되면 파일에 있는 내용을 메모리에 올려야 한다.
+4. 파일을 읽을 때 byte단위로 읽어서 메모리에 올려 놓는다.
+5. 파일을 잘 찾아서 메모리에 올려 놓으면
+6. FileInputStream.reda() 함수가 바이트 단위로 읽어온다.
+7. byte 단위로 읽을 때 파일의 끝 -1로 표현 한다.
+
+IOException 예외 클래스는 
+io 패키지의 최상위 예의 클래스 이다.
+checked Exception 이다 : 컴파일 때 체크하는 예외이다.
+소스파일을 구성할 때 : 컴파일 할 때 : 꼭 예외 처리를 해줘야 한다.
+
+io 경로
+콘솔 에디트플러스 이클립스 각각 불러오는게 다르다.
+
+지역변수 : 기초자료형을 함수 내부에서 선언 하면 일반적으로 지역변수라고 부른다 혹은 일반 변수라고 부른다.
+
+지역변수를 죽이는것은 GC(가비지컬렉터)
+
+지역변수 사용하는 규칙
+1. 지역변수는 값을 선언하기전 먼저 디폴트 값으로 초기화 한다.
+	객체 참조변수 = null;
+	기초자료형 지역변수 = 디폴트값;
+2. 통신관련, I/O가 발생하는 객체는 사용후
+	close(), fluch(), null 처리해야한다.
+	java.lang, java.io, java.sql : 무조건 close()로 닫고 null로 마무리 한다. (예제 Ex_FileInputStream 참조)
+
+
+2021 07 21
+-----------------------------------
+BUFFER (기초공부 자료 엑셀 Sheet4 참조)
+buffer size가 8k인 I/O에서
+버퍼사이즈가 8k이면 자동으로 이동되는데
+만약 버퍼사이즈가 8k를 못채우면 수동으로 이동시켜야 한다.
+그 용도가 flush()함수이다.
+
+코딩을 할때 먼저 어떻게 해야하는지 설계를 먼저하기 (예제 Ex_BufferedWriter)
+
+
+2021 07 28
+-----------------------------------
+명령행 인수 : 메인함수의 스트링배열 아규먼트
+
+2021-08-12
+----------------------
+--스칼라(Scala) 서브쿼리
+-- 한개의 로우만 반환한다.
+-- 메인 쿼리에서 추출되는 데이터 건 수 만큼 수행되기 때문에 조인으로 수행 될 때보다 수행회수가 적을 수 있다.
+-- 일치하는 값이 없는 경우 NULL을 반환한다.
+-- 코드성 테이블에서 코드값을 조회할 때, 
+-- 불필요한 조인을 하지 않기 위해 많이 사용한다.
+
+-- 직업이 'MANAGER'인 사원의 사원명, 부서명을 조회
+SELECT A.ENAME,
+       (SELECT B.DNAME FROM DEPT B WHERE B.DEPTNO = A.DEPTNO) DNAME
+FROM   EMP A
+WHERE  A.JOB = 'MANAGER';
+
+SELECT A.ENAME,
+       B.DNAME
+FROM   EMP A, DEPT B
+WHERE  A.DEPTNO = B.DEPTNO
+AND    A.JOB = 'MANAGER';
+
+SELECT  A.DEPTNO, 
+        A.DNAME,
+        (SELECT MAX(SAL) FROM EMP WHERE DEPTNO = A.DEPTNO) SAL
+FROM   DEPT A
+
+SELECT A.DEPTNO, A.DNAME, MAX(B.SAL)
+FROM   DEPT A, EMP B
+WHERE  A.DEPTNO = B.DEPTNO(+)
+GROUP BY A.DEPTNO, A.DNAME
+ORDER BY A.DEPTNO
+
+2021-08-19
+-------------------------------------
+아이디 체크할 때
+1. 없을 때 : 0
+2. 있을 때 : 1
+3. 하나 이상 일 때 : 여러개
+
+

@@ -1,0 +1,15 @@
+package a.b.c.ch7;
+
+import java.io.File;
+
+public class Ex_File_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		File f1 = new File("abc");
+		f1.mkdir();
+		System.out.println("f1 >>> : " + f1);
+	}
+
+}

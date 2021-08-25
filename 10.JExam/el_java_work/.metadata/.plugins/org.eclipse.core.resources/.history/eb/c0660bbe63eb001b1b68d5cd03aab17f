@@ -1,0 +1,22 @@
+package a.b.c.ch6;
+
+public class Ex_String {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		public CharSequence subSequence(int beginIndex)
+//		public CharSequence subSequence(int beginIndex, int endIndex)
+/*		
+		 "unhappy".substring(2) returns "happy"
+		 "Harbison".substring(3) returns "bison"
+		 "emptiness".substring(9) returns "" (an empty string)
+		 "hamburger".substring(4, 8) returns "urge"
+ 		 "smiles".substring(1, 5) returns "mile"
+*/
+		
+		String s0 = "unhappy";
+		System.out.println("s0.length() >>> : " + s0.length());
+
+	}
+
+}

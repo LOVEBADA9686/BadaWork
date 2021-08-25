@@ -1,0 +1,13 @@
+package a.b.c.d.e;
+
+public class Gclass{
+
+} // end of Gclass 클래스
+
+class Hclass
+{
+} // end of Hclass 클래스
+
+class Iclass
+{
+} // end of Iclass 클래스

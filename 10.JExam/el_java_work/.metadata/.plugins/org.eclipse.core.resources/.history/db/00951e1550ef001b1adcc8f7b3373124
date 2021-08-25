@@ -1,0 +1,19 @@
+package a.b.c.ch8;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class Ex_Inet4Address {
+
+	public static void main(String[] args) throws UnknownHostException {
+		// TODO Auto-generated method stub
+		
+		InetAddress addr = new InetAddress.getLocalHost();
+		System.out.println("addr >>> : " + addr);
+		System.out.println("addr.getHostName() >>> : " + daar.getHostName());
+		System.out.println("addr.getHostAddress() >>> : " + addr.getHostAddress());
+		
+
+	}
+
+}

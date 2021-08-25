@@ -1,0 +1,5 @@
+package a.b.c.kosmo.mem.service;
+
+public class KbdMemberServiceImpl implements KbdMemberService {
+
+}

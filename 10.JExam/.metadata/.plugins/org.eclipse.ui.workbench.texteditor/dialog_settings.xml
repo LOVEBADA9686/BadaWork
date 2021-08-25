@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="JOptionPane"/>
+		<list key="findhistory">
+			<item value="JOptionPane"/>
+			<item value="GridLayout"/>
+			<item value="KbdMemberService"/>
+			<item value="KbdBoardService"/>
+			<item value="KbdBoardrAll"/>
+			<item value="KbdBoard"/>
+			<item value="MAIL"/>
+			<item value="kmemSelectAll"/>
+			<item value="hmem"/>
+			<item value="KbdMemberAll"/>
+			<item value="Query"/>
+			<item value="ChanbunQuery"/>
+			<item value="getKbdMemberChanbunQuery"/>
+			<item value="sql"/>
+			<item value="job"/>
+		</list>
+		<list key="replacehistory">
+			<item value="kboard"/>
+			<item value="kvo"/>
+			<item value="Kbd"/>
+			<item value="BNUM"/>
+			<item value="KbdMemberVO"/>
+			<item value="KbdMemberScr"/>
+			<item value="KbdMemberVO_1"/>
+			<item value="hmem"/>
+			<item value="kmem"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="9"/>
+		<item key="DIALOG_Y_ORIGIN" value="165"/>
+		<item key="DIALOG_WIDTH" value="340"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

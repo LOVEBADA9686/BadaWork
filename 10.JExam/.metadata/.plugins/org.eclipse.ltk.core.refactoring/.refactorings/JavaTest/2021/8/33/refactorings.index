@@ -1,0 +1,50 @@
+1628482069970	Rename compilation unit 'HbeMemberChabun.java'
+1628482207446	Rename type 'HbeMemberDAO'
+1628482353130	Rename type 'HbeMemberDAOImpl'
+1628482982751	Rename type 'HbeMemberScr'
+1628482995228	Rename type 'KbeMemberScr'
+1628483059967	Rename type 'HbeMemberService'
+1628483135118	Rename type 'HbeMemberServiceImpl'
+1628483355855	Rename type 'HbeMemberSqlMap'
+1628483630976	Rename type 'HbeMemberVO'
+1628489069770	Delete element
+1628489107540	Delete element
+1628489250105	Delete element
+1628489312438	Delete element
+1628489373426	Rename package 'a.b.c.memtest'
+1628489380305	Delete element
+1628489390053	Rename package 'a.b.c.memtest'
+1628489393597	Delete element
+1628489400730	Delete element
+1628489414930	Delete element
+1628489420956	Delete element
+1628489424570	Delete element
+1628489426840	Delete element
+1628489429155	Delete element
+1628489431905	Delete element
+1628489480636	Delete element
+1628489661696	Delete element
+1628489943503	Delete element
+1628490153313	Delete element
+1628491201715	Delete element
+1628491406445	Delete element
+1628491557549	Delete element
+1628491676812	Delete element
+1628491864343	Delete element
+1628491929974	Rename compilation unit 'KbeMemberService.java'
+1628491987010	Delete element
+1628492122141	Delete element
+1628492220159	Delete element
+1628492274579	Delete element
+1628493157147	Delete element
+1628561996009	Rename type 'KbdMemberVO'
+1628563211260	Rename compilation unit 'KbdMemberScr.java'
+1628563558154	Delete element
+1628564090940	Rename compilation unit 'KbdMemberScr_1.java'
+1628564144596	Rename type 'KbdMemberVO_1'
+1628583561606	Delete element
+1628583801117	Delete element
+1628584017066	Delete element
+1628668626374	Copy compilation unit
+1628668643887	Rename type 'KbdBoardScr2'
+1628673084343	Convert local variable 'sVal' to field

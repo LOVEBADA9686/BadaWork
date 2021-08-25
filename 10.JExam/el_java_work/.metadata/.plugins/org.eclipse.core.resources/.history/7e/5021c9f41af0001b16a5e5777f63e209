@@ -1,0 +1,10 @@
+package a.b.c.ch8;
+
+public class Ex_Thread_6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package a.b.c.kosmo.board.sql;
+
+public abstract class KbdBoardSqlMap {
+
+	// 게시판 글번호 채번
+	public static String getKboardChabunQueryMap() {
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("SELECT										\n");
+		sb.append("				A.BNUM				BNUM		\n");
+		sb.append("				,A.BSUBJECT			BSUBJECT	\n");
+		sb.append("				,A.BWRITER			BWRITER		\n");
+		sb.append("				,A.BCONTENTS		BCONTENTS	\n");
+		sb.append("				,A.BPW				BPW			\n");
+		sb.append("				,A.BDELETEYN		BDELETEYN	\n");
+		sb.append("				,TO_CHAR(A.INSERTDATE, 'YYYY-MM-DD')	INSERTDATE		\n");
+		sb.append("				,TO_CHAR(A.UPDATEDATE, 'YYYY-MM-DD')	UPDATEDATE		\n");
+		sb.append(" FROM										\n");
+		sb.append("			KBE_BOARD	A						\n");
+		sb.append(" WHERE	DELETEYN	=	'Y'					\n");
+		sb.append(" ORDER BY 1 DESC								\n");
+
+		
+	}
+}

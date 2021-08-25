@@ -1,0 +1,63 @@
+2021-08-03
+---------------------------------
+
+국가직무능력 : NCS : National Competency Standards : 
+산업현장에서 직무를 수행하기위해 요구되는 
+지식, 기술, 태도 등의 내용을 국가가 체계화한 것.
+
+
+오라클 11g 
+메이저 버전 : ?
+마이너 버전 : ?
+
+오라클은 
+데이터베이스 : SID 에 
+계정 : account 로 운영한다. 
+
+오라클 account 
+sys
+system
+scott
+
+
+자바하고 오라클 연동할 때 는 
+1. JDBC 드라이버 가 있어야 한다. 
+C:\app\KOSMO\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar
+
+이클립스 202006 자바버전 에서 jdbc 드라이버 ojdbc6.jar 플러그인 하는 방법 
+1. 해당하는 패키지에서 우클릭 : javaTest
+2. Build Path 
+3. Configure Buildz Path
+4. Properties for javaTest
+5. Java Build Path 창에서 Libraries 탭 선택하기 
+6. Add External JARs.... 버튼 클릭하기 
+7. C:\app\KOSMO\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar 찾아가서 선택하기 
+8. Apply and Close 버튼 클릭하기 
+9. javaTest > Referenced Libaries > ojdbc6.jar 
+
+2. java.sql.*;
+
+java.sql.DriverManager : 드라이버 찾아주는 객체 
+	public static Connection getConnection(	String url,
+											String user,
+											String password)
+											throws SQLException
+
+java.sql.Connection : 자바 프로그램하고 오라클하고 연결 해주는 객체 
+	Statement createStatement() throws SQLException
+	PreparedStatement prepareStatement(String sql) throws SQLException
+
+java.sql.Statement : 자바에 있는 sql 쿼리문을 오라클에게 전달하고 
+                      오라클에서 실행한 결과를 받아오는 객체이다. 
+
+	ResultSet executeQuery(String sql) throws SQLException
+	int executeUpdate(String sql) throws SQLException
+
+java.sql.PreparedStatemnt : 자바에 있는 sql 쿼리문을 오라클에게 전달하고 
+                      오라클에서 실행한 결과를 받아오는 객체이다. 
+	ResultSet executeQuery() throws SQLException
+	int executeUpdate() throws SQLException
+
+java.sql.ReslutSet : 스테이트먼트, 프리페이드스테이먼트로 오라클에서 가져온 결과중 
+                     셀렉트한 결과를 받는 객체이다. 
+	boolean next() throws SQLException

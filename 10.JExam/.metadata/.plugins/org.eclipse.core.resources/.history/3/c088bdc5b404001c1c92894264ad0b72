@@ -1,0 +1,10 @@
+package a.b.c.kosmo.mem.scr;
+
+public class KbdMemberUpdate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package a.b.c.ch8;
+
+public class Ex_Thread extends Thread{
+
+	public void run() {
+		System.out.println("run() ÇÔ¼ö");
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		new Ex_Thread().start();
+	}
+}

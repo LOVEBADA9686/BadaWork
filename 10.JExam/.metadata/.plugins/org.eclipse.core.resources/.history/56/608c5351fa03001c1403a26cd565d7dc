@@ -1,0 +1,5 @@
+package a.b.c.kosmo.mem.dao;
+
+public class KbdMemberDAOImpl implements KbdMemberDAO {
+
+}

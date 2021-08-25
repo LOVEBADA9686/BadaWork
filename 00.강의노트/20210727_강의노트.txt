@@ -1,0 +1,64 @@
+2021-07-27
+----------------------------
+
+packet : 지구를 다섯바퀴 반 돈다. 초당 
+ip : 컴퓨터 주소 
+destination : 목적지 주소
+proxy : 인터넷 연결 고리 
+firewall : 검사 : 외부망 : 내부망
+port : 하나의 컴퓨터에 약 6만5천개 정도가 있다. :  어플리케이션을 가르킨다. 
+
+buffer(일반적으로 8k)
+	buffer 단위로 입출력 
+	buffer 사이즈가 8k 가 되어야 자동 입출력이 일어나는데 
+	buffer 사이즈가 8k 가 않되면 flush() 명령어을 사용해서 수동으로 입출력 시켜야 한다. 
+
+
+############################################
+BufferedWriter, BufferedReader
+	버퍼 크기를 지정하지 않은 경우 기본값으로 버퍼 생성 
+	기본 버퍼의 크기는 규정 된 것은 아니지만
+	8192char(16384byte)
+
+BufferedInputStream : 2048byte
+BufferedOutputStream : 512byte
+
+입출력 스트림의 성능은
+자바가 아닌 운영체제와 밀접한 관련이 있다. 
+java, C, C++
+512byte ~ 8192byte 정도의 입출력 버퍼가 유효 
+############################################
+
+
+FileInputStream
+FileOutputStream
+
+BufferedInputStream
+BufferedOutputStream
+
+FileInputStream  fis = new FileInputStream(new File());
+BufferedInputStream bis = new BufferedInputStream(fis);
+
+BufferedInputStream bis1 = new BufferedInputStream(new FileInputStream(new File());
+
+
+FileOutputStream fos = new FileOutputStream("파일명");
+BufferedOutputStream bos = new BufferedOutputStream(fos);
+
+BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("파일명"));
+
+FileReader
+FileWriter
+
+BufferedReader
+BufferedWriter
+
+FileReader  fr = new FileReader(new File());
+BufferedWriter br = new BufferedWriter(fr);
+
+BufferedWriter br = new BufferedWriter(new FileReader(new File()));
+
+FileWriter fw = new FileWriter("파일명");
+BufferedWriter bw = new BufferedWriter(fw);
+
+BufferedWriter bw = new BufferedWriter(new FileWriter("파일명"););

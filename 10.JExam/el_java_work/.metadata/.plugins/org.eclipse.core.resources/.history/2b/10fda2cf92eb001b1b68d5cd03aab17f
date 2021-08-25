@@ -1,0 +1,12 @@
+package a.b.c.ch6;
+
+public class Ex_StringBuffer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		1. StringBuffer 하고 String은 전혀 다른 객체이다.
+
+	}
+
+}

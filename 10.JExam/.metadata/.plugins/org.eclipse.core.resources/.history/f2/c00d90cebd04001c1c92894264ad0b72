@@ -1,0 +1,88 @@
+package a.b.c.kosmo.mem.scr;
+
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+public class HbeMemberUpdate extends JFrame implements ActionListener {
+
+	private static final long serialVersionUID = 9072198881429763467L;
+	
+	// 멤버변수
+	private JLabel				jl[];
+	private JTextField			jt[];
+	private JTextField			jtFiled[];
+	private JButton				jb[];
+	private JPanel				jp[];
+	private JComboBox<String>	jc[];
+	private JComboBox<String>	jcBirth[];
+	private JRadioButton		jr[];
+	
+	// 생성자
+	@SupperessWarnings("unchecked")
+	public KbdMemberUpdate() {
+		// JFrame 타이틀 세팅하기
+		this.setTitle(":::수정/삭제:::");
+		
+		// JFrame 레이아웃 매니저 보더 레이아웃으로 설정하기
+		this.getContentPane().setLayout(null);
+		jp = new JPanel();
+		jp[0].setBorder(new EtchedBorder());
+		jp[0].setBounds(0, 0, 420, 880);
+		jp[0].setBackground(Color.cyan);
+		jp[0].setLayout(null);
+		
+		// 콤보박스, 라이오버튼, 텍스트필드, 라벨 초기화
+		// 콤보박스
+		jc = new JComboBox[5];
+		// 콤보박스 : 생년월일에서 월, 일
+		jcBirth = new JComboBox[5];
+		// 라이오버튼 : 여자, 남자
+		jr = new JRadioButton[2];
+		
+		// 텍스트필드
+		jtFiled = new JTextField[6];
+		jt = new JTextField[17];
+		int ty = 80;
+		for (int i = 0; i < jt.length; i++) {
+			
+			if(8 == i || 10 == i || 13 == i) {
+				System.out.println(">>>>>>>>" + i);
+				// 이메일
+				if(8 == i) {
+					jtFiled[4] = new JTextField(20);
+					jtFiled[4].setBackground(Color.white);
+					jtFiled[4].setBounds(130, 400, 100, 30);
+					
+					JLabel jla = new JLabel("@");
+					jla.setOpaque(true);
+					jla.setBackground(Color.cyan);
+					jla.setBounds(235, 400, 20, 30);
+					
+					jtFiled[5] = new JTextField(6);
+					jtFiled[5].setBackground(Color.white);
+					jtFiled[5].setBounds(260, 400, 100, 30);
+					
+					jp[0].add(jtFiled[4]);
+					jp[0].add(jla);
+					jp[0].add(jtFiled[5]);
+				}
+				
+				// 취미
+				
+			}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

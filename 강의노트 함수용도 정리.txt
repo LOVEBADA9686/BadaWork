@@ -1,0 +1,73 @@
+#################################################
+
+java.lang.Object
+	public boolean equals(Object obj) // 객체의 주소값을 비교하는 함수 (예제 Ex_String_2 참조 / 상등연산자(==)부분 참조) **
+	public String toString() //  (예제 Ex_Integer, Ex_String_3)
+
+
+java.lang.Integer
+	public static final int MAX_VALUE // 최대값을 확인하는 상수 (예제 ExData_1, ExData_2, ExData_3 참조)
+	public static final int MIN_VALUE // 최소값을 확인하는 상수 (예제 ExData_1, ExData_2, ExData_3 참조)
+	public static String toBinaryString(int i) // 2진수로 선언해주는 함수 (예제 ExCast_5 참조)
+	public static String toOctalString(int i) // 8진수로 선언해주는 함수 (예제 ExCast_5 참조)
+	public static String toHexString(int i) // 16진수로 선언해주는 함수 (예제 ExCast_5 참조)
+	public static int parseInt(String s) // 숫자로된 문자열을 숫자로 선언해주는 함수 (예제 Ex_Integer 참조 / 출력값에선 다시 문자열)
+	
+java.
+	get // 데이터를 빼내오는것 (예제 TestVO)
+	set // 데이터를 입력하는것 (예제 TestVO)
+	
+java.lang.Systrm
+	public static void exit(int status) // 프로그램 종료 선언 함수
+
+
+java.lang.String
+	public char charAt(int index) // 문자열을 순서대로 선언하는 함수 // (예제 ExCast_5 참조 / 0부터 시작) 
+	public boolean equals(Object anObject) // 문자열만 비교하는 함수 (예제 Ex_String_2 참조) **
+	public int length() // 문자열길이를 선언하는 함수  (강의노트 0717 참조) (length는 배열의 길이 : length 함수와 혼동하지 말것!!)
+	public String toUpperCase() // 문자열을 대문자로 선언하는 함수 (예제 ExCast_5 참조) 
+	public String replace(char oldChar, char newChar) // 문자를 다른 문자로 변경해주는 함수 (예제 Ex_Date_1 참조) 
+
+java.lang.Math
+
+
+java.lang.System
+	public static final PrintStream out
+	public static final InputStream in
+
+
+java.io.PrintStream
+	public void print(String s)
+	public void println()
+	public void println(String x)
+	
+	
+java.util.Scanner
+	public String next() // 문자, 문자열을 선언하는 함수
+	public int nextInt() // -2147483648 ~ 2147483647 영역안에서 숫자를 가져오는 함수 (예제 Ex_String_4_1 참조)
+	
+java.util.Date
+	public int getYear() // 날짜의 년도를 이포크시간 기준으로 선언해주는 함수 (예제 Ex_Date_1 참조) 
+	public int getMonth() // 날짜의 월을 선언하는 함수 / 0부터 시작 (예제 Ex_Date_1 참조) 
+	public int getDate() // 날짜의 일을 선언하는 함수 (예제 Ex_Date_1 참조) 
+	
+java.util.Calendar
+	public static final int YEAR // 날짜의 년을 선언하는 상수 (예제 Ex_Calendar 참조)
+	public static final int DATE // 날짜의 일을 선언하는 상수 (예제 Ex_Calendar 참조)
+	public static final int DAY_OF_MONTH // 날짜의 
+	public static final int HOUR // 날짜의 12시간을 선언하는 상수 (예제 Ex_Calendar 참조)
+	public static final int HOUR_OF_DAY // 날짜의 24시간을 선언하는 상수 (예제 Ex_Calendar 참조)
+	public static final int MINUTE // 날짜의 분을 선언하는 상수 (예제 Ex_Calendar 참조)
+	public static final int SECOND // 날짜의 초를 선언하는 상수 (예제 Ex_Calendar 참조)
+	
+java.util.ArrayList
+	public void add(int index, E element) //
+	
+java.util.HashMap
+	public V put(K key, V value)
+	
+	
+
+	
+
+

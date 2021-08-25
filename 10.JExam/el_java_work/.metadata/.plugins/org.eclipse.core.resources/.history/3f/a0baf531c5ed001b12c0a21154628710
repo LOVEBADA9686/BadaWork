@@ -1,0 +1,40 @@
+package a.b.c.ch7;
+
+// 파일을 읽는 객체, byte 단위로 읽는 객체
+// 파일을 읽으려면
+// 1. 파일이 있는 위치를 알아야 한다.
+// 2. 파일 이름을 알아야 한다.
+// 3. 1번, 2번이 충족되면 파일에 있는 내용을 메모리에 올려야 한다.
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class Ex_IOTest_1 {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		// 디렉토리 구분자, 파일구분자 : file seperator 
+		// 윈도우 : \, 리눅스, 유닉스 : /
+		// 이클립스 사용방법이 다르다. 
+		String path = "C:\\00.KOSMO93\\10.JExam\\el_java_work\\javaTest\\src\\a\\b\\c\\ch7";
+		
+		FileInputStream fis = new FileInputStream(path + "\\" + "Ex_IOTest_1.java");
+		System.out.println("fis >>> : " + fis);
+
+		int data = fis.read();
+		System.out.println("data >>> : " + data);
+		System.out.println("(byte)data >>> : " + (byte)data);
+		System.out.println("(char)data >>> : " + (char)data);
+
+		// 바이트 단위로 읽을 때 맨 끝을 -1 표현한다. 
+		while ((data=fis.read()) != -1){
+			System.out.print((char)data);
+		}
+		
+//		while ((data=fis.read()) != -1){
+//			System.out.println(  " : " + data
+//				               + " : " + (char)data
+//							   + " : " + Integer.toBinaryString(data));
+//		}
+	}
+}
