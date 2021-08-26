@@ -1,0 +1,190 @@
+클래스 설계
+
+프로젝트명
+javaChj
+
+공통클래스
+
+com.kosmo.common
+	ChjConnProperty
+		private static final String ORCL_JDBC_DIRVER = "";
+		private static final String ORCL_URL = "";
+		private static final String ORCL_USER = "";
+		private static final String ORCL_PASS = "";
+		
+		public static Connection getConnection();
+		public static void conClose(Connection conn, PreparedStatement pstmt, ResulstSet rsRs);
+		public static void conClose(Connection conn, PreparedStatement pstmt);
+	
+	CodeUtill
+		public static final String[] member_value = {};
+		public static final String[] member_selectall_value = {};
+		public static final String[] gender_value = {};
+		public static final String[] tel_value = {};
+		public static final String[] hp_value = {};
+		public static final String[] hobby_lavel = {};
+		public static final String[] hobby_value = {};
+		public static final String[] job_lavel = {};
+		public static final String[] job_value = {};
+		public static final String[] combo_cpation = {};
+		public static final String[] jbtn_cpation = {};
+		public static final String[] board_label = {};
+		
+		public static String birth(String s);
+		public static String gender(String s);
+		public static String tel(String s);
+		public static String hp(String s);
+		public static String hobby(String s);
+		public static String sethobby(String s);
+		public static int getComboIndex(String s);
+		public static String job(String s);
+		public static String setJob(String s);
+		public static String numPad(String s);
+		
+		
+	MemberChebun
+		public static final String BIZ_GUBUN_M = "M";
+		public static String ymdNum();
+
+멤버
+
+com.kosmo.member.chj.scr
+	JMemberscr
+		private JLabel 			jl[];
+		private JTexField		jt[];
+		private JTexField		jtFiled[];
+		private JButton			jb[];
+		private JPanel			jp[];
+		private	JComboBox<String>	jc[];
+		private JComboBox<String>	jcBirth[];
+		private JRadioButton		jr[];
+		
+		public JMemberscr()
+		public void JMinsert( String jname,.....);
+		public void valueClear();
+		public void actionPerformed(ActionEvent e);
+
+service
+	JMemberService
+		public ArrayList<JMemberVO>JMemberSellectAll();
+		public ArrayList<JMemberVO>JMemberSellect(JMemberVO jvo);
+		public boolean JMemberInsert(JMemberVO jvo);
+		public boolean JMemberUpdate(JMemberVO jvo);
+		public boolean JMemberDelete(JMemberVO jvo);
+		
+		public ArrayList<JMemberVO>JMemberName(JMemberVO jvo);
+		public ArrayList<JMemberVO>JMemberId(JMemberVO jvo);
+		
+		//public int JMemberLoginCheck(JMemberVO jvo);
+	
+	JMemberServiceImlp
+
+dao
+	JMemberDAO
+		public ArrayList<JMemberVO>JMemberSellectAll();
+		public ArrayList<JMemberVO>JMemberSellect(JMemberVO jvo);
+		public boolean JMemberInsert(JMemberVO jvo);
+		public boolean JMemberUpdate(JMemberVO jvo);
+		public boolean JMemberDelete(JMemberVO jvo);
+		
+		public ArrayList<JMemberVO>JMemberName(JMemberVO jvo);
+		public ArrayList<JMemberVO>JMemberId(JMemberVO jvo);
+		
+		//public int JMemberLoginCheck(JMemberVO jvo);
+	
+	JMemberDAOImlp
+sql
+	JMemberSQL
+		public static String JMemberSQLchebun();
+		public static String JMemberSQLsellectall();
+		public static String JMemberSQLsellect();
+		public static String JMemberSQLinsert();
+		public static String JMemberSQLdelete();
+		
+		public static String JMemberSQLsellectname();
+		public static String JMemberSQLsellectid();
+		
+		//public static String JMemberSQLsellectlogincheck();
+vo
+	JMemberVO
+		private String jnum;
+		private String jname;
+		private String jid;
+		private String jpw;
+		private String jbirth;
+		private String jgender;
+		private String jtel;
+		private String jhp;
+		private String jaddr;
+		private String jhobby;
+		private String jphoto;
+		private String jskill;
+		private String jjob;
+		private String deleteyn;
+		private String updatedate;
+		private String insertdate;
+
+		public JMemberVO();
+		public JMemberVO(String...);
+		
+		setJnum(String)....
+		getJnum(String)....
+
+
+board
+
+com.kosmo.board.chj.scr
+	JBoardscr
+		private JLabel      jl[];
+		private JTextField  jt[];
+		private JTextArea   jta;
+		private JScrollPane jsPane;
+		private JButton     jb[];	
+		private JPanel      jp[];	
+	
+		public JBoardscr();
+	
+service
+	JBoardService
+		public ArrayList<JMemberVO>JBoardSellectAll();
+		public ArrayList<JMemberVO>JBoardSellect(JMemberVO jvo);
+		public boolean JBoardInsert(JMemberVO jvo);
+		public boolean JBoardUpdate(JMemberVO jvo);
+		public boolean JBoardDelete(JMemberVO jvo);
+		
+	
+	JBoardServiceImlp
+
+dao
+	JBoardDAO
+		public ArrayList<JMemberVO>JBoardSellectAll();
+		public ArrayList<JMemberVO>JBoardSellect(JMemberVO jvo);
+		public boolean JBoardInsert(JMemberVO jvo);
+		public boolean JBoardUpdate(JMemberVO jvo);
+		public boolean JBoardDelete(JMemberVO jvo);
+		
+	JBoardDAOImlp
+sql
+	JBoardSQL
+		public static String JBoardSQLchebun();
+		public static String JBoardSQLsellectall();
+		public static String JBoardSQLsellect();
+		public static String JBoardSQLinsert();
+		public static String JBoardSQLdelete();
+		
+vo
+	JBoardVO
+		private String jnum;
+		private String jsubject;
+		private String jwriter;
+		private String jcontents;
+		private String jpw;
+		private String deleteyn;
+		private String updatedate;
+		private String insertdate;
+
+		public JBoardVO();
+		public JBoardVO(String...);
+		
+		setJnum(String)....
+		getJnum(String)....

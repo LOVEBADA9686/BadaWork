@@ -1,0 +1,5 @@
+package a.b.c.kosmo.login.dao;
+
+public class KbdLoginDAOImpl {
+
+}

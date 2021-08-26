@@ -14,7 +14,7 @@ public abstract class KbdLoginQueryMap {
 		sb.append("AND	A.KID			= ?			\n");
 		sb.append("AND	A.KPW			= ?			\n");
 
-		//
 	    return sb.toString();
+	    
 		}
 	}	
