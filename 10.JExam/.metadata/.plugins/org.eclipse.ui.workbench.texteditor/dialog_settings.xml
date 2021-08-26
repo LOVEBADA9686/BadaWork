@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="JOptionPane"/>
+		<item key="selection" value="아이디"/>
 		<list key="findhistory">
+			<item value="아이디"/>
 			<item value="JOptionPane"/>
 			<item value="GridLayout"/>
 			<item value="KbdMemberService"/>
@@ -22,7 +23,6 @@
 			<item value="ChanbunQuery"/>
 			<item value="getKbdMemberChanbunQuery"/>
 			<item value="sql"/>
-			<item value="job"/>
 		</list>
 		<list key="replacehistory">
 			<item value="kboard"/>
