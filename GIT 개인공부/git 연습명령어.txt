@@ -29,6 +29,9 @@ git checkout 버전번호
 git checkout master
 > 가장최근에 완료했던 버전으로 다시 돌아가는 명령어
 
+git push origin master
+> 깃허브로 ocmmit완료된 사항 push(보내기) 명령어
+
 
 
 
