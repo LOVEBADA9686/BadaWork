@@ -240,7 +240,7 @@ ORDER BY A.DEPTNO
 
 2021-08-26
 -------------------------------------
-아파치 탐캣, 이클립스 네온 다운로드 URL
+아파치, 이클립스 네온 다운로드 URL
 아파치 탐캣
 https://apache.org/
 http://tomcat.apache.org/
