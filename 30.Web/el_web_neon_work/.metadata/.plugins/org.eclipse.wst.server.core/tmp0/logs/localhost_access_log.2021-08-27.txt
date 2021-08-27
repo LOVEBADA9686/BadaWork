@@ -138,3 +138,6 @@
 0:0:0:0:0:0:0:1 - - [27/Aug/2021:18:27:07 +0900] "GET /testWeb/media/EmbraceableYou.mp3 HTTP/1.1" 206 1001794
 0:0:0:0:0:0:0:1 - - [27/Aug/2021:18:27:09 +0900] "GET /favicon.ico HTTP/1.1" 404 818
 0:0:0:0:0:0:0:1 - - [27/Aug/2021:18:27:11 +0900] "GET /testWeb/media/EmbraceableYou.mp3 HTTP/1.1" 206 411970
+127.0.0.1 - - [27/Aug/2021:18:47:42 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [27/Aug/2021:18:47:42 +0900] "GET /testWeb/html/html_10.html HTTP/1.1" 200 364
+0:0:0:0:0:0:0:1 - - [27/Aug/2021:18:47:44 +0900] "GET /favicon.ico HTTP/1.1" 404 818
