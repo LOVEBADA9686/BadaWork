@@ -1,0 +1,74 @@
+2021-08-27
+-------------------------------------
+
+java :  생활코딩
+		https://opentutorials.org/course/3930
+	coreJava
+		java.lang.*
+		java.util.*
+	JDBC	
+		java.sql.*
+	Swing
+	javax.swing.*
+	
+	1. jdk 버전 : java -version : java version "1.8.0_291"
+	2. javac, java(JVM)
+	3. pacakage compile : javac -d . *.java, compile : java *.java
+	4. runtime :  package : java package.classname : NameSpace 
+	              not package :  java classname 
+	5. key word, identifier, built in class, API
+	6. variable, method(function)
+	7. constructor 
+	8. new, static, implements, Class.forname(), ClassName.getInstance()
+	9. SuperClass superclassVariable = new SubClass();
+	10. Overriding, Overloading
+
+oracle : http://www.gurubee.net/
+		 http://www.gurubee.net/oracle/sql
+	join, outer join
+	subQuery 
+		Scala SubQuery
+		inline view SubQuery
+		SubQuery
+
+-------------------------------------------------------
+
+웹 : 인터넷, 인트라넷을 통해서 웹브라우저를 서비스를 받는 것, 제공하는 것 :웹 서비스 
+웹 서비스 : HTML + JAVA, HTML + PHP, HTML + .NET .....
+
+이전에는 웹 서비스를 제공 받아서 사용하는 것 --> 웹 서비스를 제공하는 기술을 배우는 것
+
+
+일반적인 것
+웹브라우저 <--- HTML ---> 웹서버 <--- JAVA, PHP, .NET ---> WAS <--- JDBC ---> 데이터베이스 
+
+우리가 할 것 
+웹브라우저(ie, 크롬) <--- HTML ---> 
+웹서버(탐캣 코요테) <--- JAVA ---> 
+WAS(탐캣 카탈리나) <--- JDBC(ojdbc6.jar) ---> 
+Oracle 11g 2 Release 
+
+웹브라우저
+범용 5대 브라우저
+	인터넷익스플로러 : ie --> Edge
+	오페라
+	사파리
+	파이어폭스
+	크롬
+
+웹서버
+	httpd(아파치) : Apache Foundation
+	IIS : 마이크로 소프트 : .NET
+	nginx : NGINX (발음 : 엔지 엑스)
+
+
+HTML : HTML + CSS + javaScript
+Swing : HTML : JTable, JTextFiled ... 
+		CSS : Color.red, Font, EtchedBorder ...
+		javaScript : ActionListener ..... 
+	
+우리가 사용할 도구
+웹 브라우저 : ie,
+	크롬 : 92버전 : 크롬은 최신버전 다운로드 정책
+아파치-탐캣 서버 : apache-tomcat : 웹서버(코요테) + 탐캣와쓰서버(카탈리나)
+오라클 11g 2 Release
