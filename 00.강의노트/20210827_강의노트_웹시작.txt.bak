@@ -33,20 +33,17 @@ oracle : http://www.gurubee.net/
 
 -------------------------------------------------------
 
-웹 : 인터넷, 인트라넷을 통해서 웹브라우저를 서비스를 받는 것, 제공하는 것 :웹 서비스 
+웹 : 인터넷, 인트라넷 (무선, 유선) 을 통해서 웹브라우저를 서비스를 받는 것, 제공하는 것 : 웹 서비스 
 웹 서비스 : HTML + JAVA, HTML + PHP, HTML + .NET .....
 
-이전에는 웹 서비스를 제공 받아서 사용하는 것 --> 웹 서비스를 제공하는 기술을 배우는 것
+이전에는 웹 서비스 를 제공 받아서 사용하는 것  --> 웹 서비스를 제공하는 기술을 배우는 것
 
 
 일반적인 것
-웹브라우저 <--- HTML ---> 웹서버 <--- JAVA, PHP, .NET ---> WAS <--- JDBC ---> 데이터베이스 
+웹브라우저 <--- HTML ---> 웹서버 <--- JAVA, PHP, .NET etc.... ---> WAS <--- JDBC ---> 데이터베이스 
 
 우리가 할 것 
-웹브라우저(ie, 크롬) <--- HTML ---> 
-웹서버(탐캣 코요테) <--- JAVA ---> 
-WAS(탐캣 카탈리나) <--- JDBC(ojdbc6.jar) ---> 
-Oracle 11g 2 Release 
+웹브라우저(Edge, 크롬) <--- HTML ---> 웹서버(탐캣 코요테) <--- JAVA ---> WAS(탐캣 카탈리나) <--- JDBC(ojdbc6.jar) ---> Oracle 11g 2 Release 
 
 웹브라우저
 범용 5대 브라우저
@@ -67,8 +64,103 @@ Swing : HTML : JTable, JTextFiled ...
 		CSS : Color.red, Font, EtchedBorder ...
 		javaScript : ActionListener ..... 
 	
-우리가 사용할 도구
-웹 브라우저 : ie,
-	크롬 : 92버전 : 크롬은 최신버전 다운로드 정책
-아파치-탐캣 서버 : apache-tomcat : 웹서버(코요테) + 탐캣와쓰서버(카탈리나)
-오라클 11g 2 Release
+
+#########################################################
+우리가 사용할 도구 : 개발환경 세팅하기 
+
+1. 웹 브라우저 :   ie -> Edge 
+			    크롬 : 92 버전 : 크롬은 최신버전 다운로드 정책
+
+2. 아파치-탐캣 서버  : apache-tomcat : 웹서버(코요테) + 탐캣와쓰서버(카탈리나)
+
+3. 오라클 11g 2 Release
+
+4. 이클립스 : 네온 
+
+도구 설치 
+--------------------------
+아파치 탐캣 다운로드 
+https://apache.org/
+http://tomcat.apache.org/
+https://tomcat.apache.org/download-80.cgi
+
+
+Configuration
+	Server Shutdown Port : 5000 : 탐캣 내부에서 사용하는 포트 번호 : 탐캣 죽이는 역활
+	HTTP/1.1 Connector Port : 8088 : 웹 브라우저에서 웹서버에 접속할 포트번호 
+	                               : 웹 브라우저에서 아파치-탐캣 웹서버를 연결하는 포트번호
+								   : 웹 브라우저에서 코요테에 연결하는 포트번호 
+
+	User Name : admin : WAS 를 관리하는 계정 아이디 
+	Password : 1234 : WAS 를 관리하는 계정의 비빌번호
+
+네온 이클립스 다운로드 
+https://www.eclipse.org/
+https://www.eclipse.org/downloads/
+https://www.eclipse.org/downloads/packages/
+https://www.eclipse.org/downloads/packages/release
+https://www.eclipse.org/downloads/packages/release/neon
+https://www.eclipse.org/downloads/packages/release/neon/3
+https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip
+
+네온 설치 
+1. 이클립스를 설치(인스톨, 카피 버전)할 때 자동으로 jdk를 플러그 인  
+Window - Preferance - 
+Java - Installed JREs 에서 jdk 또는 jre 연결 된 것 확인할 것 
+
+2. 수동 : 탐캣서버 플러그 인 
+Window - Preferance - 
+Server - Runtime Environments
+Server Runtime Environments 창에서 Add... 버튼 클릭하기 
+New Server Runtime Environments 창에서 Apache Tomcat v8.5 선택하고 Next > 버튼 클릭
+Tomcat Server 창에서 Tomcat installation directory: 입력창 옆에 있는 Browse... 버튼 클릭
+C:\Program Files\Apache Software Foundation\Tomcat 8.5 :: Tomcat 8.5 디렉토리 선택하고 Finish 버튼 클릭 
+Server Runtime Environments 창에서 OK 버튼 클릭 
+
+이클립스 네온 하단 창에서 Servers 탭 찾아서 탭 클릭하면
+No servers are available. Click this lint to create a new server.. 링크 를 클릭 
+Difine a New Server 창에서 
+Select the server type: Tomcat v8.5 Server 선택 확인하고 Next > 버튼 클릭 
+Add and Remove 창에서 Finish 버튼 클릭 
+
+이클립스 네온 Project Explorer 에서  Servers 폴더 생김 
+
+수동으로 이클립스에 탐캣서버 플러그인 완료 !! 
+
+
+3. 작업 디렉토리 만들기 
+	빌드 프레임웍 : 다이나믹 웹 프로젝트, 메이븐, 그레이들 
+
+이클립스 - 네온 
+File - New - Other 클릭
+Select a wizard 창에서 Wizards: 검색창에서 Dyanmic 키워드로 검색하면
+Web - Dynamic Web Project  를 선택하고 Next > 버튼 클릭 
+Dynamic Web Project 창에서 
+Project name: 필드에서 testWeb 키인 하고 Next > 버튼 클릭 
+Java 창에서 Finish 버튼 클릭
+이클립스 네온 Project Explorer 에서  testWeb 폴더가 생김 
+
+
+testWeb : 작업디렉토리 : 프로젝트이름 : 컨텍스트(Context) : 도메인(Domain) : Web Application
+	Deployment Descriptor:testWeb
+	JAX-WS Web Services
+	Java Resources
+		src
+			자바소스 두기 
+		Libraires
+	JavaScript Resources
+	build
+	WebContent
+		웹서버 영역 : WebContent ~~ WEB-INF :  Client Side Script : HTML, CSS, javaScript
+											Server Side Script : jsp
+		META-INF
+		WEB-INF : 아래쪽이 카탈리나 컨테이너가 관리하는 폴더 : 서버 : 외부에서 히트 하면 않된다. 
+			lib 
+#########################################################
+
+
+
+
+
+
+

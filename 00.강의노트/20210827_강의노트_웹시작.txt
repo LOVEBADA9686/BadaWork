@@ -33,17 +33,17 @@ oracle : http://www.gurubee.net/
 
 -------------------------------------------------------
 
-웹 : 인터넷, 인트라넷을 통해서 웹브라우저를 서비스를 받는 것, 제공하는 것 :웹 서비스 
+웹 : 인터넷, 인트라넷 (무선, 유선) 을 통해서 웹브라우저를 서비스를 받는 것, 제공하는 것 : 웹 서비스 
 웹 서비스 : HTML + JAVA, HTML + PHP, HTML + .NET .....
 
 이전에는 웹 서비스 를 제공 받아서 사용하는 것  --> 웹 서비스를 제공하는 기술을 배우는 것
 
 
 일반적인 것
-웹브라우저 <--- HTML ---> 웹서버 <--- JAVA, PHP, .NET ---> WAS <--- JDBC ---> 데이터베이스 
+웹브라우저 <--- HTML ---> 웹서버 <--- JAVA, PHP, .NET etc.... ---> WAS <--- JDBC ---> 데이터베이스 
 
 우리가 할 것 
-웹브라우저(ie, 크롬) <--- HTML ---> 웹서버(탐캣 코요테) <--- JAVA ---> WAS(탐캣 카탈리나) <--- JDBC(ojdbc6.jar) ---> Oracle 11g 2 Release 
+웹브라우저(Edge, 크롬) <--- HTML ---> 웹서버(탐캣 코요테) <--- JAVA ---> WAS(탐캣 카탈리나) <--- JDBC(ojdbc6.jar) ---> Oracle 11g 2 Release 
 
 웹브라우저
 범용 5대 브라우저
@@ -65,16 +65,20 @@ Swing : HTML : JTable, JTextFiled ...
 		javaScript : ActionListener ..... 
 	
 
-우리가 사용할 도구 
-웹 브라우저 :  ie -> Edge 
-			크롬 : 92 버전 : 크롬은 최신버전 다운로드 정책
-아파치-탐캣 서버  : apache-tomcat : 웹서버(코요테) + 탐캣와쓰서버(카탈리나)
-오라클 11g 2 Release
+#########################################################
+우리가 사용할 도구 : 개발환경 세팅하기 
 
-이클립스 : 네온 
+1. 웹 브라우저 :   ie -> Edge 
+			    크롬 : 92 버전 : 크롬은 최신버전 다운로드 정책
+
+2. 아파치-탐캣 서버  : apache-tomcat : 웹서버(코요테) + 탐캣와쓰서버(카탈리나)
+
+3. 오라클 11g 2 Release
+
+4. 이클립스 : 네온 
 
 도구 설치 
-
+--------------------------
 아파치 탐캣 다운로드 
 https://apache.org/
 http://tomcat.apache.org/
@@ -125,6 +129,8 @@ Add and Remove 창에서 Finish 버튼 클릭
 
 
 3. 작업 디렉토리 만들기 
+	빌드 프레임웍 : 다이나믹 웹 프로젝트, 메이븐, 그레이들 
+
 이클립스 - 네온 
 File - New - Other 클릭
 Select a wizard 창에서 Wizards: 검색창에서 Dyanmic 키워드로 검색하면
@@ -148,13 +154,39 @@ testWeb : 작업디렉토리 : 프로젝트이름 : 컨텍스트(Context) : 도메인(Domain) : Web
 		웹서버 영역 : WebContent ~~ WEB-INF :  Client Side Script : HTML, CSS, javaScript
 											Server Side Script : jsp
 		META-INF
-		WEB-INF : 아래쪽이 카탈리나 컨테이너가 관리하는 폴더 : 서버 
+		WEB-INF : 아래쪽이 카탈리나 컨테이너가 관리하는 폴더 : 서버 : 외부에서 히트 하면 않된다. 
 			lib 
+#########################################################
+
+HTML : HTML + CSS + javaScript
+
+HTML : Hyper Text Markup Language 
+
+Markup : 옵셋 인쇄 : 태그 
+Hyper : 링크 
+
+HTML : 시작태그, 끝태그 
+HTML4.01 : 태그 80개 조금 넘게 있다. 
+HTML5 : 태그 80개에서 몇개 빼고 20개 더 붙여서 : 100개 조금 넘는다. 
+
+우리가 공부할 것은 
+기본 태그 : 30 ~ 40개 정도 공부한다. 
+
+<html>
+< : 여는 꺽쇠 : 시작태그
+html : Markup  : 태그 이름 : html 문서를 지칭하는 마크업, 태그 이다. 
+> : 닫는 꺽쇠 : 끝태그 
 
 
+<시작태그 어트리뷰트>내용:컨텐츠</끝태그>
+
+https://www.w3schools.com/
 
 
-
-
-
+현재 본인이 사용하는 컴터(데탑, 랩탑(노트북))에 는 
+아파치 탐캣 서버가 한대 만 설치 되는데 
+관리하는 파일은 컴퓨터에서 설치한 conf 와 이클립스에 플로그인 한 Server 2두대가 있다.
+항상 1대만 사용해야 한다. 
+1. 설치한 아파치 탐캣 : C:\Program Files\Apache Software Foundation\Tomcat 8.5\bin : 확인 
+2. 이클립스에 플러그인 한 탐캣 : /Servers/Tomcat v8.5 Server at localhost-config
 

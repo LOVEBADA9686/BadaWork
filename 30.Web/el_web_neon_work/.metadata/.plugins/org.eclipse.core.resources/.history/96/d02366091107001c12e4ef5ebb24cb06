@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>링크 만들기</title>
+</head>
+<body>
+<h3>링크 만들기</h3>
+<hr>
+포털 사이트
+<ul>
+<hr>
+	<li><a href="https://www.naver.com"></a></li>
+	<li><a href="https://www.daum.net"></a></li>
+</ul>
+신문 사이트
+<hr>
+<ul>
+	<li><a href="https://www.joongang.co.kr"></a></li>
+	<li><a href="https://www.hani.co.kr/?NaPm=ct%3Dksu3bnff%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D3fb8b5459c3c7ef0c1a7f3b221e0bcc086ba49dc"></a></li>
+</ul>
+<hr>
+<a href="html_03.html">예제 2-17로 이동</a>
+</body>
+</html>
