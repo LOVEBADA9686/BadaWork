@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Object</title>
+
+<script type="text/javascript">
+
+	function formSubmit(){
+			alert("안녕하세요 >>> : ");
+			alert(window);
+			alert(window.navigator);
+			alert(window.history);
+			alert(window.location);
+			alert(window.screen);
+			alert(window.document);
+	}
+</script>
+
+</head>
+<body>
+<form>
+	<input type="text" id="mid" name="mid" value="아이디"><br>
+	<input type="button" value="보내기" onclick="formSubmit()">
+</form>
+</body>
+</html>
