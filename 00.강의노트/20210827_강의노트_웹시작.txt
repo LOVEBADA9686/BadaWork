@@ -33,17 +33,29 @@ oracle : http://www.gurubee.net/
 
 -------------------------------------------------------
 
-웹 : 인터넷, 인트라넷 (무선, 유선) 을 통해서 웹브라우저를 서비스를 받는 것, 제공하는 것 : 웹 서비스 
+Web : 웹 : 거미줄 : 월드와이드웹 : 사전적 의미 : World Wide Web : 3W
+	: 브라우저에서 구동되는 프로그램
+	: 브라우저 : 웹 브라우저, 브라우저 
+
+	이전 : 서버가 매우 중요했다. 
+	현재 또는 미래 : 클라이어트가 매우 중요해.
+
+App : 앱 : 핸드폰에서 구동되는 프로그램 
+
+
+Web
+=====
+
+웹 개발, 프로그램 : 인터넷, 인트라넷 (무선, 유선) 을 통해서 웹브라우저로 서비스를 받는 것, 웹서버로 서비스를 제공하는 것 : 웹 서비스 
 웹 서비스 : HTML + JAVA, HTML + PHP, HTML + .NET .....
 
 이전에는 웹 서비스 를 제공 받아서 사용하는 것  --> 웹 서비스를 제공하는 기술을 배우는 것
-
 
 일반적인 것
 웹브라우저 <--- HTML ---> 웹서버 <--- JAVA, PHP, .NET etc.... ---> WAS <--- JDBC ---> 데이터베이스 
 
 우리가 할 것 
-웹브라우저(Edge, 크롬) <--- HTML ---> 웹서버(탐캣 코요테) <--- JAVA ---> WAS(탐캣 카탈리나) <--- JDBC(ojdbc6.jar) ---> Oracle 11g 2 Release 
+웹브라우저(ie, Edge, 크롬) <--- HTML ---> 웹서버(탐캣 코요테(규모가 조금 작은 httpd)) <--- JAVA ---> WAS(탐캣 카탈리나) <--- JDBC(ojdbc6.jar) ---> Oracle 11g 2 Release 
 
 웹브라우저
 범용 5대 브라우저
@@ -57,12 +69,21 @@ oracle : http://www.gurubee.net/
 	httpd(아파치) : Apache Foundation
 	IIS : 마이크로 소프트 : .NET
 	nginx : NGINX (발음 : 엔지 엑스)
+	WebToBe : 웹투비
+
+WAS : Web Application Server
+		아파치 탐캣 : 공공에서 많이 사용한다. 
+		제이보스(JBOSS) : 공공 프로젝트에서 많이 사용한다. 
+		제우스(Jeus) : 금융권 많이 사용한다.
+		웹스피어 : IBM : 공공, 금융 ... 
+		웹로직 .... 
+
 
 
 HTML : HTML + CSS + javaScript
 Swing : HTML : JTable, JTextFiled ... 
 		CSS : Color.red, Font, EtchedBorder ...
-		javaScript : ActionListener ..... 
+		javaScript : 이벤트 : ActionListener ..... 
 	
 
 #########################################################
@@ -70,8 +91,36 @@ Swing : HTML : JTable, JTextFiled ...
 
 1. 웹 브라우저 :   ie -> Edge 
 			    크롬 : 92 버전 : 크롬은 최신버전 다운로드 정책
+	클라이언트(웹브라우저) 하고 웹서버(탐캣 코요테(규모가 작은 아파치httpd 웹서버)) 하고 html을 주고 받으면서 
+	웹서버에서 제공한 html을 브라우저에 렌더링하는 것이다. 
+
+	html을 브라우저로 보는 것은 
+	*.html 화일을 브라우저 프로그램(ie, Edge, Chrome)이 렌더링(Rendering))해서 브라우저에 display 한다. 
+	브라우저(응용프로그램 : html 읽는 엔진, css 읽는 엔진, javaScript를 읽은 엔진이 포함되어 있다.)에 display : html tag + css 
+	웹브라우저에서 html을 보내주면(웹 브라우저가 있는 컴퓨터로 다운로드 되면), 물리적으로 보내준 파일을 읽어서 브라우저에 렌더링 한다. 
+	웹브라우저하고 웹서버는 실제로 html 파일을 주고 받는다. 
 
 2. 아파치-탐캣 서버  : apache-tomcat : 웹서버(코요테) + 탐캣와쓰서버(카탈리나)
+	
+	웹서버(코요테) : HTML, CSS, javaScript, Ajax, JSON, xml ... etc. : Client Side Script 
+				 jsp, jstl .. etc. : Server Side Script 
+			     
+				 웹서버에 있는 클라이언트사이드 스크립트의 내용(html)을  서버사이드 스크립트(jsp)가 받아서
+				 와쓰서버(카탈리나)에 전달하면 
+				
+				 와쓰서버(카탈리나)에서 작업을 해서(?) 결과를 만들어서 
+				 서버사이드 스크립트(jsp)에 전달하면 
+				 
+				 서버사이드 스크립트(jsp)는 클라이언트사이드 스크립트(html)에게 전달하고 
+				 전달 받은 클라이언트사이드 스크립트(html)를 
+				 웹서버는 클라이언트 컴퓨터에 클라이언트사이드 스크립트(html 다운로드)를 전달하고 
+				 전달된 클라이언트사이드 스크립트(html)를 
+				 클라이언드(웹브라우저)가 읽어서 렌더링해서 보여준다.
+	
+	와쓰서버(카탈리나) : 서버사이트 스크립트(jsp, Servlet)에 전달된 내용을 읽어서 
+					servlet(서블릿) 또는 coreJava를 이용해서 
+					비즈니스 로직을 만들거나 또는 데이터베이스를 연동해서 결과를 만들어서 
+					서버사이드 스크립트에게 전달한다. 
 
 3. 오라클 11g 2 Release
 
