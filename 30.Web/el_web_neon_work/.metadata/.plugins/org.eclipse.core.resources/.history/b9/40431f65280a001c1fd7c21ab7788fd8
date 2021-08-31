@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>getData Form Test</title>
+</head>
+<body>
+<!-- 
+http://localhost:8088/testWeb/html_1/getData_1.html?mname=&addr=
+http://localhost:8088/testWeb/html_1/getData_1.html?mname=1111&addr=2222
+
+action : URL : Specifies where to send the form-data when a form is submitted
+	현재 클라이언트 html의 form 태그에 바인딩 된 데이터를 가지고
+	웹서버의 특정 페이지로 url을 적는 속성 값이다.
+	
+enctype : application/x-www-form-urlencoded
+		multipart/form-data
+		text/plain
+		Specifies how the form-data should be encoded
+		when submitting it to the server (only for method="post")
+		
+method : 	get
+			post
+			Specifies the HTTP method to use when sending form-data
+			
+input type="text" name="mname"
+input type="text" name="maddr"
+input type="submit" : submit() 함수 : 폼태그에 있는 데이터를 action에서 지정한 url 전송하세요
+input type="reset" : 폼태그에 내부의 요소에 바인딩 된 데이터를 지우세요
+ -->
+<form action="http://localhost:8088/testWeb/jsp/getDate.jsp">
+	이름 : <input type="text" id="mname" name="mname"><br>
+	주소 : <input type="text" id="maddr" name="addr"><br>
+	<input type="submit" value="보내기">
+	<input type="reset" value="다시">
+</form>
+</body>
+</html>
