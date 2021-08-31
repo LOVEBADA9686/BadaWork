@@ -32,6 +32,8 @@ form 태그
 	내용
 </끝태그>
 
+
+
 id 어트리뷰트 : attribute 
 	: html 요소에서 하나만 선택할 때 사용
 -----------------------------
@@ -49,6 +51,7 @@ For a <form> element, the name attribute is  used as a reference when the data i
 html tag를 다루려면(태그에 디자인 또는 이벤트 주기 .. 등)
 태그(엘리먼트, 요소, 노드)르 선택해야 한다. 
 
+
 javaScript에서 특정 html 요소를 선택하는 방법
 =============================================
 1. html tag 이름(name)
@@ -56,7 +59,7 @@ javaScript에서 특정 html 요소를 선택하는 방법
 3. class attribute(클래스 어트리뷰트)
 4. name attribute(네임 어튜리뷰트)
 5. CSS Selector(CSS 선택자)
-6. HTML Object Collection(html 객체집합)
+6. HTML Object Collection(html 객체집합) : 계층관계 : 함수로 표현 : 배열로 표현한다. 
 
 
 

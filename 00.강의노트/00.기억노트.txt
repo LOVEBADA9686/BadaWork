@@ -256,4 +256,18 @@ https://www.eclipse.org/downloads/packages/release/neon/3
 https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip
 
 
+2021-08-31
+----------------------
+돔트리 : DOM Tree
 
+브라우저 어브 오브젝트 : Browser of Object
+window, navigator, history, location, screen
+
+도큐먼트 어브 오브젝트 : Document of Object
+document
+
+시작태그
+태그이름, 속성, 스타일, 이벤트리스너, 컨텐츠
+<p id="pId" style="color:red" onclick="idFunction()">
+컨텐츠(innerHTML)
+<p>
