@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>회원가입 JSP</title>
+</head>
+<body>
+<h3>회원가이 JSP</h3>
+<hr>
+<%request.setCharacterEncoding(EUC-KR); %>
+<%
+	String mname = request.getParameter("mname");
+	String mid = request.getParameter("mid");
+	String mpw = request.getParameter("mpw");
+	String mgender = request.getParameter("mgender");
+	String mbirth = request.getParameter("mbirth");
+	String mbirth1 = request.getParameter("mbirth1");
+	String mbirth2 = request.getParameter("mbirth2");
+	String mhp = request.getParameter("mhp");
+	String mhp1 = request.getParameter("mhp1");
+	String mhp2 = request.getParameter("mhp2");
+	String mtel = request.getParameter("mtel");
+	String mtel1 = request.getParameter("mtel1");
+	String mtel2 = request.getParameter("mtel2");
+
+
+
+%>
+
+
+
+
+
+
+
+</body>
+</html>

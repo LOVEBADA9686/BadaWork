@@ -1,0 +1,84 @@
+html
+
+<head>
+	<title>브라우저 제목</title>
+	<meta charset="utf-8"> html안 문자를 인코딩 해주는 거 (utf-8을 쓰는게 좋음)
+	<script>자바스크립트,제이쿼리</script>
+</head>
+
+<body>
+	<h1>대제목<img src="/이미지/경로" alt="마우스 커서되면 이미지명 나오게 하는거"></h1>
+	<h2>h1보다 작은 제목</h2>
+	<h3></h3>
+	<h4></h4>
+	<h5></h5>
+	<h6></h6>
+	<hr>하단에 선 생기게 해주는거
+
+	<p>문단태그 <br>엔터 &gt;닫는 꺽쇠 &lt;여는 꺽쇠 &quot;더블쿼테이션 &apos;싱글쿼테이션 &amp;&앰퍼세트 &nbsp;빈칸</p>
+	<a>아무런 효과 없고 거의 <u>href태그에 사용</u>밑줄태그 <href="경로" download(다운로드 받을 수 있게 해주는거)></a>
+
+	<video scr="경로">비디오 재생 태그</video>
+
+	<ul> 순서의 상관없이 목록 나타내는 태그	(점 점 으로나옴)
+		<li>항목 나타내는 태그 반드시 ul,ol안에 써야함</li>
+		<li><a href="경로" target="_blank">(새 윈도우, _blank)</a>
+		<li><a href="경로" target="_self">(현재 윈도우, _self)</a>
+		<li><a href="경로" target="_parent">(부모 윈도우, _parent)</a>
+		<li><a href="경로" target="_top">(브라우저 윈도우, _top)</a>
+	</ul>
+
+	<ol> 순서의 상관있이 목록 나타내는 태그 (1. 2. 3. 이렇게 나옴)
+		<li> 항목 나타내는 태그 반드시 ul,ol안에 써야함</li>
+	</ol>
+
+	<dl> 설명 혹은 정의 할때 사용하는 태그
+		<dt>최현준은?(여기에 설명할거 목록 적는거)</dt>
+		<dd>쥰나게 이뻐(여기다 설명을 적는거)</dd>
+	</dl>
+
+	<form>
+		클라이언트(웹브라우저)에서 서버(웹서버)로 전송할 수 있는 유일한 방법 문
+		<input type="text(텍스트 필드 생기게 해주는거)" value="양식의 이름값">
+		<input type="password(값이 가려지게 나오게 해주는거 )" placeholder="양식에 비어있을때 양식에 나타나게 해주는 거 쓰면 바로 사라짐">
+		<input type="button(버튼생기게 해주는거)" onclick="이벤트 리스너,인라인자바스크립트">
+		<input type="reset(초기화 해주는 거)" Style="CSS3 스타일,인라인 CSS3">
+		<input type="radio(동그라미 여러개중 하나의 값을 선택할 수 있는거 )">
+		<input type="checkbox(여러개 선택할 수 있고 선택해제 할 수 있는거)">
+		<input type="sumit(양식을 보내는 거, 서버에 전달하는 거)">
+		<input type="file(파일을 지정할 수 있게 해주는 거)">
+		<select> 회원가입할때 생년월일 부분에서 나오는거 아니면 네이버 로그인화면 상단에 한국어 써져 있는 거 클릭하면 한국어 영어 나오는거
+			<option>1월</option>
+			<option>2월</option>
+			<option>한국어</option>
+			<option>영어</option>
+		</select>
+	</form>
+
+	<table>
+		<caption>html5 태그의 기능</caption>
+		<thead>
+			테이블 태그의 상단 부분
+			<tr>
+				<th>thead부분에 사용하는 태그</th>
+			</tr>
+		</thead>
+		<tbody>
+			테이블 태그의 중단 부분
+			<tr>
+				<td>tbody부분에 사용하는 태그</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea>텍스트 길게 칠 수 있게 만드는 거</textarea>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			테이블 태그의 마무리 부분 tfoot이 없는 경우도 많음
+			<tr>
+				<td>tfoot부분에 사용하는 태그</td>
+			</tr>
+		</tfoot>
+	</tabel>
+</body>
