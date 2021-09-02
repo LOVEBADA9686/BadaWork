@@ -1,5 +1,0 @@
-package a.b.c.kosmo.mem.sql;
-
-public abstract class KbdMemberSqlMap {
-
-}

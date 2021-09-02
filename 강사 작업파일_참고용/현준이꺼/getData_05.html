@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>getDate Form Test 자바스크립트 함수안에 배열 이용해서 하는 방법</title>
+<!-- 자바스크립트 블럭 -->
+<!-- 40문단 바다가 도와줌 -->
+<script> type="text/javascript"
+
+	//<!--\\ alert 문구 띄우는 함수-->
+	alert("자바스크립트 블럭 시작 >>> : ");
+	
+	//<!-- javascript function 함수 선언-->
+	// checkAction()함수명
+	function checkAction(){
+
+		//<!-- alert 문구 띄우는 함수-->
+		alert("checkAction 함수 내부에 진입 >>> : ");
+		//<!-- Web Console에 메시지를 출력. F12버튼 입력후 콘솔창-->
+		console.log("checkAction 함수 내부에 진입 >>> : ");
+		
+		//<!--var문은 변수를 선언!! 기능
+			//let문은 지역변수 선언!! 기능
+			//const문은 상수 선언!! 기능-->
+		//document.forms[0] document안에서 첫번째 form을 사용
+		var form0 = document.forms[0];
+		//<!-- alert 문구 띄우는 함수-->
+		alert("form0 >>> : " + form0);
+		
+		//<!--var문은 변수를 선언!! 기능
+			//a를 변수로 선언 후 form0.mname.value값으로 초기화(맨처음 form문의 mname을 네임을 가진 태그의 value값으로 초기화)-->
+		var a = form0.mname.value;
+		alert("a >>> : " + a);
+		//<!-- var문은 변수를 선언!! 기능
+			 //b를 변수로 선언 후 form0.maddr.value값으로 초기화(맨처음 form문의  maddr의 네임을 가진 태그의 value값으로 초기화)-->
+		var b = form0.maddr.value;
+		alert("b >>> : " + b);
+		
+		//<!-- form0.action 해당 서버의 가고싶은 링크를 적으면 된다.-->
+		form0.acrtion = "/testWeb/jsp/getData.jsp";
+		//<!-- form0.method 해당 서버로 가는 방법, 서버로 가야 할 방향을 제시
+			 //GET : head 부분으로 감, form0의 입력한 값들이 location 부분의 값들이 다보임, 보안 취약
+			 //POST : body 부분으로 감, form0의 입력한 값들 location 부분의 값들이 안보임, 보안 강하-->
+		form0.method = "GET";
+		//<!-- form.enctype 쿼리스트링으로 인코딩 하는 방식
+			 //쿼리스트링 : url에 mname=%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7&maddr=%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7 이렇게 나와있는거-->
+			 //숫자와 문자(영문)을 제외한 2바이트 이상 사용한문자만 인코딩함
+			 //method는 GET POST 사용가능하다. (GET사용시 그런거 상관없이 다나옴)
+		form0.enctype = "application/x-www-form-urlencoded";
+		var form1 = document.forms[1];
+		alert("form1 >>> : " + form1);
+		
+		// form.submit 서버에 보내는 함수, 양식을 전달하는 함수
+		form0.submit();
+	}
+
+</script>
+</head>
+<body>
+
+	<!-- form 클라이언트(웹브라우저)에서 서버(웹서버)로 전송할 수 있는 유일한 방법 문 -->
+	<!-- id 유일한 이름으로 선언 후 사용 ex)최현준으로 선언후 최현준이 또 있으면 안됨 
+		 name 여러 이름으로 선언해도 사용 가능 / 단 javascript에서만 사용가능 ex)최현준이라는 이름이 여러가 있어도됨
+		 class 여러 이름으로 선언해도 사용 가능 / 단 css에서만 사용가능 
+		  만약 동일한 클래스명을 사용할 수 있으면 예를 들어 marginR클래스에 css값 margin-right:500px을 줬으면
+		  이제  html에서 이 클래스만 사용하면 각각 따로 margin-right에 500px을 주지 않고 공통으로 500px을 줄 수 있기 떄문에 공통명 클래스로 사용이 가능하다-->
+	<form id="getDataForm" name="getDataForm">
+	<!-- input  사용자의 데이터를 받을 수 있는 태그
+				text 텍스트 필드 생기게 해주는 거
+				button 버튼 생기게 해주는 거
+				reset 리셋 하게 만드는 거
+				
+		 input 속성
+		 	   value 양식의 이름값 -->
+	<!-- onclick 이벤트 리스너 JavaScript
+		 style 	  이너 css   CSS3-->
+		이름 : <input type="text" id="mname" name="mname"><br>
+		주소 : <input type="text" id="maddr" name="maddr"><br>
+		<input type="button" value="보내기" onclick="checkAction()" style="Color:hotpink; background:pink">
+		<input type="reset" value="다시" style="color:deeppink; background:pink">
+	</form>
+	<form>
+	</form>
+</body>
+</html>

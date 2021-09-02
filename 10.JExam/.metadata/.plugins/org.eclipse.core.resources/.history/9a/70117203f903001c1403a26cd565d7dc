@@ -1,5 +1,0 @@
-package a.b.c.kosmo.mem.dao;
-
-public abstract class KbdMemberDAOImpl {
-
-}

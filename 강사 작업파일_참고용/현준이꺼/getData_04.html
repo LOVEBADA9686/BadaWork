@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>getDate Form Test 자바스크립트 함수를 이용해서 하는 방법</title>
+<!-- 자바스크립트 블럭 -->
+<script> type="text/javascript"
+
+	// alert 문구 띄우는 함수
+	alert("자바스크립트 블럭 시작 >>> : ");
+	
+	// function 자바스크립트 함수 선언
+	// getData(f)함수에 매개변수가 있음 42문단에 this.form 아규먼트를 선언해서 매개변수를 지어넣음
+	// getData()함수명
+	function getData(f){
+		alert("getData 함수 내부에 진입 >>> : ");
+		console.log("getData 함수 내부에 진입 >>> : ");
+	
+		// alert 문구 띄우는 함수
+		alert("f >>> : " + f);
+		
+		// var 변수 선언
+		// let 지역변수 선언
+		// const 상수 선언
+		// var a로 선언 후 f.mname으로 초기화 하였다. (f는 보내기 버튼을 누르면 mname의 value값이 alert함수로 인해 창으로 띈다.)
+		var a = f.mname;
+		alert("a >>> : " + a);
+		alert("a.value >>> : " + a.value);
+		
+		var b = f.maddr;
+		alert("b >>> : " + b);
+		alert("b.value >>> : " + b.value);
+		
+		// action 가고 싶은 서버의 링크를 적으면 된다.
+		// 보내기 버튼을 누르면 해당 서버로감
+		f.action = "/testWeb/jsp/getData.jsp";
+		// method 가는 방법제시, 가야할 방향제시
+		// GET	  head부분으로 향함, location부분에 입력한 value값이 나옴, 보안성 취약
+		// POST   body부분으로 향함, location부분에 입력한 value값이 안나옴, 보안성 강함
+		// 보내기 버튼을 누르면 해당서버로 갈 방향을 제시함 GET이므로 head로 향함
+		f.method = "GET";
+		// enctype 쿼리스트링 인코딩 하는 방식
+		//		   //쿼리스트링 : url에 mname=%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7&maddr=%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7%A4%B7 이렇게 나와있는거-->
+		//					     숫자와 문자(영문)말고 2바이트 이상 사용한 문자만(예 한글)인코딩 한다. method부분에 POST를 무조건 사용해야지 위 처럼 나온다. GET 사용하면 위에처럼 안나옴
+		// 보내기 버튼을 누르면 쿼리스트링 인코딩이 시작돼야 하지만 method에 GET이 있어 그냥 있는 그대로 나온다.
+		f.enctype = "application/x-www-form-urlencoded";
+		
+		// 서버로 해당 데이터를 보내는 함수, 양식을 전달하는 함수
+		f.submit();
+	}
+
+</script>
+</head>
+<body>
+
+	<!-- form 태그는 클라이언트(웹브라우저)를 서버(웹서버)에 보낼 수 있는 방법이라 form태그를 사용한다.
+		 id 유일한 한이름으로만 사용가능
+		 name 여러 이름으로 사용가능
+		 class 여러 이름으로 사용가능 (id,name,class 자세한 주석은 getData_05 61문단 참조) -->
+	<form id="getDataForm" name="getDataForm">
+		이름 : <input type="text" id="mname" name="mname"><br>
+		주소 : <input type="text" id="maddr" name="maddr"><br>
+		<!--  각 자세한 기능은 getData_05 68문단 참조-->
+		<input type="button" value="보내기" onclick="getData(this.form)" style="Color:hotpink; background:pink">
+		<input type="reset" value="다시" style="color:deeppink; background:pink">
+	</form>
+</body>
+</html>
