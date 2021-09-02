@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>KBD</title>
+</head>
+<body>
+<h3>김바다 웹 연습장</h3>
+<hr>
+<a href="#">회원가입</a><br>
+<a href="#">로그인</a><br>
+<a href="#">게시판</a><br>
+<a href="#">공지사항</a><br>
+</body>
+</html>
