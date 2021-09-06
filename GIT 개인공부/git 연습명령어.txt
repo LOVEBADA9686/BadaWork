@@ -32,12 +32,36 @@ git checkout master
 git push origin master
 > 깃허브로 ocmmit완료된 사항 push(보내기) 명령어
 
+git pull
+
+
 git colne 복사한URL
 > github에 오픈되어있는 오픈소스 내컴퓨터로 가져올때 명령어
 1. 소스를 저장할 폴더 터미널에 지정
 2. github에 찾고싶은 소스 검색하고 찾아들어가서 Fork 누르면 나의 레파지토리에 들어옴
 3. 레파지토리에서 code 누르면 URL이 나온다.
 * github에서 fork된 repository삭제하기, 깃허브 포크삭제 (https://wogus789789.tistory.com/139)
+
+git branch 브랜치이름
+> 작업디렉토리안에 작업상황을 브랜치이름을 지정하여 브랜치를 만듬
+
+git branch
+> 현재까지 지정하였던 브랜치목록을 보여주는 명령어
+
+git checkout 지정했던브랜치이름
+> 전에 지정했던 브랜치 작업상황으로 돌아가는 명령어
+
+git log --all --graph --oneline
+> 브랜치상황목록을 볼수 있는 명령어
+
+git commit --amend
+> 이미 commit되어진 commit이름을 수정할 수 있는 명령어, 수정하고 싶은 commit으로 시간여행이 되어있어야함
+
+git merge 합칠브랜치이름
+> 마스터브랜치와 합치고 싶은 다른 브랜치를 병합할때 사용하는 명령어
+
+nano 파일명.확장자명
+> 해당파일 내부 내용을 볼수 있는 명령어
 
 
 ---------------------------------------------
