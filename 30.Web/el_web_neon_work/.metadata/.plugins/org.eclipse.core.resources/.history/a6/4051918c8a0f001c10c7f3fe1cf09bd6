@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=EUC-KR">
+<title>클라이언트 와 서버정보</title>
+</head>
+<body>
+<h3>클라이언트 와 서버정보</h3>
+<hr>
+<%
+	// jsp 에서 request 내장형 오브젝트(built in object)를 선언ㄴ하면
+	// HttpServletRequest 인터페이스에 있는 자원을 사용할 수 있다.
+	String remoteAddr = request.getRemoteAddr();
+	out.println("remoteAddr >>> : " + remoteAddr + "<br>");
+	System.out.println("remoteAddr >>> : " + remoteAddr);
+%>
+
+</body>
+</html>
