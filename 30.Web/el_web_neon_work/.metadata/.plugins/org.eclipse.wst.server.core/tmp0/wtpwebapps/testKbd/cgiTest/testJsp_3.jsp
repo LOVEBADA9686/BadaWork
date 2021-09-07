@@ -21,13 +21,13 @@
 	C:\Program Files\Java\jdk1.8.0_291\jre\lib\ext\ojdbc6.jar
  --%>
 <%
-	String empno = request.getParameter("empno");
-	String ename = request.getParameter("ename");
-	//String empno = "7369";
-	//String ename = "SMITH";
-	
+	//String empno = request.getParameter("empno");
+	//String ename = request.getParameter("ename");
+	String empno = "7369";
+	String ename = "SMITH";
 	String _empno = "";
 	String _ename = "";
+	
 %>
 <%
 	Class.forName("oracle.jdbc.driver.OracleDriver");
