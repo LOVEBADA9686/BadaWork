@@ -15,13 +15,13 @@
 		$("#boardBtn").click(function(){
 			alert("boardBtn click() 함수 진입 >>> : ");
 			console.log("boardBtn click() 함수 진입 >>> : ");
-			
-			// attr() vs prop()
+			var v1 = $("#ISUD_TYPE").val();
+			alert("v1 >>> : " + v1);
 			$("#boardWrite")
 			.attr({
-					"action":"/testWeb/kosmo_jsp/board/boardInsert.jsp",
-				    "method":"GET",
-				    "enctype":"application/x-www-form-urlencoded"
+					"action":"/testKbd/board?ISUD_TYPE="+v1,
+				    "method":"POST",
+				    "enctype":"multipart/form-data"
 			       })
 			.submit();	
 		});		

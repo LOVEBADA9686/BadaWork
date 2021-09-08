@@ -1,0 +1,5 @@
+package a.b.c.com.kbd.board.dao;
+
+public interface BoardDAO {
+
+}

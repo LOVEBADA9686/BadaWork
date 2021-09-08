@@ -15,13 +15,14 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="KOS"/>
+			<item value="ISUD"/>
+			<item value="IOException"/>
 			<item value="kosmo"/>
 			<item value="Kbd"/>
 			<item value="web"/>
 			<item value="8443"/>
 			<item value="date"/>
-			<item value="data"/>
-			<item value="KOSMO "/>
 		</list>
 		<list key="replacehistory">
 		</list>
