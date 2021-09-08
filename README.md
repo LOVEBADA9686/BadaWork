@@ -1,12 +1,6 @@
 # BadaWork
 93기 수업진행중
 
-NAME
-~~
-~~
-~~
-~~
-~~
-~~
-~~
+NAME : KIM BA DA
+
 
