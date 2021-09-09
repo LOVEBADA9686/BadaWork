@@ -9,20 +9,20 @@ public abstract class ConnProperty {
 
 	// 상수 선언 :  4type thin 드라이브 사용
 	// 데이터베이스 연결 정보 : DataSource 라고 부른다. 
-	public static final String KOS_URL = "jdbc:oracle:thin:@localhost:1521:orcl";
-	public static final String KOS_USER = "kbd";
-	public static final String KOS_PASS = "kbd1234";	
-	public static final String KOS_DRIVER = "oracle.jdbc.driver.OracleDriver";
+	public static final String KBD_URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+	public static final String KBD_USER = "kbd";
+	public static final String KBD_PASS = "kbd1234";	
+	public static final String KBD_DRIVER = "oracle.jdbc.driver.OracleDriver";
 		
 	public static Connection getConnection() {		
 		
 		Connection conn = null;
 		
 		try {
-			Class.forName(ConnProperty.KOS_DRIVER);
-			conn = DriverManager.getConnection( ConnProperty.KOS_URL
-					                           ,ConnProperty.KOS_USER
-					                           ,ConnProperty.KOS_PASS);
+			Class.forName(ConnProperty.KBD_DRIVER);
+			conn = DriverManager.getConnection( ConnProperty.KBD_URL
+					                           ,ConnProperty.KBD_USER
+					                           ,ConnProperty.KBD_PASS);
 		}catch(Exception c) {
 			System.out.println("드라이버 찾기에 문제가 발생 >>> : " + c);
 		}	

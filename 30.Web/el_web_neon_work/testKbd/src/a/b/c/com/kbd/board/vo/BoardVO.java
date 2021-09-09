@@ -95,7 +95,7 @@ public class BoardVO {
 		System.out.println(bvo.getBmemo() + ":");
 		System.out.println(bvo.getDeleteyn() + ":");
 		System.out.println(bvo.getInsertdate() + ":");
-		System.out.println(bvo.getUpdatedate() + ":");
+		System.out.println(bvo.getUpdatedate());
 	}
 	
 	public static void printlnKbdBoardVO (BoardVO bvo){

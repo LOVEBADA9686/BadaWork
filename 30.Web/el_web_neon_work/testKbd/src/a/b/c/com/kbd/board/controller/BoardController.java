@@ -2,6 +2,7 @@ package a.b.c.com.kbd.board.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
@@ -15,6 +16,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import a.b.c.com.common.CommonUtils;
+import a.b.c.com.common.GetChabun;
 import a.b.c.com.kbd.board.service.BoardService;
 import a.b.c.com.kbd.board.service.BoardServiceImpl;
 import a.b.c.com.kbd.board.vo.BoardVO;
@@ -78,7 +80,9 @@ public class BoardController extends HttpServlet {
 				BoardVO bvo = null;
 				bvo = new BoardVO();
 				
-				bvo.setBnum("BD202109080001");
+				String bnum = GetChabun.getBoardChabun("N");
+				System.out.println("bnum >>> : " + bnum);
+				bvo.setBnum("bnum");
 				bvo.setBsubject(bsubject);
 				bvo.setBwriter(bwriter);
 				bvo.setBpw(bpw);
@@ -101,16 +105,126 @@ public class BoardController extends HttpServlet {
 			}catch(Exception e) {
 				System.out.println("게시글 등록 중 에러가 >>> : " + e.getMessage());
 			}
+			
 		}
 	} // 글등록 end 
 		
 		// 글 전체조회 ---------------------------------------------------------------------
-		// 글 조건조회 ---------------------------------------------------------------------
-		// 글 수정 ------------------------------------------------------------------------
-		// 글 삭제 ------------------------------------------------------------------------
+	if("SALL".equals(isudType)){
+		System.out.println("게시판 글 전체조회 isudType >>> : " + isudType);
 		
-	}else{
-		System.out.println("form 태그에서 hidden 타입의 ISUD_TYPE 잘 넘기세요 >>> : ");
+		// 서비스 호출하기
+		BoardService bs = new BoardServiceImpl();
+		ArrayList<BoardVO> aListAll = bs.boardSelectAll();
+		
+		if (aListAll !=null && aListAll.size() > 0) {
+			
+			request.setAttribute("aListAll", aListAll);
+			RequestDispatcher rd = request.getRequestDispatcher("/kbd/board/bookSelectAll.jsp");
+			rd.forward(request, response);
+			
+		}else{
+			out.println("<script>");
+			out.println("location.href='/testKbd/board?ISUD_TYPE=SALL'");
+			out.println("</script>");
+		}
+	}
+		
+		// 글 조건조회 ---------------------------------------------------------------------
+	if("S".equals(isudType) || "U".equals(isudType) || "D".equals(isudType)){
+		System.out.println("글 조건조회 : S U D isudType >>> : " + isudType);
+		
+		String bnum = request.getParameter("bnumCheck");
+		if(bnum !=null && bnum.length() > 0){
+			System.out.println("글 번호 >>> : " + bnum);
+			
+			BoardService bs = new BoardServiceImpl();
+			BoardVO bvo = null;
+			bvo = new BoardVO();
+			
+			bvo.setBnum(bnum);
+			ArrayList<BoardVO> aListS = bs.boardSelect(bvo);
+			
+			if(aListS !=null && aListS.size() > 0){
+				System.out.println("aListS.size() >>> : " + aListS.size());
+				request.setAttribute("aListS", aListS);
+				RequestDispatcher rd= request.getRequestDispatcher("/kbd/board/boardSelect.jsp");
+				
+			}else {
+				out.println("<script>");
+				out.println("alert('글 조회 실패')");
+				out.println("location.href='/testKbd/board?ISUD_TYPE=SALL'");
+				out.println("</script>");
+			}
+		}else{
+			System.out.println("글 번호가 없습니다.");
+		}
+	}
+ 		// 글 수정 ------------------------------------------------------------------------
+	if("UOK".equals(isudType)){
+		System.out.println("글 수정 isudType >>> : " + isudType);
+		
+		String bnum = request.getParameter("bnum");
+		String bsubject = request.getParameter("bsubject");
+		String bmemo = request.getParameter("bmemo");
+		System.out.println("bnum >>> : " + bnum);
+		System.out.println("bsubject >>> : " + bsubject);
+		System.out.println("bmemo >>> : " + bmemo);
+		
+		BoardService bs = new BoardServiceImpl();
+		BoardVO bvo = null;
+		bvo = new BoardVO();
+		
+		bvo.setBnum(bnum);
+		bvo.setBsubject(bsubject);
+		bvo.setBmemo(bmemo);
+		
+		boolean bUpdate = bs.boardUpdate(bvo);
+		
+		if(bUpdate) {
+			System.out.println("글 정보가 수정 되었습니다." + bUpdate);
+			request.setAttribute("bUpdate", new Boolean(bUpdate));
+			RequestDispatcher rd= request.getRequestDispatcher("/kbd/board/boardUpdate.jsp");
+			rd.forward(request, response);
+		}else {
+			System.out.println("글 수정 실패 !!!");
+			out.println("<script>");
+			out.println("alert('글 수정 실패')");
+			out.println("location.href='/testKbd/board?isudtype=SALL'");
+			out.println("</script>");
+		}
+	}
+		// 글 삭제 ------------------------------------------------------------------------
+	if("DOK".equals(isudType)){
+		System.out.println("글 삭제 isudType >>> : " + isudType);
+		
+		String bnum = request.getParameter("bnum");
+		System.out.println("bnum >>> : " + bnum);
+		
+		BoardService bs = new BoardServiceImpl();
+		BoardVO bvo = null;
+		bvo = new BoardVO();
+		
+		bvo.setBnum(bnum);
+		
+		boolean bDelete = bs.boardDelete(bvo);
+		
+		if(bDelete) {
+			System.out.println("글 정보가 삭제 되었습니다." + bDelete);
+			request.setAttribute("bDelete", new Boolean(bDelete));
+			RequestDispatcher rd= request.getRequestDispatcher("/kbd/board/boardDelete.jsp");
+			rd.forward(request, response);
+			
+		}else{
+			System.out.println("글 삭제 실패 !!!!");
+			out.println("<script>");
+			out.println("alert('글 수정 실패')");
+			out.println("location.href='/testKbd/board>isudtype=SALL'");
+			out.println("</script>");
+		}
+	}
+}else{
+	System.out.println("form 태그에서 hidden 타입의 ISUD_TYPE 잘 넘기세요 >>> : ");
 	}
 }
 
@@ -118,5 +232,4 @@ public class BoardController extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
