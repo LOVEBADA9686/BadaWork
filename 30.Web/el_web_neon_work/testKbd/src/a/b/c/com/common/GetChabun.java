@@ -49,7 +49,6 @@ public abstract class GetChabun {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		System.out.println("GetChabun >>> : " + GetChabun.getMemChabun("m"));
 		System.out.println("GetChabun >>> : " + GetChabun.getBoardChabun("N"));
 		System.out.println("GetChabun >>> : " + GetChabun.getRboardChabun("N"));

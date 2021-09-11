@@ -40,6 +40,7 @@ public class BoardController extends HttpServlet {
 		if(isudType !=null && isudType.length() > 0){
 			isudType = isudType.toUpperCase();
 			
+			// 글 등록 ---------------------------------------------------------------------
 		if ("I".equals(isudType)){
 			System.out.println("게시판 글 등록 isudType >>> : " + isudType);
 			
@@ -82,7 +83,7 @@ public class BoardController extends HttpServlet {
 				
 				String bnum = GetChabun.getBoardChabun("N");
 				System.out.println("bnum >>> : " + bnum);
-				bvo.setBnum("bnum");
+				bvo.setBnum(bnum);
 				bvo.setBsubject(bsubject);
 				bvo.setBwriter(bwriter);
 				bvo.setBpw(bpw);
@@ -120,12 +121,12 @@ public class BoardController extends HttpServlet {
 		if (aListAll !=null && aListAll.size() > 0) {
 			
 			request.setAttribute("aListAll", aListAll);
-			RequestDispatcher rd = request.getRequestDispatcher("/kbd/board/bookSelectAll.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/kbd/board/boardSelectAll.jsp");
 			rd.forward(request, response);
 			
 		}else{
 			out.println("<script>");
-			out.println("location.href='/testKbd/board?ISUD_TYPE=SALL'");
+			out.println("location.href='/testkbd/board?ISUD_TYPE=SALL'");
 			out.println("</script>");
 		}
 	}
@@ -149,7 +150,7 @@ public class BoardController extends HttpServlet {
 				System.out.println("aListS.size() >>> : " + aListS.size());
 				request.setAttribute("aListS", aListS);
 				RequestDispatcher rd= request.getRequestDispatcher("/kbd/board/boardSelect.jsp");
-				
+				rd.forward(request, response);
 			}else {
 				out.println("<script>");
 				out.println("alert('글 조회 실패')");
@@ -219,7 +220,7 @@ public class BoardController extends HttpServlet {
 			System.out.println("글 삭제 실패 !!!!");
 			out.println("<script>");
 			out.println("alert('글 수정 실패')");
-			out.println("location.href='/testKbd/board>isudtype=SALL'");
+			out.println("location.href='/testKbd/board?isudtype=SALL'");
 			out.println("</script>");
 		}
 	}

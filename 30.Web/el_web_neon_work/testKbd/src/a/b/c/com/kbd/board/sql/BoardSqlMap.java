@@ -6,9 +6,9 @@ public abstract class BoardSqlMap {
 	public static String getMaxChabunQuery() {
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("SELECT	/*+ INDEX_DESC(A SYS_C0011474) */			\n");
-		sb.append("			NVL(MAX(SUBSTR(A.BNUM, -4)), 0) + 1 MAXNUM	\n");
-		sb.append("FROM		MVC_BOARD A									\n");
+		sb.append("SELECT  /*+ INDEX_DESC(A SYS_C0011474) */			 \n");
+		sb.append("			 NVL(MAX(SUBSTR(A.BNUM, -4)), 0) + 1 MAXNUM  \n");
+		sb.append("FROM MVC_BOARD A									     \n");
 		
 		return sb.toString();
 	}
@@ -111,7 +111,7 @@ public abstract class BoardSqlMap {
 		sb.append("		DELETEYN		= 'N'		\n");
 		sb.append("		,UPDATEDATE		= SYSDATE	\n");
 		sb.append("WHERE BNUM			= ?			\n");
-		sb.append("AND 	DELETETN		= 'Y'		\n");
+		sb.append("AND 	DELETEYN		= 'Y'		\n");
 				
 		return sb.toString();
 	}

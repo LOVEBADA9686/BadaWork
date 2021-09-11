@@ -88,13 +88,13 @@ public class BoardVO {
 		
 	// ÇÁ¸°Æ®
 	public static void printBoardVO (BoardVO bvo){
-		System.out.println(bvo.getBnum() + ":");
-		System.out.println(bvo.getBsubject() + ":");
-		System.out.println(bvo.getBwriter() + ":");
-		System.out.println(bvo.getBpw() + ":");
-		System.out.println(bvo.getBmemo() + ":");
-		System.out.println(bvo.getDeleteyn() + ":");
-		System.out.println(bvo.getInsertdate() + ":");
+		System.out.print(bvo.getBnum() + ":");
+		System.out.print(bvo.getBsubject() + ":");
+		System.out.print(bvo.getBwriter() + ":");
+		System.out.print(bvo.getBpw() + ":");
+		System.out.print(bvo.getBmemo() + ":");
+		System.out.print(bvo.getDeleteyn() + ":");
+		System.out.print(bvo.getInsertdate() + ":");
 		System.out.println(bvo.getUpdatedate());
 	}
 	

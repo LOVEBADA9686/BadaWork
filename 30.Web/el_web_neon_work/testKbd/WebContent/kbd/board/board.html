@@ -17,6 +17,7 @@
 			console.log("boardBtn click() 함수 진입 >>> : ");
 			var v1 = $("#ISUD_TYPE").val();
 			alert("v1 >>> : " + v1);
+			
 			$("#boardWrite")
 			.attr({
 					"action":"/testKbd/board?ISUD_TYPE="+v1,
@@ -35,7 +36,7 @@
 		<td colspan="2" align="center">	
 						
 			<font size="4" style="color:blue;">게시판 글쓰기</font> 
-			<img src="/testWeb/img/ase.gif" width="25" height="25" alt="image">		
+			<img src="/testKbd/img/img_mando/ase.gif" width="25" height="25" alt="image">		
 		</td>				
 	</tr>
 	<tr>
@@ -44,10 +45,10 @@
 	</tr>
 	<tr>
 		<td align="center">제목</td>
-		<td><input type="text" name="bsubject" id="bsubject" size="53"></td>
+		<td><input type="text" name="bsubject" id="bsubject" size="55"></td>
 	</tr>
 	<tr>
-		<td  align="center">이름</td>.
+		<td  align="center">이름</td>
 		<td><input type="text" name="bwriter" id="bwriter" size="20"></td>
 	</tr>
 	<tr>
@@ -81,14 +82,14 @@
 			<input type="button" value="보내기" id="boardBtn" > 
 		 -->					
 		<button type="button" id="boardBtn">
-			<img src="/testWeb/img/ase.gif" width="25" height="25" alt="image">	
+			<img src="/testKbd/img/img_mando/ase.gif" width="25" height="25" alt="image">	
 			보내기
 		</button>
 		<!-- 
 			<input type="reset" value="다시">
 		 -->
 		<button type="reset">
-			<img src="/testWeb/img/b-baa.gif" width="25" height="25" alt="image">	
+			<img src="/testKbd/img/img_mando/b-baa.gif" width="25" height="25" alt="image">	
 			다시
 		</button>
 	</td>				

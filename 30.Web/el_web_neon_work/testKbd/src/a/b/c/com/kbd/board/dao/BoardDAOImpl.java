@@ -130,7 +130,7 @@ public class BoardDAOImpl implements BoardDAO {
 			conn = ConnProperty.getConnection();
 			pstmt = conn.prepareStatement(BoardSqlMap.getBoardInsertQuery());
 			System.out.println("¿Œº≠∆Æ :: \n" + BoardSqlMap.getBoardInsertQuery());
-			
+
 			pstmt.clearParameters();
 			pstmt.setString(1, bvo.getBnum());
 			pstmt.setString(2, bvo.getBsubject());
