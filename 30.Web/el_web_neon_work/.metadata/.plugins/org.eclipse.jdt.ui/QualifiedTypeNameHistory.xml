@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="a.b.c.com.kbd.board.dao.BoardDAO"/>
 <fullyQualifiedTypeName name="a.b.c.com.kbd.board.dao.BoardDAOImpl"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="a.b.c.com.common.CommonUtils"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
 <fullyQualifiedTypeName name="java.util.Enumeration"/>
@@ -20,4 +19,5 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="a.b.c.com.kbd.board.sql.BoardSqlMap"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>
