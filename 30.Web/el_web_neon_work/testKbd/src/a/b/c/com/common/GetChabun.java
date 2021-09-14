@@ -18,9 +18,9 @@ public abstract class GetChabun {
 	}	
 	
 	// 회원 번호 
-	public static String getMemChabun(String type) {		
+	public static String getMemberChabun(String type) {		
 		
-		return BIZ_GUBUN_M.concat(numPad(type, ""));
+		return BIZ_GUBUN_M.concat(numPad(type, GetMemberMaxNum.getMaxNum()));
 	}
 	
 	// 게시판 글 번호  
@@ -49,7 +49,8 @@ public abstract class GetChabun {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("GetChabun >>> : " + GetChabun.getMemChabun("m"));
+
+		System.out.println("GetChabun >>> : " + GetChabun.getMemberChabun("d"));
 		System.out.println("GetChabun >>> : " + GetChabun.getBoardChabun("N"));
 		System.out.println("GetChabun >>> : " + GetChabun.getRboardChabun("N"));
 		System.out.println("GetChabun >>> : " + GetChabun.getNoticeChabun("N"));

@@ -1,0 +1,5 @@
+package a.b.c.com.kbd.book.service;
+
+public interface BookService {
+
+}

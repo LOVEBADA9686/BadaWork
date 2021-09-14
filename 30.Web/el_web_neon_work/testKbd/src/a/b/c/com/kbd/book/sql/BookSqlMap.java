@@ -6,7 +6,7 @@ public abstract class BookSqlMap {
 	public static String getMaxChabunQuery() {
 		
 		StringBuffer sb = new StringBuffer();			
-		sb.append(" SELECT  /*+ INDEX_DESC(SYS_C0011474) */ 			\n");
+		sb.append(" SELECT  /*+ INDEX_DESC(SYS_C0011527) */ 			\n");
 		sb.append("         NVL(MAX(SUBSTR(A.BNUM, -4)), 0) + 1 MAXNUM	\n");
 		sb.append(" FROM    TEST_BOOK A 								\n");	  
 
@@ -20,7 +20,7 @@ public abstract class BookSqlMap {
 		sb.append("      A.BNUM 		BNUM			\n");
 		sb.append("		,A.BTITLE 		BTITLE			\n");
 		sb.append("		,A.BAUTH 		BAUTH			\n");
-	    sb.append("		,A.ISBN   		BISBN			\n");	    
+	    sb.append("		,A.ISBN   		ISBN			\n");	    
 	    sb.append("		,A.BCOMP 		BCOMP			\n");	    
 	    sb.append("		,A.BPRICE		BPRICE			\n");	    
 	    sb.append("		,A.BQTY 		BQTY			\n");
@@ -43,7 +43,7 @@ public abstract class BookSqlMap {
 		sb.append("      A.BNUM 		BNUM			\n");
 		sb.append("		,A.BTITLE 		BTITLE			\n");
 		sb.append("		,A.BAUTH 		BAUTH			\n");
-	    sb.append("		,A.ISBN   		BISBN			\n");	    
+	    sb.append("		,A.ISBN   		ISBN			\n");	    
 	    sb.append("		,A.BCOMP 		BCOMP			\n");	    
 	    sb.append("		,A.BPRICE		BPRICE			\n");	    
 	    sb.append("		,A.BQTY 		BQTY			\n");

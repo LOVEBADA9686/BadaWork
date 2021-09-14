@@ -2,4 +2,6 @@
 <typeInfoHistroy>
 <typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.board.dao{BoardDAO.java[BoardDAO" modifiers="513" timestamp="1631093576566"/>
 <typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.board.service{BoardService.java[BoardService" modifiers="513" timestamp="1631094245477"/>
+<typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.book.service{BookService.java[BookService" modifiers="513" timestamp="1631602785263"/>
+<typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.book.dao{BookDAO.java[BookDAO" modifiers="513" timestamp="1631603374722"/>
 </typeInfoHistroy>

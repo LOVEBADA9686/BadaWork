@@ -34,6 +34,7 @@ html : 클라이언트 사이드 스크립트
 servlet, jsp : 서버사이드 스크립트 
 service, dao : 자바
 query : 오라클 
+
 #########################################
 CGI 방식
 정적 : 모두가 같은 내용을 보는 페이지 
@@ -122,17 +123,43 @@ cgi 프로그램에서는 session 개념을 이용한다.
 
 
 
-JSP Action Tag 를 이용한 페이지 이동 : 동적인 태그
----------------------------------------------
+JSP Action Tag 를 이용한 페이지 이동 : 동적인 태크
+--------------------------------------------
 싱글 태그
-더블 태그 : 
+더블 태그 : 시작태그, 끝태그 
 
 
 jsp 포워드 액션 태그 : 특정 페이지로 이동
-	< : 여는 태그
-	jsp : jsp 액션태그의 접두어
-	: --> 구분자
-	forward : 기능
-	page : 키워드 : 페이지 경로
+	< : 여는 태그 
+	jsp : jsp 액셔태그의 접두어 
+	: --> 구분자 
+	forward : 기능 
+	page : 키워드 : 페이지 경로 
 	= : 대입 연산자
-	"" : 이동시키고자하는 파일의 이름
+	"" : 이동시키는고자하는 파일의 이름 
+------------------------
+<jsp:forward page="" /> 
+
+<jsp:forward page="">
+		<jsp:param name="" value="" />
+		<jsp:param name="" value="" />
+</jsp:forward>
+
+
+jsp 인쿨르드 액션 태그 : 특정 페이지를 포함
+------------------------
+<jsp:include  page="" /> : 특정 페이지를 포함한다.
+
+<jsp:include page="">
+	<jsp:param name="" value="" />
+	<jsp:param name="" value="" />
+</jsp:include>
+
+
+jsp 인쿨르드 지시지 : 정적인 태그 (예: footer 에 회사 주소 등)
+------------------------
+<%@ include file="" %>
+
+
+
+response.sendRedirect("페이지경로");

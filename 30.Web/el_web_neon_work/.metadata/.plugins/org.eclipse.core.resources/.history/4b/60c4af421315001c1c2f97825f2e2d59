@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>도서 정보 조회 화면</title>
+<style type="text/css">
+	*{
+		margin: 0 auto;
+		text-align: center;
+	}
+	
+	fieldset {
+		width: 400px
+	}
+	
+	legend {
+		font-size: 1.2em;
+		/*font-weight: bold;*/
+	}
+	
+	td {
+		padding: 5px;
+	}
+	
+	.attr {
+		font-weight: bold;
+	}
+	
+	.align{
+		text-align: left;
+	}
+</style>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+
+	function bookUpdate(actionUpdate) {
+		console.log("bookUpdate 진입 >>> : " + cationUpdate);
+	}
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
