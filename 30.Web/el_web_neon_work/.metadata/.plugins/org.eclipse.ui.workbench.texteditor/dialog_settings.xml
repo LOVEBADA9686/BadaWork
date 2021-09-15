@@ -9,20 +9,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="도서번호" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="MEMBER_IMG_FILE_SIZE"/>
+			<item value="MEMBER_IMG_FILE_SIZ"/>
+			<item value="boardBtn click()"/>
+			<item value="제이쿼리 블럭 시작"/>
+			<item value="v1"/>
+			<item value="checkAction"/>
 			<item value="도서번호"/>
 			<item value="Map"/>
-			<item value="MAP"/>
-			<item value="BISBN"/>
-			<item value="BISBNI"/>
-			<item value="?"/>
-			<item value="게시글 등록 중 에러가"/>
-			<item value="COSMO"/>
 		</list>
 		<list key="replacehistory">
 		</list>

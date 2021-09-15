@@ -104,4 +104,33 @@ public class BookVO {
 	public void setUpdatedate(String updatedate) {
 		this.updatedate = updatedate;
 	}	
+	
+	// «¡∏∞≈Õ
+	public static void printBookVO(BookVO bvo) {
+      System.out.print(bvo.getBnum()        + " : ");
+      System.out.print(bvo.getBtitle()      + " : ");
+      System.out.print(bvo.getBauth()       + " : ");
+      System.out.print(bvo.getIsbn()        + " : ");
+      System.out.print(bvo.getBcomp()       + " : ");
+      System.out.print(bvo.getBprice()      + " : ");
+      System.out.print(bvo.getBqty()        + " : ");
+      System.out.print(bvo.getBcover()      + " : ");
+      System.out.print(bvo.getDeleteyn()    + " : ");
+      System.out.print(bvo.getInsertdate()  + " : ");
+      System.out.print(bvo.getUpdatedate()         );
+   }
+   
+   public static void printlnPshBoardVO(BookVO bvo) {
+      System.out.println("bvo.getBnum() : " + bvo.getBnum()        );
+      System.out.println("bvo.getBtitle() : " + bvo.getBtitle()      );
+      System.out.println("bvo.getBauth() : " + bvo.getBauth()       );
+      System.out.println("bvo.getIsbn() : " + bvo.getIsbn()        );
+      System.out.println("bvo.getBcomp() : " + bvo.getBcomp()       );
+      System.out.println("bvo.getBprice() : " + bvo.getBprice()      );
+      System.out.println("bvo.getBqty() : " + bvo.getBqty()        );
+      System.out.println("bvo.getBcover() : " + bvo.getBcover()      );
+      System.out.println("bvo.getDeleteyn() : " + bvo.getDeleteyn()    );
+      System.out.println("bvo.getInsertdate() : " + bvo.getInsertdate()  );
+      System.out.println("bvo.getUpdatedate() : " + bvo.getUpdatedate()  );
+   }
 }

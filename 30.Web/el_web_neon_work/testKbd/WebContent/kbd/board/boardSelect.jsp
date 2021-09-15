@@ -139,11 +139,11 @@ SELECT
 </tr>
 <tr>
 	<td class="tt">이름</td>
-	<td><input type="text" name="bwriter" id="bwriter" value="<%= bwriter %>" size="20" readonly></td>
+	<td><input type="text" name="bwriter" id="bwriter" value="<%= bwriter %>" size="20" ></td>
 </tr>
 <tr>
 	<td class="tt">비밀번호</td>
-	<td><input type="text" name="bpw" id="bpw" value="<%= bpw %>" size="20" readonly></td>
+	<td><input type="text" name="bpw" id="bpw" value="<%= bpw %>" size="20" ></td>
 </tr>
 <tr>
 	<td class="tt">삭제여부</td>

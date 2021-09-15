@@ -127,6 +127,7 @@ public class BookDAOImpl implements BookDAO {
 	public int bookInsert(BookVO bvo) {
 		// TODO Auto-generated method stub
 		System.out.println("BookDAOImpl bookInsert() 함수 진입 >>> : ");
+		BookVO.printlnPshBoardVO(bvo);
 		
 		// 사용할 객체를 지역변수로 선언하고 초기화 하기
 		Connection conn = null;

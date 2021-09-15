@@ -68,7 +68,7 @@
 				console.log("체크박스를 체크하세요");
 				alert("체크박스를 체크하세요");
 			}else{
-				document.bookSelectAllForm.isudtype.value- "U";
+				document.bookSelectAllForm.isudtype.value = "U";
 				alert("isudtype U >>> : " + document.bookSelectAllForm.isudtype.value);
 				send(document.bookSelectAllForm.isudtype.value);	
 			}
@@ -127,8 +127,8 @@ SELECT ALL
 %>
 <table>
 <tr>
-<td calpan="2">
-<font size-"4" color="blue">
+<td calspan="2">
+<font size="4" color="blue">
 	<img src="/testKbd/img/img_mando/ase.gif" width="25" height="25" alter="image">
 	BOOK TEST
 </font>
@@ -182,7 +182,7 @@ SELECT ALL
 	<td class="tt"><%= bvo.getUpdatedate() %> </td>		
 </tr>
 <%
-	};//end of if
+	}//end of if
 %>
 <tr>
 	<td colspan="20" align="right">

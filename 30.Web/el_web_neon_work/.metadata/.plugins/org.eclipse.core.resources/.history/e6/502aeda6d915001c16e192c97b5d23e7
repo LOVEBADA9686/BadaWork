@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="java.util.Enumeration" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>cgiFormJsp</title>
+</head>
+<body>
+<h3>cgiFormJsp</h3>
+<h3>header</h3>
+<hr>
+<% request.setCharacterEncoding("EUC-KR"); %>
+<%-- 요청한 웹브라우저에서 header 정보 추출하기 --%>
+<%
+	Enumeration<String> em = request.getHeaderNames();
+	while (em.hasMoreElements()){
+		
+		
+	}
+
+
+
+
+%>
+
+
+
+</body>
+</html>

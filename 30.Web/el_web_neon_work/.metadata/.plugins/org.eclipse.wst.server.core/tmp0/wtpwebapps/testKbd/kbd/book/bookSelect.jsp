@@ -39,7 +39,7 @@
 <script type="text/javascript">
 
 	function bookUpdate(actionUpdate) {
-		console.log("bookUpdate 진입 >>> : " + cationUpdate);
+		console.log("bookUpdate 진입 >>> : " + actionUpdate);
 		
 		if ('U' == actionUpdate){
 			document.bookUpdateForm.action="/testKbd/book?isudtype=UOK";
@@ -47,7 +47,7 @@
 		}
 		
 		if ('D' == actionUpdate) {
-			document.bookUpdateFrom.action="/testKbd/book?isudtype=DOK";
+			document.bookUpdateForm.action="/testKbd/book?isudtype=DOK";
 		}
 		
 		document.bookUpdateForm.method="POST";
@@ -55,14 +55,14 @@
 		document.bookUpdateForm.submit();
 	}
 	
-	function checkAction(ectionName) {
+	function checkAction(actionName) {
 		console.log("actionName 진입 >>> : " + actionName);
 		
 		if ('I' == actionName){
-			location.href="/testKbd/kbd/book.html/";
+			location.href="/testKbd/kbd/book/book.html";
 		}
-		if ('SALL' == cationName){
-			lcation.href="/testKbd/book?isudtype=SALL";
+		if ('SALL' == actionName){
+			location.href="/testKbd/book?isudtype=SALL";
 		}
 	}
 </script>
@@ -132,19 +132,19 @@ BOOK TEST
 	<td><input type="text" id="btitle" name="btitle" class="align" value="<%= btitle %>" readonly /></td>
 </tr>
 <tr>
-	<td class="attr">저&nbsp;&nbsp;&nbsp;자</td>
+	<td class="attr">저자</td>
 	<td><input type="text" id="bauth" name="bauth" class="align" value="<%= bauth %>" readonly /></td>
 </tr>
 <tr>
 	<td style="letter-spacing: 3px" class="attr">ISBN</td>
-	<td><input type="text" id="isbn" name="isbn" class="align" value="<%= isbn %>" redinly /></td>
+	<td><input type="text" id="isbn" name="isbn" class="align" value="<%= isbn %>" readonly /></td>
 </tr>
 <tr>
 	<td class="attr">출판사</td>
 	<td><input type="text" id="bcomp" name="bcomp" class="align" value="<%= btitle %>" readonly /></td>
 </tr>
 <tr>
-<td class="attr">단&nbsp;&nbsp;&nbsp;가</td>
+<td class="attr">단가</td>
 <td><input type="number" id="bprice" name="bprice" class="align" value="<%= bcomp %>" /></td>
 </tr>
 <tr>
@@ -178,10 +178,9 @@ BOOK TEST
 		<input type="hidden" name="isudtype" id="isudtype" />
 		<input type="button" value="수정" onclick="bookUpdate('U')" />
 		<input type="button" value="삭제" onclick="bookUpdate('D')" />
-		<input type="rest" value="취소" />
-		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset" value="취소" />
 		<input type="button" value="입력" onclick="checkAction('I')"/>
-		<input type="button" value="목록" onclick="checkAction('SALL');"/>
+		<input type="button" value="목록" onclick="checkAction('SALL');">
 	</td>
 </tr>
 </table>

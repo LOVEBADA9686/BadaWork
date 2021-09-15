@@ -20,7 +20,7 @@ public abstract class BookSqlMap {
 		sb.append("      A.BNUM 		BNUM			\n");
 		sb.append("		,A.BTITLE 		BTITLE			\n");
 		sb.append("		,A.BAUTH 		BAUTH			\n");
-	    sb.append("		,A.ISBN   		ISBN			\n");	    
+	    sb.append("		,A.ISBN   		BISBN			\n");	    
 	    sb.append("		,A.BCOMP 		BCOMP			\n");	    
 	    sb.append("		,A.BPRICE		BPRICE			\n");	    
 	    sb.append("		,A.BQTY 		BQTY			\n");
@@ -43,7 +43,7 @@ public abstract class BookSqlMap {
 		sb.append("      A.BNUM 		BNUM			\n");
 		sb.append("		,A.BTITLE 		BTITLE			\n");
 		sb.append("		,A.BAUTH 		BAUTH			\n");
-	    sb.append("		,A.ISBN   		ISBN			\n");	    
+	    sb.append("		,A.ISBN   		BISBN			\n");	    
 	    sb.append("		,A.BCOMP 		BCOMP			\n");	    
 	    sb.append("		,A.BPRICE		BPRICE			\n");	    
 	    sb.append("		,A.BQTY 		BQTY			\n");

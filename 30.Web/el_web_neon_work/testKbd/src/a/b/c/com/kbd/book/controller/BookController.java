@@ -226,10 +226,12 @@ public class BookController extends HttpServlet {
 			bvo.setBqty(bqty);
 			bvo.setBcover(bcover);
 			
+			BookVO.printlnPshBoardVO(bvo);
+			
 			int nCnt = bs.bookInsert(bvo);
 			
 			if(nCnt > 0) {
-				System.out.println("도서 정보" + nCnt + " 건 등록 되었습니다.");
+				System.out.println("도서 정보 " + nCnt + "건 등록 되었습니다.");
 				
 				request.setAttribute("nCnt", new Integer(nCnt));
 				
