@@ -1,0 +1,83 @@
+package a.b.c.mem.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+
+import a.b.c.com.common.ConnProperty;
+import a.b.c.mem.vo.MemberVO;
+
+public class MemberDAOImpl implements MemberDAO {
+
+	@Override
+	public ArrayList<MemberVO> memberSelectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<MemberVO> memberSelect(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean memberInsert(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		System.out.println("MemberDAOImpl memberInsert() 함수 진입 >>> : ");
+		MemberVO.printlnMemberVO(mvo);
+		
+		//사용할 객체를 지역변수로 선언하고 초기화 하기
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int nCnt = 0;
+		boolean bool = false;
+		
+		try{
+			conn = ConnProperty.getConnection();
+			System.out.println("conn.getAutoCommit() >>> : " + conn.getAutoCommit());;
+			
+			pstmt = conn.prepareStatement(MemberSqlMap.getMemberInsertQuery());
+			System.out.println("입력하기 >>> : \n" + MemberSqlMap.getMemberInsertQuery());
+			
+			// 파라미터 클리어 꼭 하기
+			pstmt.clearParameters();
+			pstmt.setString(1, mvo.getMnum());
+			pstmt.setString(2, mvo.getMnum());
+			pstmt.setString(3, mvo.getMnum());
+			pstmt.setString(4, mvo.getMnum());
+			pstmt.setString(5, mvo.getMnum());
+			pstmt.setString(6, mvo.getMnum());
+			pstmt.setString(7, mvo.getMnum());
+			pstmt.setString(8, mvo.getMnum());
+			pstmt.setString(9, mvo.getMnum());
+			pstmt.setString(10, mvo.getMnum());
+			pstmt.setString(11, mvo.getMnum());
+			pstmt.setString(12, mvo.getMnum());
+			pstmt.setString(13, mvo.getMnum());
+			pstmt.setString(14, mvo.getMnum());
+			pstmt.setString(15, mvo.getMnum());
+			pstmt.setString(16, mvo.getMnum());
+			
+			
+			
+		}
+		
+		
+		
+		return false;
+	}
+
+	@Override
+	public boolean memberUpdate(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean memberDelete(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

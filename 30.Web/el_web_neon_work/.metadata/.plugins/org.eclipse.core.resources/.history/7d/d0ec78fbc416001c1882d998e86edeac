@@ -1,0 +1,93 @@
+package a.b.c.mem.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+
+import a.b.c.com.common.ConnProperty;
+import a.b.c.mem.sql.MemberSqlMap;
+import a.b.c.mem.vo.MemberVO;
+
+public class MemberDAOImpl implements MemberDAO {
+
+	@Override
+	public ArrayList<MemberVO> memberSelectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<MemberVO> memberSelect(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean memberInsert(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		System.out.println("MemberDAOImpl memberInsert() 함수 진입 >>> : ");
+		MemberVO.printlnMemberVO(mvo);
+		
+		//사용할 객체를 지역변수로 선언하고 초기화 하기
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int nCnt = 0;
+		boolean bool = false;
+		
+		try{
+			conn = ConnProperty.getConnection();
+			System.out.println("conn.getAutoCommit() >>> : " + conn.getAutoCommit());;
+			
+			pstmt = conn.prepareStatement(MemberSqlMap.getMemberInsertQuery());
+			System.out.println("입력하기 >>> : \n" + MemberSqlMap.getMemberInsertQuery());
+			
+			// 파라미터 클리어 꼭 하기
+			pstmt.clearParameters();
+			pstmt.setString(1, mvo.getMnum());
+			pstmt.setString(2, mvo.getMname());
+			pstmt.setString(3, mvo.getMid());
+			pstmt.setString(4, mvo.getMpw());
+			pstmt.setString(5, mvo.getMgender());
+			pstmt.setString(6, mvo.getMbirth());
+			pstmt.setString(7, mvo.getMhp());
+			pstmt.setString(8, mvo.getMtel());
+			pstmt.setString(9, mvo.getMemail());
+			pstmt.setString(10, mvo.getMzonecode());
+			pstmt.setString(11, mvo.getMroadaddress());
+			pstmt.setString(12, mvo.getMjibunaddress());
+			pstmt.setString(13, mvo.getMhobby());
+			pstmt.setString(14, mvo.getMinfo());
+			pstmt.setString(15, mvo.getMphoto());
+			pstmt.setString(16, mvo.getMadmin());	
+			
+			nCnt = pstmt.executeUpdate();
+			if (! conn.getAutoCommit()) conn.commit();
+			
+			System.out.println("nCnt >>> : " + nCnt + "건 등록 되었음");
+			
+			if(nCnt > 0){bool = true;}
+			
+			ConnProperty.conClose(conn, pstmt);
+		}catch(Exception e) {
+			System.out.println("입력 디비연동에 문제가 생겼습니다. >>> : " + e);
+		}finally{
+			try{
+				ConnProperty.conClose(conn, pstmt);
+			}catch(Exception e2) {}
+		}
+		return bool;
+	}
+
+	@Override
+	public boolean memberUpdate(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean memberDelete(MemberVO mvo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

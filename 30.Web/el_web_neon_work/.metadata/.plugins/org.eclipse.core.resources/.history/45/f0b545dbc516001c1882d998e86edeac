@@ -1,0 +1,15 @@
+package a.b.c.com.kbd.mem.dao;
+
+import java.util.ArrayList;
+
+import a.b.c.mem.kbd.vo.MemberVO;
+
+public interface MemberDAO {
+	
+	public ArrayList<MemberVO> memberSelectAll();
+	public ArrayList<MemberVO> memberSelect(MemberVO mvo);
+	public boolean memberInsert(MemberVO mvo);
+	public boolean memberUpdate(MemberVO mvo);
+	public boolean memberDelete(MemberVO mvo);
+
+}

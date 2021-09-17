@@ -1,0 +1,16 @@
+package a.b.c.com.common;
+
+public abstract class CodeUtil {
+	
+	// 성별 라벨
+	public static final String[] gender_value = {"여자, 남자"};
+	
+	// 핸드폰 라벨
+	public static final String[] hp_value = {"010", "011", "016", "017"};
+	
+	// 전화번호 라벨
+	public static final String[] tel_value = {"02", "031", "041", "051", "061"};
+	
+	
+
+}

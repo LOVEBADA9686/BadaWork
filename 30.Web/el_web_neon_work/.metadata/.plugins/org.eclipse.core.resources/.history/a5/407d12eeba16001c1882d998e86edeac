@@ -1,0 +1,5 @@
+package a.b.c.mem.vo;
+
+public interface MemberVO {
+
+}

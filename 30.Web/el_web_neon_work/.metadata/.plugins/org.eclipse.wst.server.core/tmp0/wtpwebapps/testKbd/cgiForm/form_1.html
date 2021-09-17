@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>cgiForm Test</title>
-<!-- µğ¹ÙÀÌ½º¿¡ ÃÖÀûÈ­µÈ Å©±â·Î Ãâ·ÂµÊ -->
+<!-- ë””ë°”ì´ìŠ¤ì— ìµœì í™”ëœ í¬ê¸°ë¡œ ì¶œë ¥ë¨ -->
 <meta name = "viwport" content="width=device-width, iitail-scale=1">
 <style type="text/css">
 	div {
@@ -15,8 +15,8 @@
 
 	$(document).ready(function(){
 		$("#jspBtn").click(function(){
-			alert("jspBtn click() ÇÔ¼ö ÁøÀÔ >>> : ");
-			console.log("jspBtn click() ÇÔ¼ö ÁøÀÔ >>> : ");
+			alert("jspBtn click() í•¨ìˆ˜ ì§„ì… >>> : ");
+			console.log("jspBtn click() í•¨ìˆ˜ ì§„ì… >>> : ");
 			
 			let v1 = $("#").val();
 			alert("v1 >>> : " + v1);
@@ -31,8 +31,8 @@
 		});
 		
 		$("#jspBtn_1").click(function(){
-			alert("jspBtn_1 click() ÇÔ¼ö ÁøÀÔ >>> : ");
-			console.log("jspBtn_1 click() ÇÔ¼ö ÁøÀÔ >>> : ");
+			alert("jspBtn_1 click() í•¨ìˆ˜ ì§„ì… >>> : ");
+			console.log("jspBtn_1 click() í•¨ìˆ˜ ì§„ì… >>> : ");
 			
 			let v1 = $("#").val();
 			alert("v1 >>> : " + v1);
@@ -48,10 +48,10 @@
 	});
 
 	function formTestCheck(){
-		alert("formTestCheck() ÇÔ¼ö ÁøÀÔ");
+		alert("formTestCheck() í•¨ìˆ˜ ì§„ì…");
 		
-		// º¸³»±â ¹öÆ°À» Å¬¸¯ÇÏ¸é actionÀÌ ½ÇÇàµÇ¾î /testServlet/abc·Î º¸³»Áø´Ù.
-		// testServlet¿¡ ÀÖ´Â abc¾î³ëÅ×ÀÌ¼ÇÀ» Ã£¾Æ¼­ ½ÇÇàÇÏ°Ô µÈ´Ù.
+		// ë³´ë‚´ê¸° ë²„íŠ¼ì„ í´ë¦­í•˜ë©´ actionì´ ì‹¤í–‰ë˜ì–´ /testServlet/abcë¡œ ë³´ë‚´ì§„ë‹¤.
+		// testServletì— ìˆëŠ” abcì–´ë…¸í…Œì´ì…˜ì„ ì°¾ì•„ì„œ ì‹¤í–‰í•˜ê²Œ ëœë‹¤.
 		document.form_1_Form.action="/testKbd/form";
 		document.form_1_Form.method="GET"
 		document.form_1_Form.enctype="application/x-www-form-urlencoded";
@@ -65,57 +65,57 @@
 <table border="1">
 
 <tr>
-	<td>ÀÌ¸§</td>
+	<td>ì´ë¦„</td>
 	<td><input type="text" name="mname" /></td>
 </tr>
 <tr>
-	<td>¾ÆÀÌµğ</td>
+	<td>ì•„ì´ë””</td>
 	<td>
-		<input type="text" name="mid" value="¾ÆÀÌµğ" />
-		<input type="button" name="midCheck" value="¾ÆÀÌµğÁßº¹È®ÀÎ" />
+		<input type="text" name="mid" value="ì•„ì´ë””" />
+		<input type="button" name="midCheck" value="ì•„ì´ë””ì¤‘ë³µí™•ì¸" />
 	</td>
 </tr>
 <tr>
-	<td>ÆĞ½º¿öµå</td>
+	<td>íŒ¨ìŠ¤ì›Œë“œ</td>
 	<td>
 		<input type="text" name="mpw">
 	</td>
 </tr>
 <tr>	
-	<td>ÇÚµåÆù</td>
+	<td>í•¸ë“œí°</td>
 	<td>
 	<input type="text" mname="mhp" />
 	</td>
 </tr>
 <tr>
-	<td>¼ºº°</td>
+	<td>ì„±ë³„</td>
 	<td>
-		<input type="radio" name="mgender" value="M" checked="checked" /> ³²ÀÚ
-		<input type="radio" name="mgender" value="F" /> ¿©ÀÚ
+		<input type="radio" name="mgender" value="M" checked="checked" /> ë‚¨ì
+		<input type="radio" name="mgender" value="F" /> ì—¬ì
 	</td>
 </tr>
 <tr>
-	<td>Ãë¹Ì</td>
+	<td>ì·¨ë¯¸</td>
 	<td>
-		<input type="checkbox" name="mhobby" value="book" />µ¶¼­
-		<input type="checkbox" name="mhobby" value="sports" />¿îµ¿
-		<input type="checkbox" name="mhobby" value="mugic" />À½¾Ç°¨»ó
-		<input type="checkbox" name="mhobby" value="trable" />¿©Çà
+		<input type="checkbox" name="mhobby" value="book" />ë…ì„œ
+		<input type="checkbox" name="mhobby" value="sports" />ìš´ë™
+		<input type="checkbox" name="mhobby" value="mugic" />ìŒì•…ê°ìƒ
+		<input type="checkbox" name="mhobby" value="trable" />ì—¬í–‰
 	</td>
 </tr>	
 <tr>
-	<td>Áö¿ª</td>
+	<td>ì§€ì—­</td>
 	<td>
 		<!-- drop down box -->
 		<select name="mlocal">
-			<option value="seoul">¼­¿ï</option>
-			<option value="gunggido">°æ±âµµ</option>
-			<option value="junju">ÀüÁÖ</option>
+			<option value="seoul">ì„œìš¸</option>
+			<option value="gunggido">ê²½ê¸°ë„</option>
+			<option value="junju">ì „ì£¼</option>
 		</select>
 	</td>
 </tr>
 <tr>
-	<td>¼Ò°³±Û</td>
+	<td>ì†Œê°œê¸€</td>
 	<td>
 		<textarea name="mmsg" rows="5" cols="50"></textarea>
 	</td>
@@ -123,13 +123,13 @@
 <tr>
 	<td colspan="2">
 	<!-- 
-		hidden Å¸ÀÔÀº È­¸é¿¡ display µÇÁö ¾Ê´Â´Ù. value ´Â ¼­¹ö·Î Àü¼ÛÀÌ µÈ´Ù.
+		hidden íƒ€ì…ì€ í™”ë©´ì— display ë˜ì§€ ì•ŠëŠ”ë‹¤. value ëŠ” ì„œë²„ë¡œ ì „ì†¡ì´ ëœë‹¤.
 	 -->
 	 	<input type="hidden" id="isudtype" name="isudtype" value="I">
-	 	<input type="button" value="Servlet_º¸³»±â" onclick="formTestCheck()" />
-		<input type="button" value="jsp_º¸³»±â" id="jspBtn" />
-		<input type="button" value="jsp_º¸³»±â_1" id="jspBtn_1" />
-		<input type="reset" value="Ãë¼Ò" />
+	 	<input type="button" value="Servlet_ë³´ë‚´ê¸°" onclick="formTestCheck()" />
+		<input type="button" value="jsp_ë³´ë‚´ê¸°" id="jspBtn" />
+		<input type="button" value="jsp_ë³´ë‚´ê¸°_1" id="jspBtn_1" />
+		<input type="reset" value="ì·¨ì†Œ" />
 	</td>
 </tr>
 </table>
@@ -139,10 +139,10 @@
 </html>
 
 <!-- 
-PAI¿¡¼­ ÇÔ¼ö¸¦ º¼¶§
+PAIì—ì„œ í•¨ìˆ˜ë¥¼ ë³¼ë•Œ
 1.static
-2.¿¹¿ÜÃ³¸®
+2.ì˜ˆì™¸ì²˜ë¦¬
 3.return
-4.µ¥ÀÌÅÍ°¡ ¾øÀ»¶§
-5.parameterÈ®ÀÎ
+4.ë°ì´í„°ê°€ ì—†ì„ë•Œ
+5.parameterí™•ì¸
 -->

@@ -1,0 +1,158 @@
+package a.b.c.com.kbd.mem.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import a.b.c.com.common.CommonUtils;
+import a.b.c.com.common.FileUploadUtil;
+import a.b.c.com.common.GetChabun;
+import a.b.c.com.kbd.mem.service.MemberService;
+import a.b.c.com.kbd.mem.service.MemberServiceImpl;
+import a.b.c.com.kbd.mem.vo.MemberVO;
+
+@WebServlet("/mem")
+public class MemberController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("EUC-KR");
+		response.setContentType("/text/html; charset=EUC-KR");
+		PrintWriter out = response.getWriter();
+		
+		String isudType = request.getParameter("ISUD_TYPE");
+		
+		if (isudType !=null && isudType.length() > 0) {
+			isudType = isudType.toUpperCase();
+			
+			//회원 등록
+			if("I".equals(isudType)){
+				System.out.println("회원등록isudType >>> : " + isudType);
+				
+				boolean bool = request.getContentType().toLowerCase().startsWith("multipart/form-data");
+				
+				String filePaths = CommonUtils.MEMBER_IMG_UPLOAD_PATH;
+				int size_limit = CommonUtils.MEMBER_IMG_FILE_SIZE;
+				String encode_type = CommonUtils.MEMBER_IMG_ENCODE;
+				
+				FileUploadUtil fu = new FileUploadUtil();
+				boolean bFile = fu.fileUpldad3(request, filePaths, size_limit, encode_type);
+				
+				if(bFile){
+					
+					// 서비스 호출하기
+					MemberService ms = new MemberServiceImpl();
+					MemberVO mvo = null;
+					mvo = new MemberVO();
+					
+					String mnum = GetChabun.getMemberChabun("d");
+					System.out.println("mnum >>> : " + mnum);
+					
+					//회원 번호
+					mvo.setMnum(mnum);
+					//회원이름
+					mvo.setMname(fu.getParameter("mname"));
+					// 아이디
+					mvo.setMid(fu.getParameter("mid"));
+					//패스워드
+					mvo.setMpw(fu.getParameter("mpw"));
+					
+					//성별
+					mvo.setMgender(fu.getParameter("mgender"));
+					
+					//생년월일
+					String mbirth = fu.getParameter("mbirth");
+					String mbirth1 = fu.getParameter("mbirth1");
+					String mbirth2 = fu.getParameter("mbirth2");
+					mbirth = mbirth + mbirth1 + mbirth2;
+					mvo.setMbirth(mbirth);
+					
+					// 핸드폰
+					String mhp = fu.getParameter("mhp");
+					String mhp1 = fu.getParameter("mhp1");
+					String mhp2 = fu.getParameter("mhp2");
+					mhp = mhp + mhp1 + mhp2;
+					mvo.setMhp(mhp);
+					
+					// 전화번호
+					String mtel = fu.getParameter("mtel");
+					String mtel1 = fu.getParameter("mtel1");
+					String mtel2 = fu.getParameter("mtel2");
+					mtel = mtel + mtel1 + mtel2;
+					mvo.setMtel(mtel);
+					
+					//이메일
+					String memail = fu.getParameter("memail");
+					String memail1 = fu.getParameter("memail1");
+					memail = memail.concat("@").concat(memail1);
+					mvo.setMemail(memail);
+					
+					// 주소 : 우편번호
+					mvo.setMzonecode(fu.getParameter("mzonecode"));
+					
+					// 주소 : 도로명 주소
+					String mroadaddress = fu.getParameter("mroadaddress");;
+					String mroadaddressdetail = fu.getParameter("mroadaddressdetail");
+					mroadaddress = mroadaddress.concat("@").concat(mroadaddressdetail);
+					mvo.setMroadaddress(mroadaddress);
+					
+					// 주소 : 지번 주소
+					mvo.setMjibunaddress(fu.getParameter("mjibunaddress"));
+					
+					// 취미
+					String[] hobby = fu.getParameterValues("mhobby");
+					String mhobby = "";
+					for(int i=0; i < hobby.length; i++){
+						mhobby += hobby[i] + ",";
+					}
+					mvo.setMhobby(mhobby);
+					
+					// 내소개
+					mvo.setMinfo(fu.getParameter("minfo"));
+					
+					// 사진
+					ArrayList<String> aFileName = fu.getFileNames();
+					String mphoto = aFileName.get(0);
+					mvo.setMphoto(mphoto);;
+					//관리자
+					mvo.setMadmin("00"); // 관리자
+					System.out.println("MemberController 회원 등록 >>> : I");
+					MemberVO.printlnMemberVO(mvo);
+					
+					boolean bInsert = ms.memberInsert(mvo);
+					if(bInsert){
+						request.setAttribute("bInsert", new Boolean(bInsert));
+						RequestDispatcher rd = request.getRequestDispatcher("/Kbd/mem/memInsert.jsp");
+						rd.forward(request, response);
+					}else{
+						out.println("<script>");
+						out.println("location.href='/testKbd/kbd/mem/mem.html'");
+						out.println("/<script>");
+					}
+					
+				}else{
+					System.out.println("회원등록 및 파일 업로드 실패");
+				}
+			}
+		} // 회원 등록 end
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

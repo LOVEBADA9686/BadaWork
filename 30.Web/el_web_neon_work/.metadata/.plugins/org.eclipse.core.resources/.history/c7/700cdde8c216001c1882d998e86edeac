@@ -1,0 +1,67 @@
+package a.b.c.mem.sql;
+
+public class MemberSqlMap {
+	
+	public static String getMaxChabunQuery() {
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("SELECT /* INDEX_DESC(A SYS_C0011199) */					\n");
+		sb.append("		NVL(MAX(SUBSTR(A.MNUM,	-4)),	0) + 1 MAXNUM		\n");
+		sb.append("FROM	MVC_MEMBER A										\n");
+		
+		return sb.toString();
+	}
+	
+	// 회원 등록
+	public static String getMemberInsertQuery(){
+		
+			StringBuffer sb = new StringBuffer();
+			sb.append("INSET INTO												\n");
+			sb.append("		MVC_MEMBER											\n");
+			sb.append("							(								\n");
+			sb.append("							MNUM							\n");
+			sb.append("							,MNAME							\n");
+			sb.append("							,MID							\n");
+			sb.append("							,MPW							\n");
+			sb.append("							,MGENDER						\n");
+			sb.append("							,MBIRTH							\n");
+			sb.append("							,MHP							\n");
+			sb.append("							,MTEL							\n");
+			sb.append("							,MEMAIL							\n");
+			sb.append("							,MZONECODE						\n");
+			sb.append("							,MROADADDRESS					\n");
+			sb.append("							,MGIBUNADDRESS					\n");
+			sb.append("							,MHOBBY							\n");
+			sb.append("							,MINFO							\n");
+			sb.append("							,MPHOTO							\n");
+			sb.append("							,MADMIN							\n");
+			sb.append("							,DELETEYN						\n");
+			sb.append("							,INSERTDATE						\n");
+			sb.append("							,UPDATEDATE						\n");
+			sb.append("							)								\n");
+			sb.append("							VALUES							\n");
+			sb.append("							)								\n");
+			sb.append("							?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,?								\n");
+			sb.append("							,'Y'							\n");
+			sb.append("							,'SYSDATE'						\n");
+			sb.append("							,'SYSDATE'						\n");
+
+		
+	}
+	
+
+}

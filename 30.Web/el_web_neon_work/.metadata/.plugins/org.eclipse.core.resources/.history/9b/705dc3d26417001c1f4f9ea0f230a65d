@@ -1,0 +1,68 @@
+package a.b.c.com.kbd.mem.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import a.b.c.com.common.CommonUtils;
+import a.b.c.com.common.FileUploadUtil;
+import a.b.c.com.common.GetChabun;
+
+@WebServlet("/mem")
+public class MemberController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("EUC-KR");
+		response.setContentType("/text/html; charset=EUC-KR");
+		PrintWriter out = response.getWriter();
+		
+		String isudType = request.getParameter("ISUD_TYPE");
+		
+		if (isudType !=null && isudType.length() > 0) {
+			isudType = isudType.toUpperCase();
+			
+			//회원 등록
+			if("I".equals(isudType)){
+				System.out.println("회원등록isudType >>> : " + isudType);
+				
+				boolean bool = request.getContentType().toLowerCase().startsWith("multipart/form-data");
+				
+				String filePaths = CommonUtils.MEMBER_IMG_UPLOAD_PATH;
+				int size_limit = CommonUtils.MEMBER_IMG_FILE_SIZE;
+				String encode_type = CommonUtils.MEMBER_IMG_ENCODE;
+				
+				FileUploadUtil fu = new FileUploadUtil();
+				boolean bFile = fu.fileUpldad3(request, filePaths, size_limit, encode_type);
+				
+				if(bFile){
+					
+					// 서비스 호출하기
+					MemberService ms = new MemberServiceImpl();
+					MemberVO mvo = null;
+					mvo = new MemberVO();
+					
+					String Mnum = GetChabun.getMemberChabun("d");
+					System.out.println("mnum >>> : " + mnum);
+				}
+			}
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
