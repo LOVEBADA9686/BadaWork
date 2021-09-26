@@ -1,0 +1,5 @@
+package a.b.c.com.kbd.notice.dao;
+
+public interface NoticeDAO {
+
+}

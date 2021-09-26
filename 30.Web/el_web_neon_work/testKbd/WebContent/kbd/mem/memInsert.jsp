@@ -19,7 +19,7 @@
 		System.out.println("입력 성공 bool >>> : " + bool);
 %>
 	<script>
-		localtion.href="/testKbd/mem?ISUD_TYPE=SALL";
+		location.href="/testKbd/mem?ISUD_TYPE=SALL";
 	</script>
 <%
 	}else{

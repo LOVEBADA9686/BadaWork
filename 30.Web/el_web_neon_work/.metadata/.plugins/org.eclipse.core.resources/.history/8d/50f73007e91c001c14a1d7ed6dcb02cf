@@ -1,0 +1,38 @@
+package a.b.c.com.kbd.notice.sql;
+
+public abstract class NoticeSqlMap {
+
+	public static String getMaxChabunQuery(){
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("	SELECT /*+ INDEX_DESC(A SYS_C0011639)*/				\n");
+		sb.append("			NVL(MAX(SUBSTR(A.NNUM, -4)), 0) +1 MAXNUM	\n");
+		sb.append("	FROM	MVC_NOTICE A;									\n");
+		
+		return sb.toString();
+	}
+	
+	public static String getNoticeInsertQuery(){
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("INSERT INTO								\n");
+		sb.append("		MVC_NOTICE							\n");
+		sb.append("					(						\n");
+		sb.append("					NNUM					\n");
+		sb.append("					,NSUBJECT				\n");
+		sb.append("					,NMEMO					\n");
+		sb.append("					,NPHOTO					\n");
+		sb.append("					,DELETEYN				\n");
+		sb.append("					,INSERTDATE				\n");
+		sb.append("					,UPDATEDATE				\n");
+		sb.append("					)						\n");
+		sb.append("					VALUES(					\n");
+		sb.append("						?					\n");
+		sb.append("						,?					\n");
+		sb.append("						,?					\n");
+		sb.append("						,?					\n");
+		sb.append("						,'Y'				\n");
+		sb.append("						,SYSDATE			\n");
+		sb.append("						,SYSDATE			\n");
+	}
+}

@@ -1,0 +1,38 @@
+2021-09-24
+------------------------------
+
+html <- request, form 태그, form 태그 name 어트리뷰트  -> 
+Servlet <-	request, 
+			getParameter("name 어트리뷰트 값"); 
+			request.setAttribute(java.lang.String, java.lang.Object)-> 
+jsp :	request.getAttribute(java.lang.String);
+		request.getParameter();
+
+
+###############################################
+2021-09-30(목 오후 5시까지) : 제출할 것 
+1. 테이블 정의서 
+2. 클래스 다이아 그램
+2. 데이터이동 프로세스 
+board
+book
+mem
+login
+notice
+
+D:\00.KOSMO93\20210924_model2MVC_데이터이동\
+###############################################
+
+->
+엑셀 파일 이름
+20210924_model2MVC_데이터이동_김바다
+
+
+엑셀파일 시트
+board book mem login notice
+시트별 내용에는 
+1. 테이블 정의서
+2. 클래스 다이아그램
+3. 데이터이동 프로세스
+
+09/30 까지 작성하여 제출하기

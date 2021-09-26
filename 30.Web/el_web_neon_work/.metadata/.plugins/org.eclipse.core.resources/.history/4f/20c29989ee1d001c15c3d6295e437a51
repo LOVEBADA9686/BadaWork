@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>게시판</title>
+<style type="text/css">
+
+	.div1{
+		background : lightblue;
+		border : 1px solid yellow;
+		width : 450px;
+		margin : 100px auto;
+	}
+	
+	.align{
+		text-align : center;
+	}
+	
+</style>
+<!-- 제이쿼리 CDN -->
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		//폼태그 데이터 JSP 보내기 
+		$("#noticeBtn").click(function(){
+			alert("noticeBtn click() 함수 진입 >>> : ");
+			console.log("noticedBtn click() 함수 진입 >>> : ");
+			
+			var v1 = $("#ISUD_TYPE").val();
+			alert("v1 >>> : " + v1);
+			
+			
+			// attr() vs prop()
+			$("#noticeWrite")
+			.attr({
+					"action":"/testKbd/notice?ISUD_TYPE="+v1,
+				    "method":"POST",
+				    "enctype":"multipart/form-data"
+			       })
+			.submit();	
+		});		
+	});
+</script>	
+</head>
+<body>
+<div class = "div1">
+<form name="noticeWrite" id="noticeWrite">
+<table border="1">
+	<tr>	
+		<td colspan="2" class="align">	
+						
+			<font size="4" style="color:blue;">공지 사항</font> 
+			<img src="/testKbd/img/img_kakao/10잘난척.png" width="25" height="25" alt="image">		
+		</td>				
+	</tr>
+	<tr>
+		<td align="center">글번호</td>
+		<td><input type="text" name="nnum" id="nnum" size="20" readonly></td>
+	</tr>
+	<tr>
+		<td align="center">제목</td>
+		<td><input type="text" name="nsubject" id="nsubject" size="55"></td>
+	</tr>		
+	<tr>
+		<td  align="center">내용</td>
+		<td>
+		<textarea name="nmemo" id="mmemo" cols="50" rows="10"></textarea>
+	</td>
+	</tr>
+	<tr>
+		<td  align="center">사진</td>
+		<td>
+		<input type="file" name="bphoto" id="bphoto">
+	</td>
+	</tr>	
+	<tr>
+		<td colspan="2" align="center">	
+		<input type="hidden" name="ISUD_TYPE" id="ISUD_TYPE" value="I">
+		<!--
+			<input type="button" value="보내기" id="boardBtn" > 
+		 -->					
+		<button type="button" id="noticeBtn">
+			<img src="/testKbd/img/img_kakaofriends/13.png" width="25" height="25" alt="image">	
+			보내기
+		</button>
+		<!-- 
+			<input type="reset" value="다시">
+		 -->
+		<button type="reset">
+			<img src="/testKbd/img/img_kakaofriends/01 (2).png" width="25" height="25" alt="image">	
+			다시
+		</button>
+	</td>				
+	</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

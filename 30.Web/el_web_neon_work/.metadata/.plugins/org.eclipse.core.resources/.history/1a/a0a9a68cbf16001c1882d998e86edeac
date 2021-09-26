@@ -1,5 +1,0 @@
-package a.b.c.mem.dao;
-
-public interface MemberDAO {
-
-}

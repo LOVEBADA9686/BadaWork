@@ -87,8 +87,8 @@ public abstract class CodeUtil {
 		String h = "";
 		String ss[] = s.split(",");
 		for (int i=0; i < ss.length; i++){
-			System.out.println(hobbys(ss[i]));
-			h += hobbys(ss[i]) + " ";
+			System.out.println(hobby(ss[i]));
+			h += hobby(ss[i]) + " ";
 		}
 		return h;
 	}

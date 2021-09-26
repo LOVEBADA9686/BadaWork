@@ -1,0 +1,12 @@
+package a.b.c.com.kbd.notice.sql;
+
+public abstract class NoticeSqlMap {
+
+	public static String getMaxChabunQuery(){
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append();
+		
+		
+	}
+}

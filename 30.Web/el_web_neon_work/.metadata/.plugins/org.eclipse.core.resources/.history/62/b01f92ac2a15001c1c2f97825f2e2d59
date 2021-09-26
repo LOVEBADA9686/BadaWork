@@ -1,5 +1,0 @@
-package a.b.c.com.kbd.book.dao;
-
-public interface BookDAO {
-
-}

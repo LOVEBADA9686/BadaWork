@@ -1,11 +1,12 @@
 package a.b.c.com.kbd.mem.sql;
 
-public class MemberSqlMap {
+public abstract class MemberSqlMap {
 	
+	// MaxChabun 쿼리 
 	public static String getMaxChabunQuery() {
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("SELECT /*+ INDEX_DESC(SYS_C0011614) */					\n");
+		sb.append("SELECT /*+ INDEX_DESC(A SYS_C0011614) */					\n");
 		sb.append("		NVL(MAX(SUBSTR(A.MNUM,	-4)),	0) + 1 MAXNUM		\n");
 		sb.append("FROM	MVC_MEMBER A										\n");
 		
@@ -42,7 +43,6 @@ public class MemberSqlMap {
 	    sb.append("	ORDER BY 1 DESC													\n");
 	    
 		return sb.toString();
-		
 	}
 	
 	// 회원 조건 조회
@@ -75,14 +75,13 @@ public class MemberSqlMap {
 	    sb.append("	AND A.MNUM = ?													\n");
 		
 		return sb.toString();
-		
 	}
 	
 	// 회원 등록
 	public static String getMemberInsertQuery(){
 		
 			StringBuffer sb = new StringBuffer();
-			sb.append("INSET INTO												\n");
+			sb.append("INSERT INTO												\n");
 			sb.append("		MVC_MEMBER											\n");
 			sb.append("							(								\n");
 			sb.append("							MNUM							\n");// COLUMN 1
@@ -106,7 +105,7 @@ public class MemberSqlMap {
 			sb.append("							,UPDATEDATE						\n");// COLUMN 19
 			sb.append("							)								\n");
 			sb.append("							VALUES							\n");
-			sb.append("							)								\n");
+			sb.append("							(								\n");
 			sb.append("							?								\n");// placeholder 1
 			sb.append("							,?								\n");// placeholder 2
 			sb.append("							,?								\n");// placeholder 3
@@ -124,8 +123,8 @@ public class MemberSqlMap {
 			sb.append("							,?								\n");// placeholder 15
 			sb.append("							,?								\n");// placeholder 16
 			sb.append("							,'Y'							\n");// placeholder 17
-			sb.append("							,'SYSDATE'						\n");// placeholder 18
-			sb.append("							,'SYSDATE'						\n");// placeholder 19
+			sb.append("							,SYSDATE						\n");// placeholder 18
+			sb.append("							,SYSDATE						\n");// placeholder 19
 			sb.append("	          			    )								\n");
 			
 		return sb.toString();

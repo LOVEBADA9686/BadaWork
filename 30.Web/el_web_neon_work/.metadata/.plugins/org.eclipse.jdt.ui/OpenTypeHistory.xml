@@ -4,4 +4,8 @@
 <typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.board.service{BoardService.java[BoardService" modifiers="513" timestamp="1631094245477"/>
 <typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.book.service{BookService.java[BookService" modifiers="513" timestamp="1631602785263"/>
 <typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.book.dao{BookDAO.java[BookDAO" modifiers="513" timestamp="1631603374722"/>
+<typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.login.service{LoginService.java[LoginService" modifiers="513" timestamp="1632370253754"/>
+<typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.login.dao{LoginDAO.java[LoginDAO" modifiers="513" timestamp="1632370476232"/>
+<typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.notice.dao{NoticeDAO.java[NoticeDAO" modifiers="513" timestamp="1632447677294"/>
+<typeInfo handle="=testKbd/src&lt;a.b.c.com.kbd.notice.service{NoticeService.java[NoticeService" modifiers="513" timestamp="1632449329667"/>
 </typeInfoHistroy>

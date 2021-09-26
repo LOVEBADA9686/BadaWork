@@ -1,0 +1,15 @@
+package a.b.c.com.kbd.notice.service;
+
+import java.util.ArrayList;
+
+import a.b.c.com.kbd.notice.vo.NoticeVO;
+
+public interface NoticeService {
+	
+	public ArrayList<NoticeVO> noticeSelectAll();
+	public ArrayList<NoticeVO> noticeSelect(NoticeVO Nvo);
+	public int noticeInsert(NoticeVO Nvo);
+	public int noticeUpdate(NoticeVO Nvo);
+	public int noticeDelete(NoticeVO Nvo);
+
+}

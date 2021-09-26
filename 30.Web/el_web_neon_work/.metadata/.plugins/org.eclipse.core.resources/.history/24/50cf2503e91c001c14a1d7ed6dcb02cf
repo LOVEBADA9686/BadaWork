@@ -1,0 +1,21 @@
+package a.b.c.com.kbd.notice.sql;
+
+public abstract class NoticeSqlMap {
+
+	public static String getMaxChabunQuery(){
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("	SELECT /*+ INDEX_DESC(A SYS_C0011639)*/				\n");
+		sb.append("			NVL(MAX(SUBSTR(A.NNUM, -4)), 0) +1 MAXNUM	\n");
+		sb.append("	FROM	MVC_NOTICE A;									\n");
+		
+		return sb.toString();
+	}
+	
+	public static String getNoticeInsertQuery(){
+		
+		
+		
+		
+	}
+}

@@ -28,5 +28,11 @@ public abstract class CommonUtils {
 	public static final String BOOK_IMG_UPLOAD_PATH = "C:\\00.KOSMO93\\30.Web\\el_web_neon_work\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\testKbd\\fileupload\\book";
 	public static final int BOOK_IMG_FILE_SIZE = 10*1024*1024;
 	public static final String BOOK_IMG_ENCODE = "EUC-KR";
+	
+	// notice 이미지 업로드
+	//C:\00.KOSMO93\30.Web\el_web_neon_work\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\testKbd\fileupload\notice
+	public static final String NOTICE_IMG_UPLOAD_PATH = "C:\\00.KOSMO93\\30.Web\\el_web_neon_work\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\testKbd\\fileupload\\notice";
+	public static final int NOTICE_IMG_FILE_SIZE = 10*1024*1024;
+	public static final String NOTICE_IMG_ENCODE = "EUC-KR";
 
 }

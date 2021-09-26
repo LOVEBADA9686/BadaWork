@@ -9,20 +9,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="testKbd" key="selection"/>
+		<item value="공지사항 수정 isudtype" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="testkbd"/>
-			<item value="kbd"/>
-			<item value="kosmo"/>
-			<item value="testKbd"/>
-			<item value="memForm"/>
-			<item value="ISUD_TYPE"/>
-			<item value="UTF-8"/>
-			<item value="EUC-KR"/>
+			<item value="공지사항 수정 isudtype"/>
+			<item value="POST"/>
+			<item value="GET"/>
+			<item value="글 수정 실패 !!!!"/>
+			<item value="수정"/>
+			<item value="건"/>
+			<item value="method &gt;&gt;&gt; :"/>
+			<item value="method"/>
 		</list>
 		<list key="replacehistory">
 			<item value="EUC-KR"/>
@@ -33,7 +33,7 @@
 		<item value="340" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="454" key="DIALOG_HEIGHT"/>
-		<item value="1500" key="DIALOG_X_ORIGIN"/>
-		<item value="343" key="DIALOG_Y_ORIGIN"/>
+		<item value="1588" key="DIALOG_X_ORIGIN"/>
+		<item value="576" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    <%@page import="a.b.c.com.kbd.notice.service.NoticeService" %>
+    <%@page import="a.b.c.com.kbd.notice.service.NoticeServiceImpl" %>
+    <%@page import="a.b.c.com.kbd.notice.vo.NoticeVO" %>
+    <%@page import="java.util.ArrayList" %>
+    
+    
+    
+    
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

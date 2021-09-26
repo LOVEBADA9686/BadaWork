@@ -1,0 +1,6 @@
+package a.b.c.com.kbd.login.dao;
+
+public interface LoginDAO {
+
+	public int loginCheckCnt(MemberVO mvo);
+}
