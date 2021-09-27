@@ -137,9 +137,9 @@ SELECT ALL
 <thead>
 <tr>
 	<td class="tt"><input type = "checkbox" name="chkAll" id="chkAll"></td>
-	<td class="tt"> </td>
-	<td class="tt">순번</td>
-	<td class="tt">제목</td>
+	<td class="tt">순번 </td>
+	<td class="tt">번호</td>
+	<td class="tt">글제목</td>
 	<td class="tt">내용</td>
 	<td class="tt">사진</td>
 	<td class="tt">삭제여부</td>
@@ -157,29 +157,28 @@ SELECT ALL
 <tr>
 	<td class="tt">
 		<input type="checkbox" id="nnumCheck" name="nnumCheck" value=<%= nvo.getNnum() %> onclick="checkOnly(this)">
-	</td>
+	</td>		
 	<td class="tt"><%= i + 1 %></td>
-	<td class="tt"><%= nvo.getNnum() %></td>
-	<td class="tt"><%= nvo.getNsubject() %></td>
-	<td class="tt"><%= nvo.getNmemo() %></td>
-	<td class="tt"><img src="/testKbd/fileupload/notice/<%= nvo.getNphoto() %>" border="1" width="25" height="25" alt="image"></td>
-	<td class="tt"><%= nvo.getDeleteyn() %></td>
-	<td class="tt"><%= nvo.getInsertdate() %></td>
-	<td class="tt"><%= nvo.getUpdatedate() %></td>
-</tr>
+	<td class="tt"><%= nvo.getNnum() %> </td>
+	<td class="tt"><%= nvo.getNsubject() %> </td>
+	<td class="tt"><%= nvo.getNmemo() %> </td>
+	<td class="tt"><img src="/testKbd/fileupload/notice/<%= nvo.getNphoto() %> " border="1" width="25" height="25" alt="image"></td>
+	<td class="tt"><%= nvo.getDeleteyn() %> </td>		
+	<td class="tt"><%= nvo.getInsertdate() %> </td>
+	<td class="tt"><%= nvo.getUpdatedate() %> </td>		
+</tr>	
 <%
 	}//end of if
-%>
+%>						
 <tr>
 	<td colspan="9" align="right">
-		<input type="hidden" name="ISUD_TYPE" id="ISUD_TYPE" value="">
+		<input type="hidden" name="ISUD_TYPE" id="ISUD_TYPE" value="">			
 		<input type="button" value="등록" id="I">
 		<input type="button" value="조회" id="SALL">
 		<input type="button" value="수정" id="U">
-		<input type="button" value="삭제" id="DOK">
-		
+		<input type="button" value="삭제" id="DOK">									
 	</td>
-</tr>
+</tr>	
 </tbody>
 </table>
 </form>

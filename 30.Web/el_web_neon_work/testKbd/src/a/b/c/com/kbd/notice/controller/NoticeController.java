@@ -23,154 +23,142 @@ import a.b.c.com.kbd.notice.vo.NoticeVO;
 public class NoticeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("EUC-KR");
 		response.setCharacterEncoding("EUC-KR");
-		response.setContentType("text/html; charset=EUC-KR"); 
+		response.setContentType("text/html; charset=EUC-KR");
 		PrintWriter out = response.getWriter();
 		
-		String isudtype = request.getParameter("ISUD_TYPE");
-		if(isudtype !=null) isudtype.toUpperCase();
+		String isudType = request.getParameter("ISUD_TYPE");	
 		
-		if(isudtype !=null && isudtype.length() > 0){
-			System.out.println("isudtype >>> : " + isudtype);
-			System.out.println("remoteIP >>> : " + request.getRemoteAddr());
-			System.out.println("method >>> : " + request.getMethod());
+		if (isudType !=null && isudType.length() > 0){
+			isudType = isudType.toUpperCase();
 			
-			// notice 전체 조회
-			if("SALL".equals(isudtype)){
-				System.out.println("notice 정보 전체 조회 isudtype >>> : " + isudtype);
+			// 공지사항 등록 ------------------------------------------------------------------------------
+			if ("I".equals(isudType)){
+				System.out.println("공지사항등록isudType >>> : " + isudType);
 				
-				NoticeService bs = new NoticeServiceImpl();
-				ArrayList<NoticeVO> aListAll = bs.noticeSelectAll();
-				
-				if(aListAll !=null && aListAll.size() > 0) {
+                boolean bool = request.getContentType().toLowerCase().startsWith("multipart/form-data");				
+				if (bool){
+					System.out.println("공지사항등록 파일업로드 루틴 :: bool >>> : " + bool);
 					
-					request.setAttribute("aListAll", aListAll);
-					RequestDispatcher rd = request.getRequestDispatcher("/kbd/notice/noticeSelectAll.jsp");
+					String filePaths = CommonUtils.NOTICE_IMG_UPLOAD_PATH;
+	                int size_limit = CommonUtils.NOTICE_IMG_FILE_SIZE;
+	                String  encode_type = CommonUtils.NOTICE_IMG_ENCODE;
+					
+					FileUploadUtil fu = new FileUploadUtil();					
+					boolean bFile = fu.fileUpload3(request, filePaths, size_limit, encode_type);
+					
+					if (bFile){
+						
+						// 서비스 호출하기 
+						NoticeService ns = new NoticeServiceImpl();
+						NoticeVO nvo = null;
+						nvo = new NoticeVO();
+						
+						String nnum = GetChabun.getNoticeChabun("d");
+						System.out.println("nnum >>> : " + nnum);
+						
+						// 공지사항 번호
+						nvo.setNnum(nnum);
+						// 공지사항 제목
+						nvo.setNsubject(fu.getParameter("nsubject"));
+						// 공지사항  내용
+						nvo.setNmemo(fu.getParameter("nmemo"));						
+						// 사진
+						ArrayList<String> aFileName = fu.getFileNames();
+						String nphoto = aFileName.get(0);				
+						nvo.setNphoto(nphoto);
+						
+					
+						System.out.println("NoticeController 공지사항 등록 >>> I ");
+						NoticeVO.printlnNoticeVO(nvo);
+					
+						int nCnt = ns.noticeInsert(nvo);
+						if (nCnt > 0){						
+							request.setAttribute("nCnt", new Integer(nCnt));				
+							RequestDispatcher rd = request.getRequestDispatcher("/kbd/notice/noticeInsert.jsp");
+							rd.forward(request, response);						
+						}else{
+							out.println("<script>");				
+							out.println("location.href='/testKbd/kbd/notice/notice.html'");
+							out.println("</script>");
+						}
+					
+					}else{
+						System.out.println("공지사항 등록 및 파일 업로드 실패 ");
+					}	
+				}				
+			} // 공지사항 등록 end
+			
+			// 전체 공지사항 조회 ------------------------------------------------------------------------
+			if ("SALL".equals(isudType)){
+				System.out.println("공지사항정보 전체조회 isudType >>> : " + isudType);
+				
+				// 서비스 호출하기 
+				NoticeService ns = new NoticeServiceImpl();
+				ArrayList<NoticeVO> aListAll = ns.noticeSelectAll();
+				
+				if (aListAll !=null && aListAll.size() > 0) {
+					
+					request.setAttribute("aListAll", aListAll);					
+					RequestDispatcher rd= request.getRequestDispatcher("/kbd/notice/noticeSelectAll.jsp");
 					rd.forward(request, response);
 					
-				}else{
-					out.println("<script>");
+				}else {
+					out.println("<script>");					
 					out.println("location.href='/testKbd/notice?ISUD_TYPE=SALL'");
 					out.println("</script>");
-				}
-			}
+				}		
+			} // 전체 회원정보 조회 end
 			
-			// notice 조회 : S U D ----------------------------------
-			if("S".equals(isudtype) || "U".equals(isudtype)){
-				System.out.println("공지사항 조건조회 : S U D isudtype >>> : " + isudtype);
-				
-				String nnum = request.getParameter("nnumCheck");
-				if(nnum !=null && nnum.length() > 0){
-					System.out.println("공지사항 번호 >>> : " + nnum);
+			// 공지사항 조회 : S U D ---------------------------------------------------------------------
+			if ("S".equals(isudType) || "U".equals(isudType)){
+				System.out.println("공지사항 조건조회 : S U D isudType >>> : " + isudType);
+
+				String nnum = request.getParameter("nnumCheck");				
+				if (nnum !=null && nnum.length() > 0){
+					System.out.println("공지사항 번호 >>> :  " + nnum);
 					
-					//서비스 호출하기
+					// 서비스 호출하기 
 					NoticeService ns = new NoticeServiceImpl();
 					NoticeVO nvo = null;
 					nvo = new NoticeVO();
 					
-					nvo.setNnum(nnum);
+					nvo.setNnum(nnum);					
 					ArrayList<NoticeVO> aListS = ns.noticeSelect(nvo);
 					
-					if(aListS !=null && aListS.size() > 0){
-						System.out.println("aListS.size() >>> : " + aListS.size());
-						request.setAttribute("aListS", aListS);
-						RequestDispatcher rd = request.getRequestDispatcher("/kbd/notice/noticeSelect.jsp");
+					if (aListS !=null && aListS.size() > 0) {
+						System.out.println("aListS.size() >>> : " + aListS.size());						
+						request.setAttribute("aListS", aListS);					
+						RequestDispatcher rd= request.getRequestDispatcher("/kbd/notice/noticeSelect.jsp");
 						rd.forward(request, response);
 						
-					}else{
+					}else {
 						out.println("<script>");
 						out.println("alert('글 조회 실패')");
 						out.println("location.href='/testKbd/notice?ISUD_TYPE=SALL'");
 						out.println("</script>");
-					}
+					}									
 				}else{
-					System.out.println("공지사항 번호가 없습니다. ");
-				}
+					System.out.println("공지사항 번호가  없습니다. ");
+				}		
 			}
-
-				// 공지사항 수정-------------------------------------------------
-				if("UOK".equals(isudtype)){
-					System.out.println("공지사항 수정 isudtype >>> : " + isudtype);
-					
-					String nnum = request.getParameter("nnum");
-					String nsubject = request.getParameter("nsubject");
-					String nmemo = request.getParameter("nmemo");
-					System.out.println("nnum >>> : " + nnum);
-					System.out.println("nsubject >>> : " + nsubject);
-					System.out.println("nmemo >>> : " + nmemo);
-					
-					// 서비스 호출하기
-					NoticeService ns = new NoticeServiceImpl();
-					NoticeVO nvo = null;
-					nvo = new NoticeVO();
-					
-					nvo.setNnum(nnum);
-					nvo.setNsubject(nsubject);
-					nvo.setNmemo(nmemo);
-					
-					int nCnt = ns.noticeUpdate(nvo);
-					
-					if(nCnt > 0) {
-						System.out.println("공지사항 정보가 수정 되었습니다." + nCnt);
-						request.setAttribute("nCnt", new Integer(nCnt));
-						RequestDispatcher rd = request.getRequestDispatcher("/kbd/notice/noticeUpdate.jsp");
-						rd.forward(request, response);
-					}else{
-						System.out.println("글 수정 실패 !!!!");
-						out.println("<script>");
-						out.println("alert('글 수정 실패')");
-						out.println("location.href='/testKbd/notice?ISUD_TYPE=SALL'");
-						out.println("</script>");
-					}
-				}
-				
-				// notice 등록
-				if("I".equals(isudtype)){
-					System.out.println("notice 등록 isudtype >>> : " + isudtype);
-					
-					String nnum = "";
-					String nsubject = "";
-					String nmemo = "";
-					String nphoto = "";
-					
-					boolean fileUploadBool = request.getContentType().toLowerCase().startsWith("multipart/form-data");
-					System.out.println("fileUploadBool >>> : " + fileUploadBool);
-					
-					if(fileUploadBool) {
-						System.out.println("파일 업로드 루틴 >>> : ");
-						
-						String filePaths = CommonUtils.NOTICE_IMG_UPLOAD_PATH;
-						int size_limit = CommonUtils.NOTICE_IMG_FILE_SIZE;
-						String encode_type = CommonUtils.NOTICE_IMG_ENCODE;
-						
-						FileUploadUtil fu = new FileUploadUtil();
-						boolean bool = fu.fileUpldad3(request, filePaths, size_limit, encode_type);
-						
-						if(bool) {
-							
-							nsubject = fu.getParameter("nsubject");
-							nmemo = fu.getParameter("nmemo");
 			
-							// 사진
-							ArrayList<String> aFileName = fu.getFileNames();
-							nphoto = aFileName.get(0);
-						}else{
-							System.out.println("파일 업로드 실패");
-						}
-					}
-					
+			// 공지사항 수정 ------------------------------------------------------------------------------
+			if ("UOK".equals(isudType)){
+				System.out.println("공지사항 수정 isudType >>> : " + isudType);
 				
-				// 채번
-				nnum = GetChabun.getNoticeChabun("d");
+				String nnum = request.getParameter("nnum");
+				String nsubject = request.getParameter("nsubject");
+				String nmemo = request.getParameter("nmemo");				
 				System.out.println("nnum >>> : " + nnum);
 				System.out.println("nsubject >>> : " + nsubject);
 				System.out.println("nmemo >>> : " + nmemo);
-				System.out.println("nphoto >>> : " + nphoto);
 				
+				// 서비스 호출하기 
 				NoticeService ns = new NoticeServiceImpl();
 				NoticeVO nvo = null;
 				nvo = new NoticeVO();
@@ -178,30 +166,63 @@ public class NoticeController extends HttpServlet {
 				nvo.setNnum(nnum);
 				nvo.setNsubject(nsubject);
 				nvo.setNmemo(nmemo);
-				nvo.setNphoto(nphoto);
 				
-				NoticeVO.printlnNoticeVO(nvo);
+				int nCnt = ns.noticeUpdate(nvo);
 				
-				int nCnt = ns.noticeInsert(nvo);
-				
-				if(nCnt > 0){
-					System.out.println("notice정보" + nCnt + "건 등록 되었습니다.");
-					
-					request.setAttribute("nCnt", new Integer(nCnt));
-					
-					RequestDispatcher rd = request.getRequestDispatcher("/kbd/notice/noticeInsert.jsp");
+				if (nCnt > 0) {
+					System.out.println("공지사항 정보가  수정 되었습니다." + nCnt);					
+					request.setAttribute("nCnt", new Integer(nCnt));										
+					RequestDispatcher rd= request.getRequestDispatcher("/kbd/notice/noticeUpdate.jsp");
 					rd.forward(request, response);
-				}else{
-					System.out.println("notice 정보 등록 실패 !!!!!");
-					out.println("<script>");
-					out.println("location.href='/testKbd/notice/notice.html'");
+					
+				}else {
+					System.out.println("글 수정 실패 !!!!");
+					out.println("<script>");	
+					out.println("alert('글 수정 실패')");
+					out.println("location.href='/testKbd/notice?ISUD_TYPE=SALL'");
 					out.println("</script>");
 				}
-			}
+			}			
+			
+			// 공지사항 삭제 ------------------------------------------------------------------------------
+			if ("DOK".equals(isudType)){
+				System.out.println("공지사항 삭제 isudType >>> : " + isudType);
+				
+			
+				String nnum = request.getParameter("nnumCheck");				
+				if (nnum !=null && nnum.length() > 0){
+					System.out.println("공지사항 번호 >>> :  " + nnum);
+					
+					// 서비스 호출하기 
+					NoticeService ns = new NoticeServiceImpl();
+					NoticeVO nvo = null;
+					nvo = new NoticeVO();
+					
+					nvo.setNnum(nnum);
+					int nCnt = ns.noticeDelete(nvo);
+					
+					if (nCnt > 0) {
+						System.out.println("공지사항 정보가  삭제 되었습니다." + nCnt);					
+						request.setAttribute("nCnt", new Integer(nCnt));										
+						RequestDispatcher rd= request.getRequestDispatcher("/kbd/notice/noticeDelete.jsp");
+						rd.forward(request, response);
+						
+					}else {
+						System.out.println("글 삭제 실패 !!!!");
+						out.println("<script>");	
+						out.println("alert('글 수정 실패')");
+						out.println("location.href='/testKbd/notice?ISUD_TYPE=SALL'");
+						out.println("</script>");
+					}
+				}else{
+					System.out.println("공지사항 번호를 잘 넘기세요 !!!! ");
+				}	
+			}	
 		}else{
-			System.out.println("isudtype 을 잘 보내시오 !!!");
-		}
+			System.out.println("form 태그에서 hidden 타입의 ISUD_TYPE 잘 넘기세요 >>> : ");
+		}		
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

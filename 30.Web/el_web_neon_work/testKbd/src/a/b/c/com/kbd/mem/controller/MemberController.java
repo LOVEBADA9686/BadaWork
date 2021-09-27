@@ -55,7 +55,7 @@ public class MemberController extends HttpServlet {
 				String encode_type = CommonUtils.MEMBER_IMG_ENCODE;
 				
 				FileUploadUtil fu = new FileUploadUtil();
-				boolean bFile = fu.fileUpldad3(request, filePaths, size_limit, encode_type);
+				boolean bFile = fu.fileUpload3(request, filePaths, size_limit, encode_type);
 				
 				if(bFile){
 					

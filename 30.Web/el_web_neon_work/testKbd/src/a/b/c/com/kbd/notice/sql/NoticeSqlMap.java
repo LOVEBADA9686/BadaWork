@@ -5,7 +5,7 @@ public abstract class NoticeSqlMap {
 	public static String getMaxChabunQuery(){
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("	SELECT /*+ INDEX_DESC(A SYS_C0011639)*/				\n");
+		sb.append("	SELECT /*+ INDEX_DESC(A SYS_C0011722)*/				\n");
 		sb.append("			NVL(MAX(SUBSTR(A.NNUM, -4)), 0) +1 MAXNUM	\n");
 		sb.append("	FROM	MVC_NOTICE A								\n");
 		
@@ -64,7 +64,8 @@ public abstract class NoticeSqlMap {
 		sb.append("					,INSERTDATE				\n"); // COLUMN 6
 		sb.append("					,UPDATEDATE				\n"); // COLUMN 7
 		sb.append("					)						\n");
-		sb.append("					VALUES(					\n");
+		sb.append("					VALUES					\n");
+		sb.append("					(						\n");
 		sb.append("						?					\n"); // placeholder 1
 		sb.append("						,?					\n"); // placeholder 2
 		sb.append("						,?					\n"); // placeholder 3
@@ -92,18 +93,17 @@ public abstract class NoticeSqlMap {
 		return sb.toString();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static String getNoticeDeleteQuery(){
+		
+		StringBuffer sb = new StringBuffer();			
+		sb.append("	UPDATE			 					\n");	
+		sb.append("		   MVC_NOTICE 			    	\n");	
+		sb.append("	SET  								\n");
+	    sb.append("		   DELETEYN 	= 'N'			\n");	    	   
+	    sb.append("		  ,UPDATEDATE 	= SYSDATE		\n");
+		sb.append("	WHERE  NNUM 		= ?				\n");
+		sb.append("	AND    DELETEYN 	= 'Y'  			\n");		
+					
+		return sb.toString();
+	}
 }

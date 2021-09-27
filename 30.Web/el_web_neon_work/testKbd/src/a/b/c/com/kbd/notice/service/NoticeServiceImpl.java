@@ -47,7 +47,10 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public int noticeDelete(NoticeVO nvo) {
 		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("NoticeServiceImpl noticeDelete() 함수 진입 >>> : ");
+		
+		NoticeDAO ndao = new NoticeDAOImpl();
+		return ndao.noticeDelete(nvo);
 	}
 
 }

@@ -29,13 +29,13 @@ public class FileUploadUtil {
 									 ,new DefaultFileRenamePolicy());		
 			return fb = true;			
 		}catch(Exception e){
-			System.out.println("BabyFileUploadUtil.fileUpldad() >>> : " + e);
+			System.out.println("BabyFileUploadUtil.fileUpload() >>> : " + e);
 		}
 		
 		return fb;		
 	}
 	
-	public boolean fileUpldad3(HttpServletRequest hReq, String filePaths, int size_limit, String encode_type){
+	public boolean fileUpload3(HttpServletRequest hReq, String filePaths, int size_limit, String encode_type){
 		
 		boolean fb = false;
 		try{
@@ -46,7 +46,7 @@ public class FileUploadUtil {
 									 ,new DefaultFileRenamePolicy());
 			return fb = true;			
 		}catch(Exception e){
-			System.out.println("BabyFileUploadUtil.fileUpldad3() >>> : " + e);
+			System.out.println("BabyFileUploadUtil.fileUpload3() >>> : " + e);
 		}
 		
 		return fb;		

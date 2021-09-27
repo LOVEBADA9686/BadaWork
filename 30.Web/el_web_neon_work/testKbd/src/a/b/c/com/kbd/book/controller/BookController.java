@@ -184,7 +184,7 @@ public class BookController extends HttpServlet {
 				String encode_type = CommonUtils.BOOK_IMG_ENCODE;
 				
 				FileUploadUtil fu = new FileUploadUtil();
-				boolean bool = fu.fileUpldad3(request, filePaths, size_limit, encode_type);
+				boolean bool = fu.fileUpload3(request, filePaths, size_limit, encode_type);
 				
 				if(bool){
 					

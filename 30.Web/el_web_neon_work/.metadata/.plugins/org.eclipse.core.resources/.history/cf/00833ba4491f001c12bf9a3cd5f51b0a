@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>HTML CSS</title>
+	<style type="text/css">
+		body{background-color: yellow;}
+		h1{color: blue;}
+		p{color: red;}	
+	</style>
+</head>
+<body>
+	<!-- Inline CSS -->
+	<h1 style="color:blue">This is a Blue Heading</h1>
+	<!-- Inline CSS 적용 됨 -->
+	<h1>This is a heading</h1>
+	<h1>나는ㄴ 문서 제목</h1>
+	<p>This is a paragraph.</p>
+	<p>나는 문단 태그</p>
+	
+	<h1>HTML CSS</h1>
+	<hr>
+	CSS : Cascading Style Sheets<br>
+	HTML 와 같이 CSS는 실제로 프로그래밍 언어 도 마크업(markup) 언어도 아닌<br>
+	Style sheet 언어이다.<br>
+	HTML 문서에 있는 요소들에 선택적으로 스타일을 적용할 수 있다.<br>
+	HTML 페이제에서 모든 문단 요소들을 선택하고 그 문단 요소들 안에 있는<br>
+	텍스트를 빨갛게 바꾸려면 다음과 같이 CSS를 작성하면 된다.<br>
+	p{color: red;}
+	
+	<h1>인라인 스타일(Inline Style) : </h1>
+	<hr>
+	한 줄짜리 짤막한 스타일 태그 안에 직접 지정하여 사용. HTML과 섞어서 사용<br>
+	&lt;p style='background-color:#00f; color:ff0'&gt;즐거운 하루
+	!</p><br>
+</body>
+</html>
