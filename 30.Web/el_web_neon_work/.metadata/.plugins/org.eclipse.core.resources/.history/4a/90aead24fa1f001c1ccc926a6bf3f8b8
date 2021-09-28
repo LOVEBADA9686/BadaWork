@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+</head>
+<body style="width:100px, background-color:yellow;">
+<h3>Hello Css</h3>
+<hr>
+</body>
+</html>
