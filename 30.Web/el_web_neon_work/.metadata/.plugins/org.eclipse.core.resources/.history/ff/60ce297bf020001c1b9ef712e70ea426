@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<company>
+	<staff>
+		<firstname>바다</firstname>
+		<lastname>는</lastname>
+		<nickname>지원금</nickname>
+		<salary>100000</salary>
+	</staff>
+</company>

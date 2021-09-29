@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<!-- xml 문서에서는 항상 루트 태그가 1개만 존재해야한다. -->
+<Kosmo93>
+	<title>응용SW활용 빅데이터구축 전문가 양성과정</title>
+	<delivery>2021년06월28일 ~ 2021년12월15일</delivery>
+	<story>31</story>
+	<user>
+		<name>김바다</name>
+		<gender>남자</gender>
+		<age>29</age>
+	</user>
+	<user>
+		<name>정예지</name>
+		<gender>여자</gender>
+		<age>24</age>
+	</user>
+	<user>
+		<name>김상진</name>
+		<gender>남자</gender>
+		<age>29</age>
+	</user>
+</Kosmo93>

@@ -9,20 +9,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="directon" key="selection"/>
+		<item value="TestClass클래스에" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="TestClass클래스에"/>
+			<item value="TestClass"/>
+			<item value="kosmo"/>
+			<item value="node"/>
+			<item value="nodlis"/>
 			<item value="directon"/>
 			<item value="load"/>
 			<item value="fileUpldad3"/>
-			<item value="Kosmo"/>
-			<item value="kosom"/>
-			<item value="kosmo"/>
-			<item value="integer"/>
-			<item value="공지사항 수정 isudtype"/>
 		</list>
 		<list key="replacehistory">
 			<item value="EUC-KR"/>

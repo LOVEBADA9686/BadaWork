@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>KBD</title>
+</head>
+<body onload="openPop()">
+<div class="div1">
+div::header
+</div>
+<div class="div2">
+div::nav
+<br><br>
+<ul>
+<li><a href="/testKbd/kbd/board/board.html">게시판</a></li>
+&nbsp; 
+<li><a href="/testKbd/kosmo/book/book.html">게시판</a></li>
+
+
+</ul>
+</div>
+<h3>김바다 웹 연습장</h3>
+<hr>
+<a href="/testKbd/kbd/login/login.html">로그인</a><br>
+<a href="/testKbd/kbd/mem/mem.html">회원가입</a><br>
+<a href=>게시판</a><br>
+<a href="/testKbd/kbd/notice/notice.html">공지사항</a><br>
+</body>
+</html>

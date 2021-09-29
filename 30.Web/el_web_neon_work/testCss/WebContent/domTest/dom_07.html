@@ -10,25 +10,33 @@
 	
 	function init() { // 문서가 완전히 로드되었을 때 호출
 		
-		p = document.
+		p = document.getElementById("p");
+		p.nomouseover = over; // over() 함수를 onmouseover 리스너로 등록
+		p.onmouseout = out; // out() 함수를 onmouseout 리스너로 등록
 		
+		pp = document.getElementById("pp");
+		pp.addEventListener("mouseover", over); // 이벤트 리스너 등록
+		pp.addEventListener("mouseout", out); // 이벤트 리스너 등록
 		
+		ppp = document.getElementById("ppp");
+		ppp.onmouseover = function () { // 익명 함수
+			this.style.backgroundColor = "blue";
+		};
 		
+		ppp.addEventListener("mouseout",
+				function (){this.style.backgroundColor="yellow";} // 익명 함수
+		);
+	}
+		
+	function over(){
+		p.style.backgroundColor="orchid";
+		pp.style.backgroundColor="red";
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	function out(){
+		p.style.backgroundColor="cyan";
+		pp.style.backgroundColor="yellow";
+	}
 </script>
 </head>
 <body onload="init()">
