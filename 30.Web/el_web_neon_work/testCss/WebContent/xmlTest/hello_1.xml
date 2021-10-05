@@ -21,7 +21,11 @@
 	</user>
 </Kosmo93>
 <!-- 
+RESTful API 사용 : 레스트풀 에이피아이
+HTTP 프로토콜의 GET 방식
 http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108
+
+data.go.kr 회원가입
 
 국가에서 민간에
 국가에서 보유하고 있는 공공정보를 민간에게 제공하는 행위

@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jqery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		console.log(">>> : ");
+		
+		$("#btn1").click(function(){
+			console.log(">>> : btn1.click() OK");
+			
+			var jsonUrl = "/testCss/jsonTest/emp.json";
+			
+			$.ajax({
+				type : "POST",
+				url : jsonUrl,
+				dataType : "text",
+				success : function(data){
+					console.log(data);
+					var v = JSON.stringify(data); // 자바스크립트 객체를 문자열로 변환함.
+					
+					
+					
+				}
+			})
+		})
+		
+		
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+<p id="json"></p>
+<p id="json1"></p>
+<button id="btn1">button</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>XMLHttpRequest</title>
+</head>
+<!-- 
+
+
+
+ -->
+ <script type="text/javascript">
+ 
+ 	function getFromServer(){
+ 		
+ 		// 1. XMLHttpRequest 객체를 생성
+ 		var req = new XMLHttpRequest();
+ 		console.log("req >>> : " + req);
+ 		
+ 		// 2. 서버와 통신할 때 사용할 처리 방법을 등록 한다.
+ 		console.log("req.onreadystatechange >>> 000 : " + req.onreadystatechange);
+ 		req.onreadystatechange = function(){
+ 			console.log("req.readyState >>> : " + req.readyState);
+ 			if(req.readyState == 4) {
+ 				console.log("req.readyState >>> : if : " + req.readyState);
+ 				if(req.status == 200){
+ 					console.log("req.status >>> : if " + req.status);
+ 					console.log("req.responseText >>> : if " + req.responseText);
+ 					document.getElementById("view").innerHTML = req.responseText;
+ 				}
+ 			}
+ 		}
+ 	}
+ 	console.log("req.onreadystatechange >>> 111 : " + req.onreadystatechange);
+ 	
+ 	// 3. 요청을 전송하고 통신을 시작한다.
+ 	req.open("GET", "/testCss/ajaxTest/data.txt", true);
+ 	req.send(null);
+ 
+ </script>
+<body>
+<p id="view"></p>
+<button type="button" onclick="getFromServer()">GET DATA</button>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Á¦ÀÌÄõ¸® CDN -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#target").load("/testCss/ajaxTest/testfile1.txt");
+		});
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<div id="target" style="width:300px"; height:60px; border:solid 3px red">
+</div>
+<button>Get Data</button>
+</body>
+</html>

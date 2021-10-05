@@ -2,12 +2,33 @@ package a.b.c.com.kbd.notice.vo;
 
 public class NoticeVO {
 
+	/**
+	 * @uml.property  name="nnum"
+	 */
 	private String nnum;
+	/**
+	 * @uml.property  name="nsubject"
+	 */
 	private String nsubject;
+	/**
+	 * @uml.property  name="nmemo"
+	 */
 	private String nmemo;
+	/**
+	 * @uml.property  name="nphoto"
+	 */
 	private String nphoto;
+	/**
+	 * @uml.property  name="deleteyn"
+	 */
 	private String deleteyn;
+	/**
+	 * @uml.property  name="insertdate"
+	 */
 	private String insertdate;
+	/**
+	 * @uml.property  name="updatedate"
+	 */
 	private String updatedate;
 	
 	// »ý¼ºÀÚ
@@ -25,58 +46,114 @@ public class NoticeVO {
 		this.updatedate = updatedate;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="nnum"
+	 */
 	public String getNnum() {
 		return nnum;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="nsubject"
+	 */
 	public String getNsubject() {
 		return nsubject;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="nmemo"
+	 */
 	public String getNmemo() {
 		return nmemo;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="nphoto"
+	 */
 	public String getNphoto() {
 		return nphoto;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="deleteyn"
+	 */
 	public String getDeleteyn() {
 		return deleteyn;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="insertdate"
+	 */
 	public String getInsertdate() {
 		return insertdate;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="updatedate"
+	 */
 	public String getUpdatedate() {
 		return updatedate;
 	}
 
+	/**
+	 * @param nnum
+	 * @uml.property  name="nnum"
+	 */
 	public void setNnum(String nnum) {
 		this.nnum = nnum;
 	}
 
+	/**
+	 * @param nsubject
+	 * @uml.property  name="nsubject"
+	 */
 	public void setNsubject(String nsubject) {
 		this.nsubject = nsubject;
 	}
 
+	/**
+	 * @param nmemo
+	 * @uml.property  name="nmemo"
+	 */
 	public void setNmemo(String nmemo) {
 		this.nmemo = nmemo;
 	}
 
+	/**
+	 * @param nphoto
+	 * @uml.property  name="nphoto"
+	 */
 	public void setNphoto(String nphoto) {
 		this.nphoto = nphoto;
 	}
 
+	/**
+	 * @param deleteyn
+	 * @uml.property  name="deleteyn"
+	 */
 	public void setDeleteyn(String deleteyn) {
 		this.deleteyn = deleteyn;
 	}
 
+	/**
+	 * @param insertdate
+	 * @uml.property  name="insertdate"
+	 */
 	public void setInsertdate(String insertdate) {
 		this.insertdate = insertdate;
 	}
 
+	/**
+	 * @param updatedate
+	 * @uml.property  name="updatedate"
+	 */
 	public void setUpdatedate(String updatedate) {
 		this.updatedate = updatedate;
 	}

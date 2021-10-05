@@ -1,5 +1,0 @@
-package a.b.c.com.kbd.login.service;
-
-public interface LoginService {
-
-}

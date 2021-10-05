@@ -1,0 +1,29 @@
+package a.b.c.com.common;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class OracleXmlTest {
+	
+	public static final String XML_PROLOG = "<?xml version='1.0' encoding='euc-kr'?>"; //선언부
+	
+	public String getXml(final String tableName) throws Exception{
+System.out.println("String tableName >>>> : " + tableName);
+
+	Connection con = null;
+	Statement stmt = null;
+	ResultSet rsRs = null;
+	
+	ResultSetMetaData resultMeta = null;
+	int colCount = 0;
+	StringBuffer strBuffer = new StringBuffer(XML_PROLOG);
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

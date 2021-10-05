@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>escape</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+/*
+ 	escape : 쉼표, 세미콜론 구분하려고 사용한다.
+ 	문자열을 네트워크를 통하여 누구나 ASCII 글자로 접속할 수 있도록 인코딩한다.
+ 	사용방법 : escape("문자열");
+ 		- 문자열의 각 문자들은 '%16진수코드값' 형태로 변환
+ 		- 1바이트 문자는 '%XX' 형태로 표시
+ 		- 영문 알파벳(대문자, 소문자)과, 숫자, 일부 특수문자(@, *, -, _, +, ., /)를 제외 문자만 인코딩
+ 		- 한글이 깨지는 것을 방지하기 위하여 사용
+ 		- 한글, 한자등(2바이트)은 '%u16진수4자리'로 표시
+ 		
+ 	unescape
+ 	사용방법 : unescape("%16진수코드값");
+ 	 - 코드값에 맞는 문자로 변환(escape 로 변환된 코드값만 문자로 변환)
+ 		
+ 		
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ */
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
