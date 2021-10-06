@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-
-<testclass>
- 	<test className="a.b.c.com.common.TestClass">
- 		testAttr
- 	</test>
-</testclass>

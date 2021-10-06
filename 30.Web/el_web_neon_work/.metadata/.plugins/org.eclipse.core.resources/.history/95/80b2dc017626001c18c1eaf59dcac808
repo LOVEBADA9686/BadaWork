@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>ID PW CHECK</title>
+<!-- jQuery CDN 불러오기 -->
+
+</head>
+<body>
+<h3>ID PW CHECK</h3>
+<hr>
+<form name="memForm" id="memForm">
+<table border="1">
+
+<tr>
+<td>아이디</td>
+<td>
+	<input type="hidden" name="ISUD_TYPE" id="ISUD_TYPE">
+	<input type="text" name="mid" id="mid" placeholder="아이디 체그" style="width : 100px" />
+
+
+</table>
+
+</form>
+</body>
+</html>

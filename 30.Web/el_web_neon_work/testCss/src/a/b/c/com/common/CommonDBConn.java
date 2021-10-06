@@ -12,11 +12,10 @@ public class CommonDBConn {
 	public static Connection getConnection() {
 		
 		Connection conn = null;
-		try {
-			
+		try {			
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context) initCtx.lookup("java:comp/env");
-			DataSource ds = (DataSource)envCtx.lookup("jdbc/Oracle11g_orclKBD00");
+			DataSource ds = (DataSource)envCtx.lookup("jdbc/Oracle11g_orcl");
 			conn = ds.getConnection();
 		}catch(Exception e){
 			System.out.println("데이터 베이스 커넥션 에러 >>> : " + e.getMessage());
