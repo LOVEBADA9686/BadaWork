@@ -1,0 +1,18 @@
+package a.b.c.com.common;
+
+public class EL_MemberVO {
+	
+	private String irum;
+	private String id;
+	private String pw;
+	private int age;
+	private String addr;
+	private String tel;
+	
+	public EL_MemberVO(){
+		
+	}
+	
+	public EL_MemberVO(String irum, String id, String pw, int age, String addr, String tel);
+
+}

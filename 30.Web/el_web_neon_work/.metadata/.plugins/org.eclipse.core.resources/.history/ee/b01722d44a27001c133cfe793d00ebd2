@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page import="a.b.c.com.common.EL_MemberVO" %>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>el_06</title>
+</head>
+<body>
+<h3>el_06</h3>
+<hr>
+
+</body>
+</html>

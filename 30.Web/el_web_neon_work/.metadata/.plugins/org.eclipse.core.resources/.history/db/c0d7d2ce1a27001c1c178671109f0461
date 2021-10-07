@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment>
+	<result>true</result>
+	<message></message>
+	<total_count>24</total_count>
+	<item>
+		<num>1</num>
+		<writer>
+			<!-- 씨데이터섹션 -->
+			<![CDATA[주영이]]>		
+		</writer>
+		<content>
+			<![CDATA[Ajax로 구현하는 덧글 예지 입니다. 잘 되는지 볼까요?]]>		
+		</content>
+		<datetime>
+			<![CDATA[2019-11-22 12:22:42]]>
+		</datetime>
+	
+	
+	</item>
+
+
+
+</comment>

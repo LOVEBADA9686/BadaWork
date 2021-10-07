@@ -9,12 +9,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="File" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="$.ajax"/>
 			<item value="file"/>
 			<item value="od"/>
 			<item value="jtablePrint"/>
@@ -22,7 +23,6 @@
 			<item value="TestClass"/>
 			<item value="kosmo"/>
 			<item value="node"/>
-			<item value="nodlis"/>
 		</list>
 		<list key="replacehistory">
 			<item value="EUC-KR"/>

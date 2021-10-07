@@ -14,26 +14,24 @@
  	제이쿼리.함수() : jQuery.ajax() 	
  	함수 : $.ajax(), load(), $.get(), $.post(), $.getJSON()
  	
- 	예약어(keyword) : ajax() 함수에서 {} : 오브젝트 블럭에서 사용 하는 것 
+ 	예약어(keyword) : ajax() 함수에서매개변수 {}인 오브젝트 블럭에서 사용 하는 것 
  	요청 키워드
  	#####################################
  	url      : 요청이 전송되는 URL이 포함된 문자열
  	type     : http요청 방식 : GET/POST
- 	data     : http요청 파라미터 문자열 key=value&key=value
- 	           or http요청 후 리턴값 
+ 	data     : http요청 파라미터 문자열 key=value&key=value or http요청 후 리턴값 
 	#####################################
  	
  	응답 키워드
  	#####################################
- 	success  : function(data: 리턴매개변수, 변수 이름이 가변적이다 ){....} : http요청 성공시 이벤트 핸들러 
- 	error    : function(){.....} : http요청 실패시 이벤트 핸들러
- 	
  	dataType : http요청 후 return하는 데이터 Type
  	           xml, html, srcipt, json, jsonp, text
+ 	success  : function(data: 리턴매개변수, 변수 이름이 가변적이다 ){....} : http요청 성공시 이벤트 핸들러 
+ 	error    : function(){.....} : http요청 실패시 이벤트 핸들러
  	#####################################
 
  	timeout  : http요청에 대한 제한 시간(단위 : ms)
-	async    : 요청시 동기 유무 선택(true/false)
+	asynce    : 요청시 동기 유무 선택(true/false)
 	           true : async, false : sync
 	cache    : 브라우저에 의해 요청되는 페이지를 캐시(true/false)
 	           true : 캐시사용, false : 캐시사용하지 않음 		

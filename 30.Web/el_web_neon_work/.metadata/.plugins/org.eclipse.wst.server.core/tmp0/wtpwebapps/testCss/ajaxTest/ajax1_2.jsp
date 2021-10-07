@@ -27,7 +27,7 @@
 					url : urlVal,		
 					type : typeVal,			
 					data : {					
-						id : idVal,	// data 는 쿼리 스트링 				
+						"id" : idVal,	// data 는 쿼리 스트링 				
 					},
 					success : whenSuccess,					
 					error : whenError
