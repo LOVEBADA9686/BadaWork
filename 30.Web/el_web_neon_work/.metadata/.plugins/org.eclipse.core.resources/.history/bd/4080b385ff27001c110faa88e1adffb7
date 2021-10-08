@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page import="a.b.c.com.common.EL_MemberVO" %>
+<%@ page import="java.util.ArrayList" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%
+	ArrayList<EL_MemberVO> list = new ArrayList<>();
+	list.add(new EL_MemberVO("홍길동", "hong", "1234", 11, "서울특별시", "010-1111-1111"));
+	list.add(new EL_MemberVO("홍길동", "hong", "1234", 22, "서울특별시", "010-1111-1111"));
+	list.add(new EL_MemberVO("홍길동", "hong", "1234", 33, "서울특별시", "010-1111-1111"));
+	list.add(new EL_MemberVO("홍길동", "hong", "1234", 44, "서울특별시", "010-1111-1111"));
+	list.add(new EL_MemberVO("홍길동", "hong", "1234", 55, "서울특별시", "010-1111-1111"));
+
+pageContext.setAttribute("list", list);
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

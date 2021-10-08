@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
-<fullyQualifiedTypeName name="a.b.c.com.kbd.board.sql.BoardSqlMap"/>
 <fullyQualifiedTypeName name="a.b.c.com.kbd.book.sql.BookSqlMap"/>
 <fullyQualifiedTypeName name="a.b.c.com.kbd.book.dao.BookDAO"/>
 <fullyQualifiedTypeName name="a.b.c.com.kbd.book.dao.BookDAOImpl"/>
@@ -51,7 +49,6 @@
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="a.b.c.com.common.CommonDBConn"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.JspWriter"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.SimpleTagSupport"/>
 </qualifiedTypeNameHistroy>
