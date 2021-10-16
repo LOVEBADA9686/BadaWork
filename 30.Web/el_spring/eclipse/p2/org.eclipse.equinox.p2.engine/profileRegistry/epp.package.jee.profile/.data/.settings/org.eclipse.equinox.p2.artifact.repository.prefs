@@ -834,9 +834,15 @@ repositories/http\:__testng.org_testng-p2-update-site_updatesites_7.4.0.r2021050
 repositories/http\:__www.apache.org_dist_geronimo_eclipse_updates/enabled=false
 repositories/http\:__www.apache.org_dist_geronimo_eclipse_updates/isSystem=false
 repositories/http\:__www.apache.org_dist_geronimo_eclipse_updates/uri=http\://www.apache.org/dist/geronimo/eclipse/updates/
+repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/description=
 repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/enabled=true
 repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/isSystem=false
+repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/name=2020-06/202006171000
+repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/provider=
+repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/suffix=artifacts.xml.xz
+repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/type=org.eclipse.equinox.p2.artifact.repository.simpleRepository
 repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/uri=https\://download.eclipse.org/releases/2020-06/202006171000
+repositories/https\:__download.eclipse.org_releases_2020-06_202006171000/version=1.0.0
 repositories/https\:__download.eclipse.org_releases_2021-09/description=
 repositories/https\:__download.eclipse.org_releases_2021-09/enabled=false
 repositories/https\:__download.eclipse.org_releases_2021-09/isSystem=true

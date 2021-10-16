@@ -1,0 +1,22 @@
+package a.b.c.com.kbd.board.controller;
+
+public class dddd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num1 = 10;
+		int i = 2;
+		
+		boolean value = ((num1=num1+10) < 10) && ((i = i + 2) < 10);
+		System.out.println(value); // °ÅÁþ
+		System.out.println(num1); // 20
+		System.out.println(i); // 2
+
+		boolean value1 = ((num1=num1+10) >10 ) || ((i = i + 2) < 10);
+		System.out.println(value1); // Âü
+		System.out.println(num1); // 30
+		System.out.println(i); // 2
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package a.b.c.com.kbd.board.controller;
+
+public class dddd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int games = 150;
+		int ll = games ++;
+		System.out.println(ll);
+		int ll2 = games --;
+		System.out.println(ll2);
+	}
+
+}

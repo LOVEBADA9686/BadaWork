@@ -203,6 +203,7 @@ public class BoardVO {
 		System.out.println("bvo.getBwriter()				>>> : " + bvo.getBwriter());
 		System.out.println("bvo.getBpw()					>>> : " + bvo.getBpw());
 		System.out.println("bvo.getBmemo()					>>> : " + bvo.getBmemo());
+		System.out.println("bvo.getBphoto()					>>> : " + bvo.getBphoto());
 		System.out.println("bvo.getDeleteyn()				>>> : " + bvo.getDeleteyn());
 		System.out.println("bvo.getInsertdate()				>>> : " + bvo.getInsertdate());
 		System.out.println("bvo.getUpdatedate()				>>> : " + bvo.getUpdatedate());	

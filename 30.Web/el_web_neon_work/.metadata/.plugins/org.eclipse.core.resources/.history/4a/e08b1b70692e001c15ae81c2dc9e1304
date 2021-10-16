@@ -1,0 +1,21 @@
+package a.b.c.com.kbd.board.controller;
+
+public class dddd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char gul = '\uAE00';
+		System.out.println("gul");
+		
+		int num = 10;
+		System.out.println(+num);
+		System.out.println(-num);
+		System.out.println(num);
+		
+		num = -num
+		System.out.println(num);
+		
+		
+	}
+
+}

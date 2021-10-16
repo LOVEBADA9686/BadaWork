@@ -1,0 +1,104 @@
+2021-10-14
+----------------------------------
+
+웹브라우저 ---> 디스패처서블릿(프론트 콘트롤러) ---> 사용자정의 콘트롤러
+
+사용자정의 콘트롤러에서 리턴 할 때
+ModelAndView
+Model, Map, ModelMap
+String
+View
+void 
+
+@RequestMapping
+@RequestBody
+@ResponseBody
+@ModelAttribute
+
+1. index.jsp : <a href="formdata_find.hbe">FORM DATA 실행</a>
+
+2. FormDataController
+	@RequestMapping(value="formdata_find", method=RequestMethod.GET)
+	public String formdata() {		
+		return "mvc/formdata_return";
+	}
+
+3. /WEB-INF/view/mvc/formdata_return.jsp 
+
+4. /WEB-INF/view/mvc/formdata_return.jsp 
+	<button type="button" id="getbtn">GET</button>
+	$(document).ready(function(){
+	
+		// GET 방식
+		$(document).on("click", "#getbtn", function(){
+			alert("getbtn >>> : 진입 ");
+			
+			$("#formData").attr({
+				"action":"formdata_get_servlet.hbe",
+				"method":"GET",
+				"enctype":"application/x-www-form-urlencoded"
+			}).submit();
+		});
+	}
+	
+	서브밋을 하면 액션 값을 가지고 formdata_get_servlet 콘트롤러 찾으러 간다. 
+
+5.	FormDataController
+		@RequestMapping(value="formdata_get_servlet", method=RequestMethod.GET)
+		public String formdata_get(HttpServletRequest req, Model m) {
+		
+		String datanum = req.getParameter("datanum");
+		String dataid = req.getParameter("dataid");
+		String datapw = req.getParameter("datapw");
+		String dataname = req.getParameter("dataname");
+		System.out.println("FormDataController.formdata_get() :::: datanum >>> : " + datanum);
+		System.out.println("FormDataController.formdata_get() :::: dataid >>> : " + dataid);
+		System.out.println("FormDataController.formdata_get() :::: datapw >>> : " + datapw);
+		System.out.println("FormDataController.formdata_get() :::: dataname >>> : " + dataname);
+		
+		req.setAttribute("request_datanum", datanum);
+		req.setAttribute("request_dataid", dataid);
+		req.setAttribute("request_datapw", datapw);
+		req.setAttribute("request_dataname", dataname);
+		
+		m.addAttribute("el_datanum", datanum);
+		m.addAttribute("el_dataid", dataid);
+		m.addAttribute("el_datapw", datapw);
+		m.addAttribute("el_dataname", dataname);
+		
+		return "mvc/formdata_get_servlet";
+	}
+
+6.	/WEB-INF/view/mvc/formdata_get_servlet.jsp 
+
+	<h3>formdata_get_servlet</h3>
+	<hr>
+	<h3>스프링 콘트롤러에서 request 객체로 받아오기</h3> 
+	<hr>
+	<%
+		String datanum = request.getParameter("datanum");
+		String dataid = request.getParameter("dataid");
+		String datapw = request.getParameter("datapw");
+		String dataname = request.getParameter("dataname");
+		System.out.println("formdata_get_servlet.jsp :::: datanum >>> : " + datanum);
+		System.out.println("formdata_get_servlet.jsp :::: dataid >>> : " + dataid);
+		System.out.println("formdata_get_servlet.jsp :::: datapw >>> : " + datapw);
+		System.out.println("formdata_get_servlet.jsp:::: dataname >>> : " + dataname);	
+		out.println("formdata_get_servlet.jsp :::: datanum >>> : " + datanum + "<br>");
+		out.println("formdata_get_servlet.jsp :::: dataid >>> : " + dataid + "<br>");
+		out.println("formdata_get_servlet.jsp :::: datapw >>> : " + datapw + "<br>");
+		out.println("formdata_get_servlet.jsp :::: dataname >>> : " + dataname + "<br>");
+	%>
+	<p>
+	<h3>스프링 콘트롤러에서 el 객체로 받아오기</h3> 
+	<hr>
+	${el_datanum }<br>
+	${el_dataid }<br>
+	${el_datapw }<br>
+	${el_dataname}<br>
+	<h3>스프링 콘트롤러에서 request.setAttribute() 객체로 받아오기</h3> 
+	<hr>
+	${request_datanum }<br>
+	${request_dataid }<br>
+	${request_datapw }<br>
+	${request_dataname }<br>

@@ -1,0 +1,33 @@
+package a.b.c.com.kbd.board.controller;
+
+public class aaaa {
+
+	public static void main(String[] args) {
+		
+		String a = "";
+		int b = 0;
+		boolean c = true;
+		float d = 0;
+		char e = 'A';
+		
+		// º¯¼ö = º¯¼ö, ÇÔ¼ö
+		
+		
+		a = ";
+		
+		a = "±è¹Ù´Ù±è¹Ù´Ù";
+		
+	}
+	
+
+	public static String addStr(String str){
+		String result = "";
+		
+		result = str + str;
+//		result = str + str;
+//		result = "±è¹Ù´Ù" + "±è¹Ù´Ù";
+//		result = "±è¹Ù´Ù±è¹Ù´Ù";
+				
+		return result;
+	}
+}

@@ -1,0 +1,25 @@
+package a.b.c.com.kbd.board.controller;
+
+public class dddd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int mm = 90;
+		int ss = 70;
+		int dd = 100;
+		
+		int to = mm + ss+ dd;
+		System.out.println(to);
+		int ll = to / 3;
+		System.out.println((float)ll);
+		
+		int total = mm + ss;
+		System.out.println(total);
+		
+		double as = total / 2.0;
+		System.out.println(as);
+		
+	}
+
+}

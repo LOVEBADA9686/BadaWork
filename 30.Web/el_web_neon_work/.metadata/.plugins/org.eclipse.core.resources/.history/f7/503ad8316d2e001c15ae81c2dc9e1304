@@ -1,0 +1,14 @@
+package a.b.c.com.kbd.board.controller;
+
+public class dddd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int myAge = 24;
+		boolean value = (myAge > 25);
+		System.out.println(value);
+
+	}
+
+}
